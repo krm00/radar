@@ -36,11 +36,15 @@
   .nm{font-weight:650;font-size:16px;display:flex;align-items:center;gap:5px;flex-wrap:wrap}
   .badge{color:var(--x);font-size:13px}
   .bio{color:#b9c2d0;font-size:13px;margin-top:6px;white-space:pre-wrap}
-  .last{display:flex;align-items:center;gap:7px;margin-top:12px;padding:8px 11px;
+  .last{margin-top:12px;padding:9px 11px;cursor:pointer;
         background:#12151b;border:1px solid var(--line);border-left:3px solid var(--x);
         border-radius:10px;font-size:12.5px;color:#c3cad6}
+  .last:active{background:#161b23}
+  .last .top{display:flex;align-items:center;gap:7px}
   .last b{color:#fff;font-weight:600}
   .last .ago{color:var(--dim);margin-left:auto;font-variant-numeric:tabular-nums}
+  .last .lasttext{margin-top:6px;color:#9aa3b2;font-size:12.5px;line-height:1.45;
+        display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
   .row{display:flex;align-items:flex-end;gap:10px;margin-top:14px;flex-wrap:wrap}
   .big{font-size:36px;font-weight:700;letter-spacing:-.8px;font-variant-numeric:tabular-nums}
   .delta{font-size:13px;padding-bottom:7px}
@@ -263,7 +267,7 @@ function postHTML(p, topId, handle){
   const mentions = (p.mentions||[]).map(x => `<span class="tag">@${esc(x)}</span>`).join("");
   const mini = (p.hist && p.hist.length > 1)
     ? `<div class="mini">beğeni seyri ${spark(p.hist, 120, 22)} <span>${nf(p.hist[0].l)} → ${nf(p.hist[p.hist.length-1].l)}</span></div>` : "";
-  return `<article class="post ${t.cls}">
+  return `<article class="post ${t.cls}" id="p-${p.id}">
     <div class="pmeta"><span class="pdate">${fmtDate(p.created_at)}</span>${badges}</div>
     ${typeHeader(p)}
     <div class="ptext">${esc(p.text)}</div>
@@ -336,8 +340,10 @@ function lastPostHTML(a){
   if(!ps.length) return `<div class="last">🕒 henüz gönderi yok</div>`;
   const latest = ps.reduce((x,y) => new Date(y.created_at) > new Date(x.created_at) ? y : x);
   const label = {original:"gönderi", reply:"yanıt", quote:"alıntı", retweet:"retweet"}[latest.type] || "gönderi";
-  return `<div class="last">🕒 son ${label} <b>${fmtDate(latest.created_at)}</b>
-    <span class="ago">${ago(latest.created_at)}</span></div>`;
+  return `<div class="last" onclick="document.getElementById('p-${latest.id}') && document.getElementById('p-${latest.id}').scrollIntoView({behavior:'smooth',block:'center'})">
+    <div class="top">🕒 son ${label} <b>${fmtDate(latest.created_at)}</b>
+      <span class="ago">${ago(latest.created_at)}</span></div>
+    <div class="lasttext">${esc(latest.text)}</div></div>`;
 }
 
 function accountHTML(a){
