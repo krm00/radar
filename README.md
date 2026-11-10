@@ -34,9 +34,24 @@ Birkaç dakika sonra: `https://<kullanıcı>.github.io/radar/`
 
 - Hesap eklemek/çıkarmak: `accounts.json` düzenle, commit'le
 - Güncelleme sıklığı: `.github/workflows/radar.yml` içindeki `cron` satırı
-- Maliyet: her çalışma ~5 gönderi okuması ≈ **$0,025** → saatlik = ~$18/ay üst sınır
-  (X aynı gün aynı gönderiyi tekrar faturalamazsa çok daha az). Seyreltmek için
-  `cron: "17 */3 * * *"` gibi 3 saatte bire al.
+  (şu an **3 saatte bir**: `"17 */3 * * *"`)
+- Maliyet: her çalışma ~5 gönderi okuması ≈ **$0,025** → 3 saatlik = ~**$6/ay** üst sınır
+  (X aynı gün aynı gönderiyi tekrar faturalamazsa çok daha az)
+
+## Telegram bildirimi (opsiyonel)
+
+Yeni gönderi veya takipçi değişiminde Telegram'dan haber almak için:
+
+1. Telegram'da **@BotFather** → `/newbot` → token al
+2. Botuna bir mesaj at, sonra `https://api.telegram.org/bot<TOKEN>/getUpdates`
+   adresinden `chat.id` değerini al
+3. Secret olarak ekle:
+   ```bash
+   gh secret set TELEGRAM_BOT_TOKEN
+   gh secret set TELEGRAM_CHAT_ID
+   ```
+
+Token/chat yoksa bildirim adımı sessizce atlanır — pano normal çalışmaya devam eder.
 
 ## iPhone
 
@@ -50,4 +65,4 @@ Artık her yerden, Mac kapalıyken de açılır.
 | `fetch.py` | X API'den çeker, `data.json` yazar |
 | `index.html` | Statik pano (token içermez) |
 | `accounts.json` | Takip edilecek hesaplar |
-| `.github/workflows/radar.yml` | Saatlik cron |
+| `.github/workflows/radar.yml` | 3 saatlik cron + Telegram adımı |

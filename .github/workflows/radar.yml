@@ -2,7 +2,7 @@ name: radar
 
 on:
   schedule:
-    - cron: "17 * * * *"      # her saat :17'de (UTC)
+    - cron: "17 */3 * * *"    # her 3 saatte bir (UTC) — maliyet ~$6/ay
   workflow_dispatch:           # elle tetikleme
 
 permissions:
@@ -25,6 +25,8 @@ jobs:
       - name: X API'den veri çek
         env:
           X_BEARER: ${{ secrets.X_BEARER }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python fetch.py
 
       - name: data.json'u commit'le
