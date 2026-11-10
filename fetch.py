@@ -188,6 +188,35 @@ def fetch_account(handle, token, limit):
     }
 
 
+def fetch_conversation(token, post_id, limit=30):
+    """Bir gönderinin yorumları + hesabın cevapları (tek seferlik)."""
+    q = urllib.parse.quote(f"conversation_id:{post_id}")
+    d = get_json(f"{API}/tweets/search/recent?query={q}"
+                 f"&max_results={max(10, min(100, limit))}"
+                 f"&tweet.fields=public_metrics,created_at,referenced_tweets,author_id"
+                 f"&expansions=author_id&user.fields=username,name,profile_image_url", token)
+    users = {u.get("id"): u for u in ((d.get("includes") or {}).get("users") or [])}
+    out = []
+    for t in (d.get("data") or []):
+        if str(t.get("id")) == str(post_id):
+            continue
+        refs = t.get("referenced_tweets") or []
+        parent = next((r.get("id") for r in refs if r.get("type") == "replied_to"), None)
+        u = users.get(t.get("author_id")) or {}
+        m = t.get("public_metrics") or {}
+        out.append({
+            "id": t["id"],
+            "parent": parent,
+            "author": u.get("username") or "?",
+            "name": u.get("name") or "",
+            "avatar": (u.get("profile_image_url") or "").replace("_normal", "_200x200"),
+            "text": t.get("text", ""),
+            "likes": m.get("like_count", 0),
+            "created_at": t.get("created_at", ""),
+        })
+    return out
+
+
 def fetch_trends(token, woeid="23424969", limit=15):
     """Gündem: tek çağrı, ucuz."""
     try:
@@ -325,6 +354,37 @@ def main():
             events.append({"ts": now, "type": "profile", "handle": acc["handle"], "text": c})
             notes.append(f"👤 <b>{esc(acc['handle'])}</b> profil: {esc(c)}")
 
+    # --- konuşmalar: her gönderi için yalnızca bir kez ---
+    convs = dict(prev_raw.get("conversations") or {})
+    conv_budget = int(os.environ.get("CONV_MAX", "1"))
+    conv_limit = int(os.environ.get("CONV_LIMIT", "30"))
+    fetched_now = 0
+    for acc in out:
+        for p in acc["posts"]:
+            if fetched_now >= conv_budget:
+                break
+            if p["id"] in convs:
+                continue
+            try:
+                created = int(datetime.fromisoformat(
+                    p["created_at"].replace("Z", "+00:00")).timestamp())
+                age_s = int(datetime.now(timezone.utc).timestamp()) - created
+            except Exception:
+                age_s = 10 ** 9
+            if age_s > 48 * 3600:      # sadece son 2 günün gönderileri
+                continue
+            try:
+                convs[p["id"]] = {"fetched": int(datetime.now(timezone.utc).timestamp()),
+                                  "replies": fetch_conversation(token, p["id"], conv_limit)}
+                fetched_now += 1
+                print(f"konuşma çekildi: {p['id']} ({len(convs[p['id']]['replies'])} yorum)")
+            except Exception as e:
+                print(f"konuşma hata {p['id']}: {e}")
+    # eski konuşmaları buda
+    if len(convs) > 20:
+        keep = dict(sorted(convs.items(), key=lambda kv: kv[1].get("fetched", 0), reverse=True)[:20])
+        convs = keep
+
     # --- arşiv: tüm görülen gönderiler (analitik için, ücretsiz) ---
     archive = {x["id"]: x for x in (prev_raw.get("archive") or [])} if prev_raw else {}
     for acc in out:
@@ -348,6 +408,7 @@ def main():
         "events": events,
         "archive": archive_list,
         "trends": trends,
+        "conversations": convs,
         "errors": errors,
     }, ensure_ascii=False, indent=1))
 

@@ -118,6 +118,15 @@
   .tr:last-child{border-bottom:0}
   .tr a{color:#7ab7e8;text-decoration:none}
   .tr span{color:var(--dim);font-size:11.5px;flex:0 0 auto}
+  .conv{margin-top:12px;border-top:1px solid var(--line);padding-top:10px}
+  .cmt{padding:6px 0 6px 9px;border-left:2px solid #2a3140;margin:4px 0}
+  .cmt.owner{border-left-color:var(--x);background:rgba(29,155,240,.06);border-radius:0 8px 8px 0}
+  .cmt-h{font-size:11.5px;color:var(--dim);margin-bottom:2px}
+  .cmt-h b{color:#c7d0dd;font-weight:600}
+  .cmt-h .own{color:var(--x);font-weight:600}
+  .cmt-t{font-size:13px;white-space:pre-wrap;word-break:break-word}
+  .cmt-s{font-size:11px;color:var(--dim);margin-top:2px}
+  .ask.on{background:#1d3b52;border-color:#2b5f80}
   .events{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin-top:6px}
   .events h2,.hist h2{font-size:13.5px;margin:0 0 10px;font-weight:650;color:#cdd4e0}
   .ev{display:flex;gap:9px;padding:7px 0;border-bottom:1px solid var(--line);font-size:12.5px}
@@ -230,7 +239,7 @@ function quotedBox(p){
   return "";
 }
 
-function postHTML(p, topId){
+function postHTML(p, topId, handle){
   const t = TYPE_META[p.type] || TYPE_META.original;
   const badges = [
     p.pinned ? `<span class="pill pin">sabitlenmiş</span>` : "",
@@ -256,9 +265,13 @@ function postHTML(p, topId){
       ${p.bookmarks ? `<span>🔖 <b>${nf(p.bookmarks)}</b></span>` : ""}
       ${p.impressions ? `<span>👁 <b>${nf(p.impressions)}</b></span>` : ""}
       ${p.er ? `<span>⚡ <b>%${p.er}</b></span>` : ""}
+      ${(STATE.conversations || {})[p.id]
+        ? `<button class="ask" onclick="toggleConv(this,'${p.id}')">💬 ${((STATE.conversations||{})[p.id].replies||[]).length} yorum</button>`
+        : ``}
       <a href="${p.url}" target="_blank" rel="noopener">X'te aç ↗</a>
     </div>
     ${mini}
+    ${convHTML(p.id, handle) || ""}
   </article>`;
 }
 
@@ -274,6 +287,35 @@ function filteredPosts(a){
   else if(SORT === "engagement") ps.sort((x,y) => (y.engagement||0) - (x.engagement||0));
   else ps.sort((x,y) => new Date(y.created_at) - new Date(x.created_at));
   return ps;
+}
+
+function convHTML(postId, handle){
+  const c = (STATE.conversations || {})[postId];
+  if(!c) return null;
+  const items = c.replies || [];
+  const byParent = {};
+  for(const r of items) (byParent[r.parent] = byParent[r.parent] || []).push(r);
+  const render = (parentId, depth) => (byParent[parentId] || []).map(r => {
+    const own = ("@" + r.author) === handle;
+    const when = r.created_at ? fmtDate(r.created_at) : "";
+    return `<div class="cmt${own ? " owner" : ""}">
+      <div class="cmt-h">${own ? `<span class="own">↳ ${esc(handle)}</span>` : `<b>@${esc(r.author)}</b>`} · ${when}</div>
+      <div class="cmt-t">${esc(r.text)}</div>
+      <div class="cmt-s">♥ ${nf(r.likes)}</div>
+      ${depth < 3 ? render(r.id, depth + 1) : ""}
+    </div>`;
+  }).join("");
+  const body = render(postId, 0) || `<div class="muted" style="padding:6px 0">Henüz yorum yok.</div>`;
+  return `<div class="conv" hidden>${body}</div>`;
+}
+
+function toggleConv(btn, id){
+  const art = btn.closest(".post");
+  const box = art.querySelector(".conv");
+  if(!box) return;
+  const open = box.hidden;
+  box.hidden = !open;
+  btn.classList.toggle("on", open);
 }
 
 function accountHTML(a){
@@ -321,7 +363,7 @@ function accountHTML(a){
     <i><span class="ty quote">❝ alıntı</span></i>
     <i><span class="ty retweet">🔁 retweet</span></i>
   </div>
-  <div class="posts">${posts.map(p => postHTML(p, a.top_post)).join("")
+  <div class="posts">${posts.map(p => postHTML(p, a.top_post, a.handle)).join("")
     || `<div class="acct muted">Filtreye uyan gönderi yok.</div>`}</div>`;
 }
 

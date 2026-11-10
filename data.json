@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-10T18:49:10Z",
+ "updated": "2026-11-10T18:52:09Z",
  "accounts": [
   {
    "handle": "@erkekdoven62",
@@ -43,13 +43,7 @@
      "er": 0.0,
      "hist": [
       {
-       "ts": 1794336539,
-       "l": 0,
-       "c": 0,
-       "r": 0
-      },
-      {
-       "ts": 1794336550,
+       "ts": 1794336729,
        "l": 0,
        "c": 0,
        "r": 0
@@ -65,7 +59,7 @@
      "reposts": 0,
      "quotes": 0,
      "bookmarks": 2,
-     "impressions": 2148,
+     "impressions": 2149,
      "lang": "tr",
      "created_at": "2026-11-09T21:06:03.000Z",
      "hashtags": [],
@@ -80,13 +74,7 @@
      "er": 1.58,
      "hist": [
       {
-       "ts": 1794336539,
-       "l": 26,
-       "c": 8,
-       "r": 0
-      },
-      {
-       "ts": 1794336550,
+       "ts": 1794336729,
        "l": 26,
        "c": 8,
        "r": 0
@@ -119,13 +107,7 @@
      "er": null,
      "hist": [
       {
-       "ts": 1794336539,
-       "l": 0,
-       "c": 0,
-       "r": 426
-      },
-      {
-       "ts": 1794336550,
+       "ts": 1794336729,
        "l": 0,
        "c": 0,
        "r": 426
@@ -156,13 +138,7 @@
      "er": 1.86,
      "hist": [
       {
-       "ts": 1794336539,
-       "l": 32,
-       "c": 2,
-       "r": 0
-      },
-      {
-       "ts": 1794336550,
+       "ts": 1794336729,
        "l": 32,
        "c": 2,
        "r": 0
@@ -178,7 +154,7 @@
      "reposts": 0,
      "quotes": 0,
      "bookmarks": 0,
-     "impressions": 196,
+     "impressions": 198,
      "lang": "in",
      "created_at": "2026-11-05T21:47:42.000Z",
      "hashtags": [],
@@ -200,13 +176,7 @@
      "er": 0.51,
      "hist": [
       {
-       "ts": 1794336539,
-       "l": 1,
-       "c": 0,
-       "r": 0
-      },
-      {
-       "ts": 1794336550,
+       "ts": 1794336729,
        "l": 1,
        "c": 0,
        "r": 0
@@ -222,7 +192,7 @@
      "reposts": 0,
      "quotes": 0,
      "bookmarks": 0,
-     "impressions": 349,
+     "impressions": 351,
      "lang": "tr",
      "created_at": "2026-11-05T17:14:24.000Z",
      "hashtags": [],
@@ -244,13 +214,7 @@
      "er": 0.57,
      "hist": [
       {
-       "ts": 1794336539,
-       "l": 2,
-       "c": 0,
-       "r": 0
-      },
-      {
-       "ts": 1794336550,
+       "ts": 1794336729,
        "l": 2,
        "c": 0,
        "r": 0
@@ -266,7 +230,7 @@
      "reposts": 0,
      "quotes": 0,
      "bookmarks": 7,
-     "impressions": 6155,
+     "impressions": 6158,
      "lang": "tr",
      "created_at": "2026-11-05T15:47:10.000Z",
      "hashtags": [],
@@ -290,13 +254,7 @@
      "er": 1.02,
      "hist": [
       {
-       "ts": 1794336539,
-       "l": 57,
-       "c": 6,
-       "r": 0
-      },
-      {
-       "ts": 1794336550,
+       "ts": 1794336729,
        "l": 57,
        "c": 6,
        "r": 0
@@ -327,13 +285,7 @@
      "er": 1.61,
      "hist": [
       {
-       "ts": 1794336539,
-       "l": 18,
-       "c": 0,
-       "r": 0
-      },
-      {
-       "ts": 1794336550,
+       "ts": 1794336729,
        "l": 18,
        "c": 0,
        "r": 0
@@ -349,7 +301,7 @@
      "reposts": 0,
      "quotes": 0,
      "bookmarks": 0,
-     "impressions": 1103,
+     "impressions": 1104,
      "lang": "tr",
      "created_at": "2026-11-03T20:56:42.000Z",
      "hashtags": [],
@@ -373,13 +325,7 @@
      "er": 1.9,
      "hist": [
       {
-       "ts": 1794336539,
-       "l": 21,
-       "c": 0,
-       "r": 0
-      },
-      {
-       "ts": 1794336550,
+       "ts": 1794336729,
        "l": 21,
        "c": 0,
        "r": 0
@@ -389,11 +335,7 @@
    ],
    "history": [
     {
-     "ts": 1794336539,
-     "v": 3077
-    },
-    {
-     "ts": 1794336550,
+     "ts": 1794336729,
      "v": 3077
     }
    ],
@@ -431,7 +373,7 @@
    "comments": 8,
    "reposts": 0,
    "quotes": 0,
-   "impressions": 2148,
+   "impressions": 2149,
    "lang": "tr",
    "engagement": 34,
    "er": 1.58,
@@ -476,7 +418,7 @@
    "comments": 0,
    "reposts": 0,
    "quotes": 0,
-   "impressions": 196,
+   "impressions": 198,
    "lang": "in",
    "engagement": 1,
    "er": 0.51,
@@ -491,7 +433,7 @@
    "comments": 0,
    "reposts": 0,
    "quotes": 0,
-   "impressions": 349,
+   "impressions": 351,
    "lang": "tr",
    "engagement": 2,
    "er": 0.57,
@@ -506,7 +448,7 @@
    "comments": 6,
    "reposts": 0,
    "quotes": 0,
-   "impressions": 6155,
+   "impressions": 6158,
    "lang": "tr",
    "engagement": 63,
    "er": 1.02,
@@ -536,7 +478,7 @@
    "comments": 0,
    "reposts": 0,
    "quotes": 0,
-   "impressions": 1103,
+   "impressions": 1104,
    "lang": "tr",
    "engagement": 21,
    "er": 1.9,
@@ -606,5 +548,11 @@
    "count": null
   }
  ],
+ "conversations": {
+  "2119912914354360475": {
+   "fetched": 1794336729,
+   "replies": []
+  }
+ },
  "errors": []
 }
