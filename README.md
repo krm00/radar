@@ -76,6 +76,16 @@ Token/chat yoksa bildirim adımı sessizce atlanır — pano normal çalışmaya
   tek tek sorgulanır (404 → silinmiş), ayrı bölümde son görülen metrikleriyle listelenir
 - CSV: takipçi geçmişi ve gönderi metrikleri
 
+## Bildirimler
+
+| Workflow | Zamanlama | İçerik |
+|---|---|---|
+| `radar.yml` | 3 saatte bir | veri + yeni gönderi / takipçi / profil / silinme bildirimi |
+| `notify.yml` | 5 dakikada bir | yalnızca yeni gönderi (since_id, sıfır maliyet) |
+| `digest.yml` | her gün 21:00 | günlük özet: takipçi, gönderi sayısı, en iyi gönderi, gündem |
+
+`radar.yml` başarısız olursa Telegram'a hata bildirimi gider.
+
 ## Bildirim gecikmesi
 
 - `radar.yml` (3 saatte bir): pano verisi + tam bildirimler

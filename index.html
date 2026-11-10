@@ -110,6 +110,16 @@
   .mini{display:flex;align-items:center;gap:6px;margin-top:9px;color:var(--dim);font-size:11px}
   .mini svg{height:22px;width:120px}
 
+  .daybars{display:grid;grid-template-columns:repeat(auto-fit,minmax(16px,1fr));gap:4px;
+           align-items:end;height:70px;margin:8px 0 6px}
+  .db{display:flex;flex-direction:column;justify-content:flex-end;height:100%;gap:3px}
+  .db i{display:block;border-radius:3px;min-height:2px}
+  .db em{font-style:normal;font-size:9px;color:var(--dim);text-align:center;line-height:1}
+  .top3{display:flex;flex-direction:column;gap:8px;margin-bottom:14px}
+  .t3{display:grid;grid-template-columns:18px 1fr;gap:8px;font-size:12.5px;
+      background:#12151b;border:1px solid var(--line);border-radius:10px;padding:8px 10px}
+  .t3 b{color:#f5c451}
+  .t3 .m{color:var(--dim);font-size:11px;margin-top:3px}
   .analytics{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin-top:16px}
   .analytics h2{font-size:13.5px;margin:0 0 12px;font-weight:650;color:#cdd4e0}
   .wk{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
@@ -166,6 +176,7 @@
 <header>
   <h1>📡 Radar</h1>
   <span class="spacer"></span>
+  <span class="muted" id="net"></span>
   <span class="muted" id="updated">yükleniyor…</span>
   <button onclick="render()">Yenile</button>
 </header>
@@ -501,7 +512,35 @@ function analyticsHTML(){
   const langChips = Object.entries(langs).sort((a,b)=>b[1]-a[1]).slice(0,6)
     .map(([l,c]) => `<span class="chip">${esc(l)} · ${c}</span>`).join("");
 
+  // günlük takipçi değişimi (son 14 gün)
+  const hist = (STATE.accounts && STATE.accounts[0] && STATE.accounts[0].history) || [];
+  const byDay = {};
+  for(let i = 1; i < hist.length; i++){
+    const day = new Date(hist[i].ts * 1000).toISOString().slice(0,10);
+    byDay[day] = (byDay[day] || 0) + (hist[i].v - hist[i-1].v);
+  }
+  const dayKeys = Object.keys(byDay).sort().slice(-14);
+  const maxAbs = Math.max(1, ...dayKeys.map(d => Math.abs(byDay[d])));
+  const dayBars = dayKeys.length ? `<div class="muted" style="margin-bottom:4px">günlük takipçi değişimi</div>
+    <div class="daybars">${dayKeys.map(d => {
+      const v = byDay[d], h = Math.max(4, Math.abs(v) / maxAbs * 100);
+      const col = v > 0 ? "#3ddc84" : (v < 0 ? "#ff6b6b" : "#3a4250");
+      return `<div class="db" title="${d}: ${v > 0 ? "+" : ""}${v}">
+        <i style="height:${h}%;background:${col}"></i>
+        <em>${d.slice(8)}</em></div>`;
+    }).join("")}</div>` : "";
+
+  // en iyi 3 gönderi
+  const top3 = [...A].sort((x,y) => (y.engagement||0) - (x.engagement||0)).slice(0,3);
+  const top3HTML = top3.length ? `<div class="muted" style="margin-bottom:6px">en çok etkileşim alan gönderiler</div>
+    <div class="top3">${top3.map((x,i) => `<div class="t3"><b>${i+1}</b><div>
+      <div>${esc((x.text||"").slice(0,110))}</div>
+      <div class="m">♥ ${nf(x.likes)} · 💬 ${nf(x.comments)} · 🔁 ${nf(x.reposts)} · ${TYPE_LABEL[x.type]||x.type} · ${fmtDate(x.created_at)}</div>
+    </div></div>`).join("")}</div>` : "";
+
   return `<section class="analytics"><h2>Analiz (${A.length} gönderi arşivi)</h2>
+    ${dayBars}
+    ${top3HTML}
     <div class="wk">
       <div><b>${week.length}</b><span>son 7 gün gönderi</span></div>
       <div><b>${nf(wkE)}</b><span>ort. etkileşim</span></div>
@@ -609,7 +648,7 @@ function csvPosts(){
 
 function draw(){
   if(!STATE) return;
-  document.getElementById("updated").textContent = "son veri " + fmtDate(STATE.updated);
+  document.getElementById("updated").textContent = "son veri " + fmtDate(STATE.updated) + " · " + ago(STATE.updated);
   document.getElementById("app").innerHTML =
     (STATE.accounts || []).map(a => `${accountHTML(a)}${historyHTML(a)}`).join("")
     + deletedHTML() + analyticsHTML() + trendsHTML() + eventsHTML(STATE.events)
@@ -617,6 +656,14 @@ function draw(){
   document.getElementById("errors").innerHTML =
     (STATE.errors || []).map(e => `<div class="err">⚠️ ${esc(e)}</div>`).join("");
 }
+
+function netState(){
+  const el = document.getElementById("net");
+  if(!el) return;
+  el.textContent = navigator.onLine ? "" : "çevrimdışı";
+}
+window.addEventListener("online", netState);
+window.addEventListener("offline", netState);
 
 async function render(){
   try{
