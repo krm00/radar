@@ -270,6 +270,7 @@ function quotedBox(p){
 
 function postHTML(p, topId, handle){
   const t = TYPE_META[p.type] || TYPE_META.original;
+  const CONV = (STATE && STATE.conversations) || {};
   const badges = [
     p.pinned ? `<span class="pill pin">sabitlenmiş</span>` : "",
     p.id === topId ? `<span class="pill top">🔥 en çok etkileşim</span>` : "",
@@ -294,9 +295,11 @@ function postHTML(p, topId, handle){
       ${p.bookmarks ? `<span>🔖 <b>${nf(p.bookmarks)}</b></span>` : ""}
       ${p.impressions ? `<span>👁 <b>${nf(p.impressions)}</b></span>` : ""}
       ${p.er ? `<span>⚡ <b>%${p.er}</b></span>` : ""}
-      ${(STATE.conversations || {})[p.id]
-        ? `<button class="ask" onclick="toggleConv(this,'${p.id}')">💬 ${((STATE.conversations||{})[p.id].replies||[]).length} yorum</button>`
+      ${CONV[p.id]
+        ? `<button class="ask" onclick="toggleConv(this,'${p.id}')">💬 ${(CONV[p.id].replies||[]).length} yorum</button>`
         : ``}
+      <a href="https://web.archive.org/web/2026*/${p.url.replace(/^https?:\/\//, "")}"
+         target="_blank" rel="noopener" title="Wayback Machine arşivinde ara">🗄</a>
       <a href="${p.url}" target="_blank" rel="noopener">X'te aç ↗</a>
     </div>
     ${mini}
@@ -319,7 +322,7 @@ function filteredPosts(a){
 }
 
 function convHTML(postId, handle){
-  const c = (STATE.conversations || {})[postId];
+  const c = (STATE && STATE.conversations || {})[postId];
   if(!c) return null;
   const items = c.replies || [];
   const byParent = {};
@@ -536,7 +539,9 @@ function deletedHTML(){
         ${x.deleted_at ? `<span>tespit: ${fmtShort(x.deleted_at)}</span>` : ""}
         <span>yayın: ${fmtDate(x.created_at)}</span></div>
       <div class="dtext">${esc(x.text) || "(metin yok)"}</div>
-      <div class="dmeta">son görülen: ♥ ${nf(x.likes)} · 💬 ${nf(x.comments)} · 👁 ${nf(x.impressions)} · ${TYPE_LABEL[x.type] || x.type}</div>
+      <div class="dmeta"><a href="https://web.archive.org/web/2026*/x.com/i/status/${x.id}"
+          target="_blank" rel="noopener" style="color:#7ab7e8;text-decoration:none">🗄 arşivde ara</a> ·
+        son görülen: ♥ ${nf(x.likes)} · 💬 ${nf(x.comments)} · 👁 ${nf(x.impressions)} · ${TYPE_LABEL[x.type] || x.type}</div>
     </div>`).join("");
   return `<section class="deleted"><h2>Silinen gönderiler (${del.length})</h2>${rows}</section>`;
 }
@@ -564,6 +569,7 @@ function historyHTML(a){
     <div style="margin-top:10px;display:flex;gap:8px">
       <button onclick="csvHistory()">Takipçi CSV</button>
       <button onclick="csvPosts()">Gönderi CSV</button>
+      <button onclick="jsonExport()">JSON</button>
     </div></section>`;
 }
 
@@ -571,6 +577,13 @@ function dl(name, text){
   const b = new Blob([text], {type:"text/csv;charset=utf-8"});
   const u = URL.createObjectURL(b); const a = document.createElement("a");
   a.href = u; a.download = name; a.click(); URL.revokeObjectURL(u);
+}
+
+function jsonExport(){
+  if(!STATE) return;
+  const b = new Blob([JSON.stringify(STATE, null, 1)], {type:"application/json"});
+  const u = URL.createObjectURL(b); const a = document.createElement("a");
+  a.href = u; a.download = "radar-veri.json"; a.click(); URL.revokeObjectURL(u);
 }
 
 function csvHistory(){
@@ -617,6 +630,10 @@ async function render(){
 }
 render();
 setInterval(render, 5 * 60 * 1000);
+
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("./sw.js").catch(() => {});
+}
 </script>
 </body>
 </html>
