@@ -40,6 +40,8 @@
         background:#12151b;border:1px solid var(--line);border-left:3px solid var(--x);
         border-radius:10px;font-size:12.5px;color:#c3cad6}
   .last:active{background:#161b23}
+  .last.orig{border-left-color:var(--ok)}
+  .last.orig .ty2{color:var(--ok)}
   .last .top{display:flex;align-items:center;gap:7px}
   .last b{color:#fff;font-weight:600}
   .last .ago{color:var(--dim);margin-left:auto;font-variant-numeric:tabular-nums}
@@ -335,15 +337,32 @@ function toggleConv(btn, id){
   btn.classList.toggle("on", open);
 }
 
+const TYPE_LABEL = {original:"gönderi", reply:"yanıt", quote:"alıntı", retweet:"retweet"};
+
+function lastBox(p, opts){
+  const o = opts || {};
+  const label = o.label || TYPE_LABEL[p.type] || "gönderi";
+  const icon = o.icon || "🕒";
+  return `<div class="last${o.cls ? " " + o.cls : ""}"
+     onclick="document.getElementById('p-${p.id}') && document.getElementById('p-${p.id}').scrollIntoView({behavior:'smooth',block:'center'})">
+    <div class="top"><span class="ty2">${icon} ${label}</span> <b>${fmtDate(p.created_at)}</b>
+      <span class="ago">${ago(p.created_at)}</span></div>
+    <div class="lasttext">${esc(p.text)}</div></div>`;
+}
+
 function lastPostHTML(a){
   const ps = (a.posts || []).filter(p => p.created_at);
   if(!ps.length) return `<div class="last">🕒 henüz gönderi yok</div>`;
   const latest = ps.reduce((x,y) => new Date(y.created_at) > new Date(x.created_at) ? y : x);
-  const label = {original:"gönderi", reply:"yanıt", quote:"alıntı", retweet:"retweet"}[latest.type] || "gönderi";
-  return `<div class="last" onclick="document.getElementById('p-${latest.id}') && document.getElementById('p-${latest.id}').scrollIntoView({behavior:'smooth',block:'center'})">
-    <div class="top">🕒 son ${label} <b>${fmtDate(latest.created_at)}</b>
-      <span class="ago">${ago(latest.created_at)}</span></div>
-    <div class="lasttext">${esc(latest.text)}</div></div>`;
+  const origs = ps.filter(p => p.type === "original");
+  const lastOrig = origs.length
+    ? origs.reduce((x,y) => new Date(y.created_at) > new Date(x.created_at) ? y : x) : null;
+
+  let html = lastBox(latest, {label: "son " + (TYPE_LABEL[latest.type] || "gönderi"), icon: "🕒"});
+  if(lastOrig && lastOrig.id !== latest.id){
+    html += lastBox(lastOrig, {label:"son orijinal gönderi", icon:"✏️", cls:"orig"});
+  }
+  return html;
 }
 
 function accountHTML(a){
