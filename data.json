@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-10T19:22:43Z",
+ "updated": "2026-11-10T20:38:47Z",
  "accounts": [
   {
    "handle": "@erkekdoven62",
@@ -9,7 +9,7 @@
    "bio": "primat incel k*rdistanci akpli dusmaniyim islamofobi iceriyorum aksini dusunenler block çapulcuyum apoyu da sikiyom tarot da bakiyorm",
    "joined": "2023-05-20T07:38:45.000Z",
    "followers": 3078,
-   "following": 964,
+   "following": 963,
    "tweets_total": 4462,
    "posts": [
     {
@@ -21,7 +21,7 @@
      "reposts": 0,
      "quotes": 0,
      "bookmarks": 0,
-     "impressions": 107,
+     "impressions": 110,
      "lang": "und",
      "created_at": "2026-11-09T21:59:59.000Z",
      "hashtags": [],
@@ -59,6 +59,12 @@
        "l": 0,
        "c": 0,
        "r": 0
+      },
+      {
+       "ts": 1794343127,
+       "l": 0,
+       "c": 0,
+       "r": 0
       }
      ]
     },
@@ -71,7 +77,7 @@
      "reposts": 0,
      "quotes": 0,
      "bookmarks": 2,
-     "impressions": 2190,
+     "impressions": 2253,
      "lang": "tr",
      "created_at": "2026-11-09T21:06:03.000Z",
      "hashtags": [],
@@ -83,7 +89,7 @@
      "media": [],
      "url": "https://x.com/erkekdoven62/status/2119899340986880250",
      "engagement": 34,
-     "er": 1.55,
+     "er": 1.51,
      "hist": [
       {
        "ts": 1794338001,
@@ -99,6 +105,12 @@
       },
       {
        "ts": 1794338563,
+       "l": 26,
+       "c": 8,
+       "r": 0
+      },
+      {
+       "ts": 1794343127,
        "l": 26,
        "c": 8,
        "r": 0
@@ -147,6 +159,12 @@
        "l": 0,
        "c": 0,
        "r": 426
+      },
+      {
+       "ts": 1794343127,
+       "l": 0,
+       "c": 0,
+       "r": 426
       }
      ]
     },
@@ -159,7 +177,7 @@
      "reposts": 0,
      "quotes": 1,
      "bookmarks": 1,
-     "impressions": 1890,
+     "impressions": 1896,
      "lang": "tr",
      "created_at": "2026-11-07T12:17:48.000Z",
      "hashtags": [],
@@ -190,6 +208,12 @@
        "l": 32,
        "c": 2,
        "r": 0
+      },
+      {
+       "ts": 1794343127,
+       "l": 32,
+       "c": 2,
+       "r": 0
       }
      ]
     },
@@ -202,7 +226,7 @@
      "reposts": 0,
      "quotes": 0,
      "bookmarks": 0,
-     "impressions": 198,
+     "impressions": 199,
      "lang": "in",
      "created_at": "2026-11-05T21:47:42.000Z",
      "hashtags": [],
@@ -221,7 +245,7 @@
      "media": [],
      "url": "https://x.com/erkekdoven62/status/2118460272310440415",
      "engagement": 1,
-     "er": 0.51,
+     "er": 0.5,
      "hist": [
       {
        "ts": 1794338001,
@@ -240,6 +264,12 @@
        "l": 1,
        "c": 0,
        "r": 0
+      },
+      {
+       "ts": 1794343127,
+       "l": 1,
+       "c": 0,
+       "r": 0
       }
      ]
     },
@@ -252,7 +282,7 @@
      "reposts": 0,
      "quotes": 0,
      "bookmarks": 0,
-     "impressions": 351,
+     "impressions": 352,
      "lang": "tr",
      "created_at": "2026-11-05T17:14:24.000Z",
      "hashtags": [],
@@ -290,6 +320,12 @@
        "l": 2,
        "c": 0,
        "r": 0
+      },
+      {
+       "ts": 1794343127,
+       "l": 2,
+       "c": 0,
+       "r": 0
       }
      ]
     },
@@ -302,7 +338,7 @@
      "reposts": 0,
      "quotes": 0,
      "bookmarks": 7,
-     "impressions": 6162,
+     "impressions": 6167,
      "lang": "tr",
      "created_at": "2026-11-05T15:47:10.000Z",
      "hashtags": [],
@@ -342,6 +378,12 @@
        "l": 57,
        "c": 6,
        "r": 0
+      },
+      {
+       "ts": 1794343127,
+       "l": 57,
+       "c": 6,
+       "r": 0
       }
      ]
     },
@@ -354,7 +396,7 @@
      "reposts": 0,
      "quotes": 0,
      "bookmarks": 0,
-     "impressions": 1122,
+     "impressions": 1124,
      "lang": "tr",
      "created_at": "2026-11-03T21:27:43.000Z",
      "hashtags": [],
@@ -385,6 +427,12 @@
        "l": 18,
        "c": 0,
        "r": 0
+      },
+      {
+       "ts": 1794343127,
+       "l": 18,
+       "c": 0,
+       "r": 0
       }
      ]
     },
@@ -397,7 +445,7 @@
      "reposts": 0,
      "quotes": 0,
      "bookmarks": 0,
-     "impressions": 1107,
+     "impressions": 1109,
      "lang": "tr",
      "created_at": "2026-11-03T20:56:42.000Z",
      "hashtags": [],
@@ -418,7 +466,7 @@
      ],
      "url": "https://x.com/erkekdoven62/status/2117722660092395617",
      "engagement": 21,
-     "er": 1.9,
+     "er": 1.89,
      "hist": [
       {
        "ts": 1794338001,
@@ -437,6 +485,12 @@
        "l": 21,
        "c": 0,
        "r": 0
+      },
+      {
+       "ts": 1794343127,
+       "l": 21,
+       "c": 0,
+       "r": 0
       }
      ]
     }
@@ -452,6 +506,10 @@
     },
     {
      "ts": 1794338563,
+     "v": 3078
+    },
+    {
+     "ts": 1794343127,
      "v": 3078
     }
    ],
@@ -474,7 +532,7 @@
    "comments": 0,
    "reposts": 0,
    "quotes": 0,
-   "impressions": 107,
+   "impressions": 110,
    "lang": "und",
    "engagement": 0,
    "er": 0.0,
@@ -492,10 +550,10 @@
    "comments": 8,
    "reposts": 0,
    "quotes": 0,
-   "impressions": 2190,
+   "impressions": 2253,
    "lang": "tr",
    "engagement": 34,
-   "er": 1.55,
+   "er": 1.51,
    "reply_to": "",
    "rt_of": "",
    "handle": "@erkekdoven62",
@@ -528,7 +586,7 @@
    "comments": 2,
    "reposts": 0,
    "quotes": 1,
-   "impressions": 1890,
+   "impressions": 1896,
    "lang": "tr",
    "engagement": 35,
    "er": 1.85,
@@ -546,10 +604,10 @@
    "comments": 0,
    "reposts": 0,
    "quotes": 0,
-   "impressions": 198,
+   "impressions": 199,
    "lang": "in",
    "engagement": 1,
-   "er": 0.51,
+   "er": 0.5,
    "reply_to": "angelbutsinner",
    "rt_of": "",
    "handle": "@erkekdoven62",
@@ -564,7 +622,7 @@
    "comments": 0,
    "reposts": 0,
    "quotes": 0,
-   "impressions": 351,
+   "impressions": 352,
    "lang": "tr",
    "engagement": 2,
    "er": 0.57,
@@ -582,7 +640,7 @@
    "comments": 6,
    "reposts": 0,
    "quotes": 0,
-   "impressions": 6162,
+   "impressions": 6167,
    "lang": "tr",
    "engagement": 63,
    "er": 1.02,
@@ -600,7 +658,7 @@
    "comments": 0,
    "reposts": 0,
    "quotes": 0,
-   "impressions": 1122,
+   "impressions": 1124,
    "lang": "tr",
    "engagement": 18,
    "er": 1.6,
@@ -618,10 +676,10 @@
    "comments": 0,
    "reposts": 0,
    "quotes": 0,
-   "impressions": 1107,
+   "impressions": 1109,
    "lang": "tr",
    "engagement": 21,
-   "er": 1.9,
+   "er": 1.89,
    "reply_to": "",
    "rt_of": "",
    "handle": "@erkekdoven62",
@@ -631,6 +689,10 @@
  ],
  "trends": [
   {
+   "name": "#Karabağ",
+   "count": null
+  },
+  {
    "name": "#COP31FonlaKirlendi",
    "count": null
   },
@@ -639,7 +701,7 @@
    "count": null
   },
   {
-   "name": "#GundemHerFonaTamAnaPara",
+   "name": "AlparslanHocaya YineSürgün",
    "count": null
   },
   {
@@ -647,11 +709,19 @@
    "count": null
   },
   {
-   "name": "#ErisahAricanHemenistifa",
+   "name": "#Azerbaycan",
    "count": null
   },
   {
-   "name": "#GazaEmergency",
+   "name": "#GundemHerFonaTamAnaPara",
+   "count": null
+  },
+  {
+   "name": "AkpDönemi ZulümDönemi",
+   "count": null
+  },
+  {
+   "name": "Gazze'de Acil Durum",
    "count": null
   },
   {
@@ -659,7 +729,11 @@
    "count": null
   },
   {
-   "name": "Gazze'de Acil Durum",
+   "name": "Filistin'i Kurtar",
+   "count": null
+  },
+  {
+   "name": "5 BIN DKAB",
    "count": null
   },
   {
@@ -671,23 +745,7 @@
    "count": null
   },
   {
-   "name": "Filistin'i Kurtar",
-   "count": null
-  },
-  {
    "name": "Hacı",
-   "count": null
-  },
-  {
-   "name": "5 BIN DKAB",
-   "count": null
-  },
-  {
-   "name": "AileButcesindePsikolog",
-   "count": null
-  },
-  {
-   "name": "DKAB MAGDUR",
    "count": null
   }
  ],
