@@ -40,8 +40,10 @@
         background:#12151b;border:1px solid var(--line);border-left:3px solid var(--x);
         border-radius:10px;font-size:12.5px;color:#c3cad6}
   .last:active{background:#161b23}
-  .last.orig{border-left-color:var(--ok)}
-  .last.orig .ty2{color:var(--ok)}
+  .last.orig{border-left-color:var(--ok)}      .last.orig .ty2{color:var(--ok)}
+  .last.reply{border-left-color:var(--x)}      .last.reply .ty2{color:var(--x)}
+  .last.quote{border-left-color:#a06bff}       .last.quote .ty2{color:#a06bff}
+  .last.retweet{border-left-color:#5b6472}     .last.retweet .ty2{color:#9aa3b2}
   .last .top{display:flex;align-items:center;gap:7px}
   .last b{color:#fff;font-weight:600}
   .last .ago{color:var(--dim);margin-left:auto;font-variant-numeric:tabular-nums}
@@ -350,19 +352,26 @@ function lastBox(p, opts){
     <div class="lasttext">${esc(p.text)}</div></div>`;
 }
 
+const LAST_SPEC = [
+  {type:"original", label:"son orijinal gönderi", icon:"✏️", cls:"orig"},
+  {type:"reply",    label:"son yanıt",            icon:"↩︎", cls:"reply"},
+  {type:"quote",    label:"son alıntı",           icon:"❝", cls:"quote"},
+  {type:"retweet",  label:"son retweet",          icon:"🔁", cls:"retweet"},
+];
+
 function lastPostHTML(a){
   const ps = (a.posts || []).filter(p => p.created_at);
   if(!ps.length) return `<div class="last">🕒 henüz gönderi yok</div>`;
-  const latest = ps.reduce((x,y) => new Date(y.created_at) > new Date(x.created_at) ? y : x);
-  const origs = ps.filter(p => p.type === "original");
-  const lastOrig = origs.length
-    ? origs.reduce((x,y) => new Date(y.created_at) > new Date(x.created_at) ? y : x) : null;
 
-  let html = lastBox(latest, {label: "son " + (TYPE_LABEL[latest.type] || "gönderi"), icon: "🕒"});
-  if(lastOrig && lastOrig.id !== latest.id){
-    html += lastBox(lastOrig, {label:"son orijinal gönderi", icon:"✏️", cls:"orig"});
+  const boxes = [];
+  for(const spec of LAST_SPEC){
+    const list = ps.filter(p => p.type === spec.type);
+    if(!list.length) continue;
+    const latest = list.reduce((x,y) => new Date(y.created_at) > new Date(x.created_at) ? y : x);
+    boxes.push({p: latest, spec});
   }
-  return html;
+  boxes.sort((x,y) => new Date(y.p.created_at) - new Date(x.p.created_at));  // en yeni üstte
+  return boxes.map(b => lastBox(b.p, b.spec)).join("");
 }
 
 function accountHTML(a){
