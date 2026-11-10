@@ -54,6 +54,18 @@ Yeni gönderi veya takipçi değişiminde Telegram'dan haber almak için:
 
 Token/chat yoksa bildirim adımı sessizce atlanır — pano normal çalışmaya devam eder.
 
+## Panoda neler var
+
+- Profil: avatar, ad, doğrulama, biyografi, katılım tarihi
+- Takipçi: toplam değişim + **24 saat / 7 gün** değişimi, sparkline, geçmiş tablosu
+- Gönderiler: tür (orijinal / yanıt / alıntı / RT), sabitlenmiş, **en çok etkileşim**
+- Metrikler: ♥ beğeni, 💬 yorum, 🔁 repost, 🔄 alıntı, 🔖 kayıt, 👁 görüntülenme, ⚡ etkileşim oranı
+- Gönderi başına **beğeni seyri** (her çalışmada anlık görüntü)
+- Hashtag ve mention etiketleri
+- **Aktivite akışı**: yeni gönderi, takipçi değişimi, profil değişikliği (ad/biyografi/rozet/foto)
+- Arama, sıralama (tarih/beğeni/etkileşim), tür filtresi
+- CSV: takipçi geçmişi ve gönderi metrikleri
+
 ## iPhone
 
 Safari → `https://<kullanıcı>.github.io/radar/` → Paylaş → **Ana Ekrana Ekle**.
@@ -64,6 +76,6 @@ Artık her yerden, Mac kapalıyken de açılır.
 | Dosya | İş |
 |---|---|
 | `fetch.py` | X API'den çeker, `data.json` yazar |
-| `index.html` | Statik pano: profil, gönderi görselleri, etkileşim, geçmiş tablosu |
+| `index.html` | Statik pano: profil, gönderi görselleri, etkileşim oranı, filtre/arama, aktivite |
 | `accounts.json` | Takip edilecek hesaplar |
 | `.github/workflows/radar.yml` | 3 saatlik cron + Telegram adımı |

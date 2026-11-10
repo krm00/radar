@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-10T18:30:37Z",
+ "updated": "2026-11-10T18:35:36Z",
  "accounts": [
   {
    "handle": "@erkekdoven62",
@@ -11,103 +11,234 @@
    "followers": 3077,
    "following": 964,
    "tweets_total": 4462,
-   "engagement": 598,
    "posts": [
     {
      "id": "2119912914354360475",
      "text": "@yusuffmentality yok",
+     "type": "reply",
      "likes": 0,
      "comments": 0,
      "reposts": 0,
      "quotes": 0,
-     "impressions": 102,
+     "bookmarks": 0,
+     "impressions": 104,
      "lang": "und",
      "created_at": "2026-11-09T21:59:59.000Z",
-     "is_retweet": false,
+     "hashtags": [],
+     "mentions": [
+      "yusuffmentality"
+     ],
+     "pinned": false,
      "media": [],
-     "url": "https://x.com/erkekdoven62/status/2119912914354360475"
+     "url": "https://x.com/erkekdoven62/status/2119912914354360475",
+     "engagement": 0,
+     "er": 0.0,
+     "hist": [
+      {
+       "ts": 1794335729,
+       "l": 0,
+       "c": 0,
+       "r": 0
+      },
+      {
+       "ts": 1794335736,
+       "l": 0,
+       "c": 0,
+       "r": 0
+      }
+     ]
     },
     {
      "id": "2119899340986880250",
      "text": "finansal köle istiyorum",
-     "likes": 25,
+     "type": "original",
+     "likes": 26,
      "comments": 8,
      "reposts": 0,
      "quotes": 0,
-     "impressions": 2123,
+     "bookmarks": 2,
+     "impressions": 2130,
      "lang": "tr",
      "created_at": "2026-11-09T21:06:03.000Z",
-     "is_retweet": false,
+     "hashtags": [],
+     "mentions": [],
+     "pinned": false,
      "media": [],
-     "url": "https://x.com/erkekdoven62/status/2119899340986880250"
+     "url": "https://x.com/erkekdoven62/status/2119899340986880250",
+     "engagement": 34,
+     "er": 1.6,
+     "hist": [
+      {
+       "ts": 1794335729,
+       "l": 26,
+       "c": 8,
+       "r": 0
+      },
+      {
+       "ts": 1794335736,
+       "l": 26,
+       "c": 8,
+       "r": 0
+      }
+     ]
     },
     {
      "id": "2119758069601079679",
      "text": "RT @miyavlq: Burnu yaptirsak dudaga bi 1.5cc attirsak lazerlensek cildi duzeltsek 10 kilo versek saci uzatsak kraliz kral",
+     "type": "retweet",
      "likes": 0,
      "comments": 0,
      "reposts": 426,
      "quotes": 0,
+     "bookmarks": 0,
      "impressions": 1,
      "lang": "tr",
      "created_at": "2026-11-09T11:44:41.000Z",
-     "is_retweet": true,
+     "hashtags": [],
+     "mentions": [
+      "miyavlq"
+     ],
+     "pinned": false,
      "media": [],
-     "url": "https://x.com/erkekdoven62/status/2119758069601079679"
+     "url": "https://x.com/erkekdoven62/status/2119758069601079679",
+     "engagement": 426,
+     "er": null,
+     "hist": [
+      {
+       "ts": 1794335729,
+       "l": 0,
+       "c": 0,
+       "r": 426
+      },
+      {
+       "ts": 1794335736,
+       "l": 0,
+       "c": 0,
+       "r": 426
+      }
+     ]
     },
     {
      "id": "2119041628102877546",
      "text": "finansal enayi köle istiyorum yok mu sömürtecekk",
+     "type": "original",
      "likes": 32,
      "comments": 2,
      "reposts": 0,
      "quotes": 1,
-     "impressions": 1881,
+     "bookmarks": 1,
+     "impressions": 1882,
      "lang": "tr",
      "created_at": "2026-11-07T12:17:48.000Z",
-     "is_retweet": false,
+     "hashtags": [],
+     "mentions": [],
+     "pinned": false,
      "media": [],
-     "url": "https://x.com/erkekdoven62/status/2119041628102877546"
+     "url": "https://x.com/erkekdoven62/status/2119041628102877546",
+     "engagement": 35,
+     "er": 1.86,
+     "hist": [
+      {
+       "ts": 1794335729,
+       "l": 32,
+       "c": 2,
+       "r": 0
+      },
+      {
+       "ts": 1794335736,
+       "l": 32,
+       "c": 2,
+       "r": 0
+      }
+     ]
     },
     {
      "id": "2118460272310440415",
      "text": "@angelbutsinner PUUYAYSOFUARKARKALAISODYSODUAIFKDUA",
+     "type": "reply",
      "likes": 1,
      "comments": 0,
      "reposts": 0,
      "quotes": 0,
+     "bookmarks": 0,
      "impressions": 196,
      "lang": "in",
      "created_at": "2026-11-05T21:47:42.000Z",
-     "is_retweet": false,
+     "hashtags": [],
+     "mentions": [
+      "angelbutsinner"
+     ],
+     "pinned": false,
      "media": [],
-     "url": "https://x.com/erkekdoven62/status/2118460272310440415"
+     "url": "https://x.com/erkekdoven62/status/2118460272310440415",
+     "engagement": 1,
+     "er": 0.51,
+     "hist": [
+      {
+       "ts": 1794335729,
+       "l": 1,
+       "c": 0,
+       "r": 0
+      },
+      {
+       "ts": 1794335736,
+       "l": 1,
+       "c": 0,
+       "r": 0
+      }
+     ]
     },
     {
      "id": "2118391494423777748",
      "text": "@StevenBerkee7 her boku ciddiye almayın ya",
+     "type": "reply",
      "likes": 2,
      "comments": 0,
      "reposts": 0,
      "quotes": 0,
+     "bookmarks": 0,
      "impressions": 349,
      "lang": "tr",
      "created_at": "2026-11-05T17:14:24.000Z",
-     "is_retweet": false,
+     "hashtags": [],
+     "mentions": [
+      "StevenBerkee7"
+     ],
+     "pinned": false,
      "media": [],
-     "url": "https://x.com/erkekdoven62/status/2118391494423777748"
+     "url": "https://x.com/erkekdoven62/status/2118391494423777748",
+     "engagement": 2,
+     "er": 0.57,
+     "hist": [
+      {
+       "ts": 1794335729,
+       "l": 2,
+       "c": 0,
+       "r": 0
+      },
+      {
+       "ts": 1794335736,
+       "l": 2,
+       "c": 0,
+       "r": 0
+      }
+     ]
     },
     {
      "id": "2118369542405517674",
      "text": "finansal köle ifşası!!!!\nbu hesap sahtekarın teki bes kuruş sömürttüğü yok ve engelliyor sahibelerin dikkatine https://t.co/wAMf4Hr0f8",
+     "type": "original",
      "likes": 57,
      "comments": 6,
      "reposts": 0,
      "quotes": 0,
-     "impressions": 6152,
+     "bookmarks": 7,
+     "impressions": 6153,
      "lang": "tr",
      "created_at": "2026-11-05T15:47:10.000Z",
-     "is_retweet": false,
+     "hashtags": [],
+     "mentions": [],
+     "pinned": false,
      "media": [
       {
        "type": "photo",
@@ -118,33 +249,73 @@
        "alt": ""
       }
      ],
-     "url": "https://x.com/erkekdoven62/status/2118369542405517674"
+     "url": "https://x.com/erkekdoven62/status/2118369542405517674",
+     "engagement": 63,
+     "er": 1.02,
+     "hist": [
+      {
+       "ts": 1794335729,
+       "l": 57,
+       "c": 6,
+       "r": 0
+      },
+      {
+       "ts": 1794335736,
+       "l": 57,
+       "c": 6,
+       "r": 0
+      }
+     ]
     },
     {
      "id": "2117730466258362756",
      "text": "gozlerini gorene kadar yesilin boyle bir tonu oldugunu ve en sevdigim renk oldugunu bilmiyodum",
+     "type": "original",
      "likes": 18,
      "comments": 0,
      "reposts": 0,
      "quotes": 0,
+     "bookmarks": 0,
      "impressions": 1120,
      "lang": "tr",
      "created_at": "2026-11-03T21:27:43.000Z",
-     "is_retweet": false,
+     "hashtags": [],
+     "mentions": [],
+     "pinned": false,
      "media": [],
-     "url": "https://x.com/erkekdoven62/status/2117730466258362756"
+     "url": "https://x.com/erkekdoven62/status/2117730466258362756",
+     "engagement": 18,
+     "er": 1.61,
+     "hist": [
+      {
+       "ts": 1794335729,
+       "l": 18,
+       "c": 0,
+       "r": 0
+      },
+      {
+       "ts": 1794335736,
+       "l": 18,
+       "c": 0,
+       "r": 0
+      }
+     ]
     },
     {
      "id": "2117722660092395617",
      "text": "enistenizle rivaya gittigim gun benim saf nese https://t.co/9qN510Kbyw",
+     "type": "original",
      "likes": 21,
      "comments": 0,
      "reposts": 0,
      "quotes": 0,
+     "bookmarks": 0,
      "impressions": 1103,
      "lang": "tr",
      "created_at": "2026-11-03T20:56:42.000Z",
-     "is_retweet": false,
+     "hashtags": [],
+     "mentions": [],
+     "pinned": false,
      "media": [
       {
        "type": "video",
@@ -155,7 +326,23 @@
        "alt": ""
       }
      ],
-     "url": "https://x.com/erkekdoven62/status/2117722660092395617"
+     "url": "https://x.com/erkekdoven62/status/2117722660092395617",
+     "engagement": 21,
+     "er": 1.9,
+     "hist": [
+      {
+       "ts": 1794335729,
+       "l": 21,
+       "c": 0,
+       "r": 0
+      },
+      {
+       "ts": 1794335736,
+       "l": 21,
+       "c": 0,
+       "r": 0
+      }
+     ]
     }
    ],
    "history": [
@@ -166,10 +353,25 @@
     {
      "ts": 1794335437,
      "v": 3077
+    },
+    {
+     "ts": 1794335729,
+     "v": 3077
+    },
+    {
+     "ts": 1794335736,
+     "v": 3077
     }
    ],
-   "delta": 0
+   "delta": 0,
+   "delta_24h": 0,
+   "delta_7d": 0,
+   "engagement": 600,
+   "avg_er": 1.13,
+   "top_post": "2118369542405517674",
+   "original_count": 5
   }
  ],
+ "events": [],
  "errors": []
 }

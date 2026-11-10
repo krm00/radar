@@ -13,7 +13,7 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <style>
   :root{--bg:#0f1115;--card:#171a21;--line:#252a34;--txt:#e6e9ef;--dim:#8b93a1;
-        --x:#1d9bf0;--ok:#3ddc84;--red:#ff6b6b}
+        --x:#1d9bf0;--ok:#3ddc84;--red:#ff6b6b;--gold:#f5c451}
   *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
   body{margin:0;background:var(--bg);color:var(--txt);
        font:15px/1.5 -apple-system,BlinkMacSystemFont,"SF Pro Text",system-ui,sans-serif;
@@ -30,30 +30,40 @@
   button:active{transform:translateY(1px)}
   main{max-width:820px;margin:0 auto;padding:16px 16px calc(30px + env(safe-area-inset-bottom))}
 
-  .acct{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:16px}
+  .acct{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:14px}
   .who{display:flex;gap:12px;align-items:flex-start}
-  .avatar{width:54px;height:54px;border-radius:50%;object-fit:cover;background:#222732;flex:0 0 auto}
-  .names{min-width:0;flex:1}
-  .nm{font-weight:650;font-size:16px;display:flex;align-items:center;gap:5px}
+  .avatar{width:56px;height:56px;border-radius:50%;object-fit:cover;background:#222732;flex:0 0 auto}
+  .nm{font-weight:650;font-size:16px;display:flex;align-items:center;gap:5px;flex-wrap:wrap}
   .badge{color:var(--x);font-size:13px}
   .bio{color:#b9c2d0;font-size:13px;margin-top:6px;white-space:pre-wrap}
-  .row{display:flex;align-items:flex-end;gap:10px;margin-top:14px}
+  .row{display:flex;align-items:flex-end;gap:10px;margin-top:14px;flex-wrap:wrap}
   .big{font-size:36px;font-weight:700;letter-spacing:-.8px;font-variant-numeric:tabular-nums}
   .delta{font-size:13px;padding-bottom:7px}
+  .chips{display:flex;gap:6px;padding-bottom:8px;flex-wrap:wrap}
+  .chip{font-size:11px;border:1px solid var(--line);border-radius:99px;padding:2px 8px;color:var(--dim)}
   .up{color:var(--ok)} .down{color:var(--red)} .flat{color:var(--dim)}
   svg.spark{width:100%;height:52px;margin-top:10px;display:block}
-  .stats3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px;
+  .stats4{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:14px;
           border-top:1px solid var(--line);padding-top:12px}
   .st{text-align:center}
-  .st b{display:block;font-size:15px;font-variant-numeric:tabular-nums}
-  .st span{font-size:11px;color:var(--dim)}
+  .st b{display:block;font-size:14px;font-variant-numeric:tabular-nums}
+  .st span{font-size:10.5px;color:var(--dim)}
 
-  .posts{display:flex;flex-direction:column;gap:14px}
-  .post{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:15px}
-  .pmeta{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+  .tools{display:flex;gap:8px;margin:14px 0 12px;flex-wrap:wrap}
+  .tools input{flex:1;min-width:140px;background:var(--card);border:1px solid var(--line);
+               border-radius:9px;padding:8px 11px;color:var(--txt);font-size:13px}
+  .tools select{background:var(--card);border:1px solid var(--line);border-radius:9px;
+                padding:8px 9px;color:var(--txt);font-size:13px}
+
+  .post{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:15px;margin-bottom:12px}
+  .pmeta{display:flex;align-items:center;gap:6px;margin-bottom:8px;flex-wrap:wrap}
   .pdate{color:var(--dim);font-size:12px}
   .pill{font-size:10.5px;color:var(--dim);border:1px solid var(--line);border-radius:99px;padding:2px 7px}
-  .ptext{font-size:14.5px;white-space:pre-wrap;word-break:break-word;margin-bottom:10px}
+  .pill.top{color:#241c05;background:var(--gold);border-color:var(--gold);font-weight:600}
+  .pill.pin{color:#0b1a10;background:var(--ok);border-color:var(--ok);font-weight:600}
+  .ptext{font-size:14.5px;white-space:pre-wrap;word-break:break-word;margin-bottom:9px}
+  .tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:9px}
+  .tag{font-size:11.5px;color:#7ab7e8}
   .media{display:grid;gap:4px;border-radius:12px;overflow:hidden;margin:4px 0 10px}
   .media.n1{grid-template-columns:1fr}
   .media.n2{grid-template-columns:1fr 1fr}
@@ -64,18 +74,24 @@
   .media.n1 img{object-fit:contain;background:#0b0d11}
   .play{position:absolute;inset:0;display:grid;place-items:center;font-size:30px;
         color:#fff;text-shadow:0 2px 12px #000;background:rgba(0,0,0,.18)}
-  .pstats{display:flex;gap:15px;color:var(--dim);font-size:12.5px;flex-wrap:wrap;align-items:center}
+  .pstats{display:flex;gap:14px;color:var(--dim);font-size:12.5px;flex-wrap:wrap;align-items:center}
   .pstats b{color:#cdd4e0;font-weight:600;font-variant-numeric:tabular-nums}
   .pstats a{margin-left:auto;color:#7ab7e8;text-decoration:none;font-size:12.5px}
+  .mini{display:flex;align-items:center;gap:6px;margin-top:9px;color:var(--dim);font-size:11px}
+  .mini svg{height:22px;width:120px}
 
-  .hist{margin-top:18px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px}
-  .hist h2{font-size:13.5px;margin:0 0 10px;font-weight:650;color:#cdd4e0}
+  .events{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin-top:6px}
+  .events h2,.hist h2{font-size:13.5px;margin:0 0 10px;font-weight:650;color:#cdd4e0}
+  .ev{display:flex;gap:9px;padding:7px 0;border-bottom:1px solid var(--line);font-size:12.5px}
+  .ev:last-child{border-bottom:0}
+  .ev time{color:var(--dim);flex:0 0 84px;font-variant-numeric:tabular-nums}
+  .hist{margin-top:16px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px}
   table{width:100%;border-collapse:collapse;font-size:12.5px}
   th,td{text-align:left;padding:6px 4px;border-bottom:1px solid var(--line)}
   th{color:var(--dim);font-weight:500}
   td:last-child,th:last-child{text-align:right;font-variant-numeric:tabular-nums}
   .err{color:#ff8080;font-size:13px;margin:10px 0}
-  footer{max-width:820px;margin:0 auto;padding:0 16px 34px;color:var(--dim);font-size:11.5px}
+  footer{max-width:820px;margin:0 auto;padding:16px 16px 34px;color:var(--dim);font-size:11.5px}
 </style>
 </head>
 <body>
@@ -92,30 +108,35 @@
 </main>
 <footer>
   Veriler herkese açık X gönderilerinden, GitHub Actions ile 3 saatte bir güncellenir.
-  Görseller X'in CDN'inden yüklenir; gönderiye dokunarak X'te açabilirsin.
+  Etkileşim oranı = (beğeni + yorum + repost + alıntı) / görüntülenme.
 </footer>
 
 <script>
 const nf = n => (n == null ? "—" : n.toLocaleString("tr-TR"));
 const esc = s => (s || "").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
-const fmtDate = s => {
-  if(!s) return "";
-  const d = new Date(s);
-  return d.toLocaleString("tr-TR", {day:"numeric", month:"short", hour:"2-digit", minute:"2-digit"});
-};
+const fmtDate = s => { if(!s) return ""; const d = new Date(s);
+  return d.toLocaleString("tr-TR", {day:"numeric", month:"short", hour:"2-digit", minute:"2-digit"}); };
+const fmtShort = ts => { const d = new Date(ts*1000);
+  return d.toLocaleString("tr-TR", {day:"numeric", month:"short", hour:"2-digit", minute:"2-digit"}); };
 
-function spark(history){
+let STATE = null, QUERY = "", SORT = "date", FILTER = "all";
+
+function spark(history, w, h){
+  w = w || 300; h = h || 52;
   if(!history || history.length < 2) return "";
-  const vs = history.map(h => h.v), min = Math.min(...vs), max = Math.max(...vs);
-  const span = (max - min) || 1, W = 300, H = 52, P = 4;
-  const pts = vs.map((v,i) => {
-    const x = (i/(vs.length-1))*W, y = H-P-((v-min)/span)*(H-2*P);
-    return `${x.toFixed(1)},${y.toFixed(1)}`;
-  }).join(" ");
+  const vs = history.map(x => x.v != null ? x.v : x.l);
+  const min = Math.min(...vs), max = Math.max(...vs), span = (max-min)||1, P = 3;
+  const pts = vs.map((v,i) => `${((i/(vs.length-1))*w).toFixed(1)},${(h-P-((v-min)/span)*(h-2*P)).toFixed(1)}`).join(" ");
   const col = vs[vs.length-1] >= vs[0] ? "#3ddc84" : "#ff6b6b";
-  return `<svg class="spark" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">
+  return `<svg class="spark" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none">
     <polyline points="${pts}" fill="none" stroke="${col}" stroke-width="2.2"
       stroke-linejoin="round" stroke-linecap="round"/></svg>`;
+}
+
+function deltaChip(label, v){
+  if(v == null) return "";
+  const cls = v > 0 ? "up" : (v < 0 ? "down" : "flat");
+  return `<span class="chip ${cls}">${label} ${v > 0 ? "+" : ""}${nf(v)}</span>`;
 }
 
 function deltaHTML(d){
@@ -127,110 +148,174 @@ function deltaHTML(d){
 function mediaHTML(media){
   if(!media || !media.length) return "";
   const n = Math.min(media.length, 4);
-  const items = media.slice(0, 4).map(m => {
+  return `<div class="media n${n}">${media.slice(0,4).map(m => {
     const src = m.preview || m.url;
-    const play = (m.type === "video" || m.type === "animated_gif")
-      ? `<span class="play">▶</span>` : "";
+    const play = (m.type === "video" || m.type === "animated_gif") ? `<span class="play">▶</span>` : "";
     return `<a href="${m.url || src}" target="_blank" rel="noopener">
       <img src="${src}" alt="${esc(m.alt).replace(/"/g,"&quot;")}" loading="lazy">${play}</a>`;
-  }).join("");
-  return `<div class="media n${n}">${items}</div>`;
+  }).join("")}</div>`;
 }
 
-function accountHTML(a){
-  return `<section class="acct">
-    <div class="who">
-      ${a.avatar ? `<img class="avatar" src="${a.avatar}" alt="">` : `<div class="avatar"></div>`}
-      <div class="names">
-        <div class="nm">${esc(a.name)} ${a.verified ? `<span class="badge">✔︎</span>` : ""}</div>
-        <div class="muted">${a.handle}</div>
-        ${a.bio ? `<div class="bio">${esc(a.bio)}</div>` : ""}
-      </div>
-    </div>
-    <div class="row"><div class="big">${nf(a.followers)}</div>${deltaHTML(a.delta)}</div>
-    <div class="muted">takipçi</div>
-    ${spark(a.history)}
-    <div class="stats3">
-      <div class="st"><b>${nf(a.following)}</b><span>takip edilen</span></div>
-      <div class="st"><b>${nf(a.tweets_total)}</b><span>toplam gönderi</span></div>
-      <div class="st"><b>${nf(a.engagement)}</b><span>son gönderi etkileşimi</span></div>
-    </div>
-  </section>`;
-}
+const TYPES = {original:"", reply:"yanıt", quote:"alıntı", retweet:"RT"};
 
-function postHTML(p){
+function postHTML(p, topId){
+  const tags = [
+    p.pinned ? `<span class="pill pin">sabitlenmiş</span>` : "",
+    p.id === topId ? `<span class="pill top">🔥 en çok etkileşim</span>` : "",
+    TYPES[p.type] ? `<span class="pill">${TYPES[p.type]}</span>` : "",
+    p.lang ? `<span class="pill">${p.lang}</span>` : "",
+  ].join("");
+  const hashtags = (p.hashtags||[]).map(t => `<span class="tag">#${esc(t)}</span>`).join("");
+  const mentions = (p.mentions||[]).map(t => `<span class="tag">@${esc(t)}</span>`).join("");
+  const mini = (p.hist && p.hist.length > 1)
+    ? `<div class="mini">beğeni seyri ${spark(p.hist, 120, 22)} <span>${nf(p.hist[0].l)} → ${nf(p.hist[p.hist.length-1].l)}</span></div>` : "";
   return `<article class="post">
-    <div class="pmeta">
-      <span class="pdate">${fmtDate(p.created_at)}</span>
-      ${p.is_retweet ? `<span class="pill">RT</span>` : ""}
-      ${p.lang ? `<span class="pill">${p.lang}</span>` : ""}
-    </div>
+    <div class="pmeta"><span class="pdate">${fmtDate(p.created_at)}</span>${tags}</div>
     <div class="ptext">${esc(p.text)}</div>
+    ${hashtags || mentions ? `<div class="tags">${hashtags}${mentions}</div>` : ""}
     ${mediaHTML(p.media)}
     <div class="pstats">
       <span>♥ <b>${nf(p.likes)}</b></span>
       <span>💬 <b>${nf(p.comments)}</b></span>
       <span>🔁 <b>${nf(p.reposts)}</b></span>
       <span>🔄 <b>${nf(p.quotes)}</b></span>
+      ${p.bookmarks ? `<span>🔖 <b>${nf(p.bookmarks)}</b></span>` : ""}
       ${p.impressions ? `<span>👁 <b>${nf(p.impressions)}</b></span>` : ""}
+      ${p.er ? `<span>⚡ <b>%${p.er}</b></span>` : ""}
       <a href="${p.url}" target="_blank" rel="noopener">X'te aç ↗</a>
     </div>
+    ${mini}
   </article>`;
+}
+
+function filteredPosts(a){
+  let ps = (a.posts || []).slice();
+  if(FILTER !== "all") ps = ps.filter(p => p.type === FILTER);
+  if(QUERY){
+    const q = QUERY.toLocaleLowerCase("tr");
+    ps = ps.filter(p => (p.text||"").toLocaleLowerCase("tr").includes(q)
+      || (p.hashtags||[]).some(h => h.toLocaleLowerCase("tr").includes(q)));
+  }
+  if(SORT === "likes") ps.sort((x,y) => y.likes - x.likes);
+  else if(SORT === "engagement") ps.sort((x,y) => (y.engagement||0) - (x.engagement||0));
+  else ps.sort((x,y) => new Date(y.created_at) - new Date(x.created_at));
+  return ps;
+}
+
+function accountHTML(a){
+  const posts = filteredPosts(a);
+  return `<section class="acct">
+    <div class="who">
+      ${a.avatar ? `<img class="avatar" src="${a.avatar}" alt="">` : `<div class="avatar"></div>`}
+      <div class="names">
+        <div class="nm">${esc(a.name)} ${a.verified ? `<span class="badge">✔︎</span>` : ""}</div>
+        <div class="muted">${esc(a.handle)}${a.joined ? " · katılım " + fmtDate(a.joined).split(",")[0] : ""}</div>
+        ${a.bio ? `<div class="bio">${esc(a.bio)}</div>` : ""}
+      </div>
+    </div>
+    <div class="row">
+      <div class="big">${nf(a.followers)}</div>${deltaHTML(a.delta)}
+      <div class="chips">${deltaChip("24s", a.delta_24h)}${deltaChip("7g", a.delta_7d)}</div>
+    </div>
+    <div class="muted">takipçi</div>
+    ${spark(a.history)}
+    <div class="stats4">
+      <div class="st"><b>${nf(a.following)}</b><span>takip edilen</span></div>
+      <div class="st"><b>${nf(a.tweets_total)}</b><span>toplam gönderi</span></div>
+      <div class="st"><b>%${nf(a.avg_er)}</b><span>ort. etkileşim</span></div>
+      <div class="st"><b>${nf(a.engagement)}</b><span>toplam etkileşim</span></div>
+    </div>
+  </section>
+  <div class="tools">
+    <input placeholder="gönderilerde ara…" value="${esc(QUERY)}" oninput="QUERY=this.value;draw()">
+    <select onchange="SORT=this.value;draw()">
+      <option value="date">tarih</option>
+      <option value="likes">beğeni</option>
+      <option value="engagement">etkileşim</option>
+    </select>
+    <select onchange="FILTER=this.value;draw()">
+      <option value="all">tümü</option>
+      <option value="original">orijinal</option>
+      <option value="reply">yanıt</option>
+      <option value="quote">alıntı</option>
+      <option value="retweet">RT</option>
+    </select>
+  </div>
+  <div class="posts">${posts.map(p => postHTML(p, a.top_post)).join("")
+    || `<div class="acct muted">Filtreye uyan gönderi yok.</div>`}</div>`;
+}
+
+function eventsHTML(evts){
+  if(!evts || !evts.length) return "";
+  const rows = evts.slice().reverse().slice(0, 15).map(e => `
+    <div class="ev"><time>${fmtShort(e.ts)}</time>
+      <span>${esc(e.handle)} ${esc(e.text)}</span></div>`).join("");
+  return `<section class="events"><h2>Aktivite</h2>${rows}</section>`;
 }
 
 function historyHTML(a){
   const h = (a.history || []).slice(-24).reverse();
   if(h.length < 2) return "";
   const rows = h.map((x,i) => {
-    const prev = h[i+1];
-    const d = prev ? x.v - prev.v : 0;
+    const prev = h[i+1], d = prev ? x.v - prev.v : 0;
     const cls = d > 0 ? "up" : (d < 0 ? "down" : "flat");
-    const sign = d > 0 ? "+" : "";
-    return `<tr><td>${fmtDate(new Date(x.ts*1000).toISOString())}</td>
-      <td class="${cls}">${d ? sign + d : "—"}</td>
+    return `<tr><td>${fmtShort(x.ts)}</td><td class="${cls}">${d ? (d>0?"+":"") + d : "—"}</td>
       <td>${nf(x.v)}</td></tr>`;
   }).join("");
-  return `<section class="hist">
-    <h2>Takipçi geçmişi (son ${h.length} kayıt)</h2>
+  return `<section class="hist"><h2>Takipçi geçmişi (son ${h.length})</h2>
     <table><thead><tr><th>zaman</th><th>değişim</th><th>takipçi</th></tr></thead>
     <tbody>${rows}</tbody></table>
-    <div style="margin-top:10px"><button onclick="csv()">CSV indir</button></div>
-  </section>`;
+    <div style="margin-top:10px;display:flex;gap:8px">
+      <button onclick="csvHistory()">Takipçi CSV</button>
+      <button onclick="csvPosts()">Gönderi CSV</button>
+    </div></section>`;
 }
 
-let LAST = null;
+function dl(name, text){
+  const b = new Blob([text], {type:"text/csv;charset=utf-8"});
+  const u = URL.createObjectURL(b); const a = document.createElement("a");
+  a.href = u; a.download = name; a.click(); URL.revokeObjectURL(u);
+}
 
-function csv(){
-  if(!LAST) return;
-  const lines = ["hesap,zaman,takipci"];
-  for(const a of LAST.accounts || []){
-    for(const h of a.history || []){
-      lines.push(`${a.handle},${new Date(h.ts*1000).toISOString()},${h.v}`);
+function csvHistory(){
+  if(!STATE) return;
+  const L = ["hesap,zaman,takipci"];
+  for(const a of STATE.accounts || [])
+    for(const h of a.history || []) L.push(`${a.handle},${new Date(h.ts*1000).toISOString()},${h.v}`);
+  dl("radar-takipci.csv", L.join("\n"));
+}
+
+function csvPosts(){
+  if(!STATE) return;
+  const L = ["hesap,tarih,tip,begeni,yorum,repost,alinti,goruntulenme,etkilesim,er,metin"];
+  for(const a of STATE.accounts || [])
+    for(const p of a.posts || []){
+      const row = [a.handle, p.created_at, p.type, p.likes, p.comments, p.reposts,
+                   p.quotes, p.impressions, p.engagement, p.er,
+                   (p.text||"").replace(/"/g,"'").replace(/\n/g," ")];
+      L.push('"' + row.join('","') + '"');
     }
-  }
-  const blob = new Blob([lines.join("\n")], {type:"text/csv;charset=utf-8"});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url; a.download = "radar-takipci.csv"; a.click();
-  URL.revokeObjectURL(url);
+  dl("radar-gonderiler.csv", L.join("\n"));
+}
+
+function draw(){
+  if(!STATE) return;
+  document.getElementById("updated").textContent = "son veri " + fmtDate(STATE.updated);
+  document.getElementById("app").innerHTML =
+    (STATE.accounts || []).map(a => `${accountHTML(a)}${eventsHTML(STATE.events)}${historyHTML(a)}`).join("")
+    || `<div class="acct muted">Takip edilen hesap yok.</div>`;
+  document.getElementById("errors").innerHTML =
+    (STATE.errors || []).map(e => `<div class="err">⚠️ ${esc(e)}</div>`).join("");
 }
 
 async function render(){
   try{
     const r = await fetch("data.json?t=" + Date.now(), {cache:"no-store"});
-    const d = await r.json();
-    LAST = d;
-    document.getElementById("updated").textContent = "son veri " + fmtDate(d.updated);
-    document.getElementById("app").innerHTML = (d.accounts || []).map(a => `
-      ${accountHTML(a)}
-      <div class="posts">${(a.posts || []).map(postHTML).join("")}</div>
-      ${historyHTML(a)}
-    `).join("") || `<div class="acct muted">Takip edilen hesap yok.</div>`;
-    document.getElementById("errors").innerHTML =
-      (d.errors || []).map(e => `<div class="err">⚠️ ${e}</div>`).join("");
+    STATE = await r.json();
+    draw();
   }catch(e){
     document.getElementById("errors").innerHTML =
-      `<div class="err">Veri yüklenemedi: ${e.message}</div>`;
+      `<div class="err">Veri yüklenemedi: ${esc(e.message)}</div>`;
   }
 }
 render();
