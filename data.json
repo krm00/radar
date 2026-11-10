@@ -1,585 +1,6 @@
 {
- "updated": "2026-11-10T20:51:05Z",
- "accounts": [
-  {
-   "handle": "@erkekdoven62",
-   "name": "effy milkovich",
-   "avatar": "https://pbs.twimg.com/profile_images/2049295030083608576/V1AdE24V_200x200.jpg",
-   "verified": false,
-   "bio": "primat incel k*rdistanci akpli dusmaniyim islamofobi iceriyorum aksini dusunenler block çapulcuyum apoyu da sikiyom tarot da bakiyorm",
-   "joined": "2023-05-20T07:38:45.000Z",
-   "followers": 3074,
-   "following": 962,
-   "tweets_total": 4462,
-   "posts": [
-    {
-     "id": "2119912914354360475",
-     "text": "@yusuffmentality yok",
-     "type": "reply",
-     "likes": 0,
-     "comments": 0,
-     "reposts": 0,
-     "quotes": 0,
-     "bookmarks": 0,
-     "impressions": 110,
-     "lang": "und",
-     "created_at": "2026-11-09T21:59:59.000Z",
-     "hashtags": [],
-     "mentions": [
-      "yusuffmentality"
-     ],
-     "pinned": false,
-     "reply_to": {
-      "user": "yusuffmentality",
-      "name": "yusuf",
-      "text": "@erkekdoven62 sus amk yeter",
-      "id": "2119907824457130271"
-     },
-     "quote": null,
-     "rt_of": "",
-     "media": [],
-     "url": "https://x.com/erkekdoven62/status/2119912914354360475",
-     "engagement": 0,
-     "er": 0.0,
-     "hist": [
-      {
-       "ts": 1794338001,
-       "l": 0,
-       "c": 0,
-       "r": 0
-      },
-      {
-       "ts": 1794338012,
-       "l": 0,
-       "c": 0,
-       "r": 0
-      },
-      {
-       "ts": 1794338563,
-       "l": 0,
-       "c": 0,
-       "r": 0
-      },
-      {
-       "ts": 1794343127,
-       "l": 0,
-       "c": 0,
-       "r": 0
-      },
-      {
-       "ts": 1794343865,
-       "l": 0,
-       "c": 0,
-       "r": 0
-      }
-     ]
-    },
-    {
-     "id": "2119899340986880250",
-     "text": "finansal köle istiyorum",
-     "type": "original",
-     "likes": 26,
-     "comments": 8,
-     "reposts": 0,
-     "quotes": 0,
-     "bookmarks": 2,
-     "impressions": 2256,
-     "lang": "tr",
-     "created_at": "2026-11-09T21:06:03.000Z",
-     "hashtags": [],
-     "mentions": [],
-     "pinned": false,
-     "reply_to": null,
-     "quote": null,
-     "rt_of": "",
-     "media": [],
-     "url": "https://x.com/erkekdoven62/status/2119899340986880250",
-     "engagement": 34,
-     "er": 1.51,
-     "hist": [
-      {
-       "ts": 1794338001,
-       "l": 26,
-       "c": 8,
-       "r": 0
-      },
-      {
-       "ts": 1794338012,
-       "l": 26,
-       "c": 8,
-       "r": 0
-      },
-      {
-       "ts": 1794338563,
-       "l": 26,
-       "c": 8,
-       "r": 0
-      },
-      {
-       "ts": 1794343127,
-       "l": 26,
-       "c": 8,
-       "r": 0
-      },
-      {
-       "ts": 1794343865,
-       "l": 26,
-       "c": 8,
-       "r": 0
-      }
-     ]
-    },
-    {
-     "id": "2119758069601079679",
-     "text": "RT @miyavlq: Burnu yaptirsak dudaga bi 1.5cc attirsak lazerlensek cildi duzeltsek 10 kilo versek saci uzatsak kraliz kral",
-     "type": "retweet",
-     "likes": 0,
-     "comments": 0,
-     "reposts": 426,
-     "quotes": 0,
-     "bookmarks": 0,
-     "impressions": 1,
-     "lang": "tr",
-     "created_at": "2026-11-09T11:44:41.000Z",
-     "hashtags": [],
-     "mentions": [
-      "miyavlq"
-     ],
-     "pinned": false,
-     "reply_to": null,
-     "quote": null,
-     "rt_of": "miyavlq",
-     "media": [],
-     "url": "https://x.com/erkekdoven62/status/2119758069601079679",
-     "engagement": 426,
-     "er": null,
-     "hist": [
-      {
-       "ts": 1794338001,
-       "l": 0,
-       "c": 0,
-       "r": 426
-      },
-      {
-       "ts": 1794338012,
-       "l": 0,
-       "c": 0,
-       "r": 426
-      },
-      {
-       "ts": 1794338563,
-       "l": 0,
-       "c": 0,
-       "r": 426
-      },
-      {
-       "ts": 1794343127,
-       "l": 0,
-       "c": 0,
-       "r": 426
-      },
-      {
-       "ts": 1794343865,
-       "l": 0,
-       "c": 0,
-       "r": 426
-      }
-     ]
-    },
-    {
-     "id": "2119041628102877546",
-     "text": "finansal enayi köle istiyorum yok mu sömürtecekk",
-     "type": "original",
-     "likes": 32,
-     "comments": 2,
-     "reposts": 0,
-     "quotes": 1,
-     "bookmarks": 1,
-     "impressions": 1896,
-     "lang": "tr",
-     "created_at": "2026-11-07T12:17:48.000Z",
-     "hashtags": [],
-     "mentions": [],
-     "pinned": false,
-     "reply_to": null,
-     "quote": null,
-     "rt_of": "",
-     "media": [],
-     "url": "https://x.com/erkekdoven62/status/2119041628102877546",
-     "engagement": 35,
-     "er": 1.85,
-     "hist": [
-      {
-       "ts": 1794338001,
-       "l": 32,
-       "c": 2,
-       "r": 0
-      },
-      {
-       "ts": 1794338012,
-       "l": 32,
-       "c": 2,
-       "r": 0
-      },
-      {
-       "ts": 1794338563,
-       "l": 32,
-       "c": 2,
-       "r": 0
-      },
-      {
-       "ts": 1794343127,
-       "l": 32,
-       "c": 2,
-       "r": 0
-      },
-      {
-       "ts": 1794343865,
-       "l": 32,
-       "c": 2,
-       "r": 0
-      }
-     ]
-    },
-    {
-     "id": "2118460272310440415",
-     "text": "@angelbutsinner PUUYAYSOFUARKARKALAISODYSODUAIFKDUA",
-     "type": "reply",
-     "likes": 1,
-     "comments": 0,
-     "reposts": 0,
-     "quotes": 0,
-     "bookmarks": 0,
-     "impressions": 199,
-     "lang": "in",
-     "created_at": "2026-11-05T21:47:42.000Z",
-     "hashtags": [],
-     "mentions": [
-      "angelbutsinner"
-     ],
-     "pinned": false,
-     "reply_to": {
-      "user": "angelbutsinner",
-      "name": "emre",
-      "text": "@erkekdoven62 bizi şöyle paylaşan kızla..",
-      "id": "2118444390813229181"
-     },
-     "quote": null,
-     "rt_of": "",
-     "media": [],
-     "url": "https://x.com/erkekdoven62/status/2118460272310440415",
-     "engagement": 1,
-     "er": 0.5,
-     "hist": [
-      {
-       "ts": 1794338001,
-       "l": 1,
-       "c": 0,
-       "r": 0
-      },
-      {
-       "ts": 1794338012,
-       "l": 1,
-       "c": 0,
-       "r": 0
-      },
-      {
-       "ts": 1794338563,
-       "l": 1,
-       "c": 0,
-       "r": 0
-      },
-      {
-       "ts": 1794343127,
-       "l": 1,
-       "c": 0,
-       "r": 0
-      },
-      {
-       "ts": 1794343865,
-       "l": 1,
-       "c": 0,
-       "r": 0
-      }
-     ]
-    },
-    {
-     "id": "2118391494423777748",
-     "text": "@StevenBerkee7 her boku ciddiye almayın ya",
-     "type": "reply",
-     "likes": 2,
-     "comments": 0,
-     "reposts": 0,
-     "quotes": 0,
-     "bookmarks": 0,
-     "impressions": 352,
-     "lang": "tr",
-     "created_at": "2026-11-05T17:14:24.000Z",
-     "hashtags": [],
-     "mentions": [
-      "StevenBerkee7"
-     ],
-     "pinned": false,
-     "reply_to": {
-      "user": "StevenBerkee7",
-      "name": "StevenBerke7",
-      "text": "@erkekdoven62 Al knk\n\nIncel kalan erkekler parasını sömürülmekten hoşlandığı için değil, ihtiyaçlarını giderene kadar seninle iletişim halinde olmak için veriyorlar https://t.co/2VLYZ0xpiQ",
-      "id": "2118385007240630563"
-     },
-     "quote": null,
-     "rt_of": "",
-     "media": [],
-     "url": "https://x.com/erkekdoven62/status/2118391494423777748",
-     "engagement": 2,
-     "er": 0.57,
-     "hist": [
-      {
-       "ts": 1794338001,
-       "l": 2,
-       "c": 0,
-       "r": 0
-      },
-      {
-       "ts": 1794338012,
-       "l": 2,
-       "c": 0,
-       "r": 0
-      },
-      {
-       "ts": 1794338563,
-       "l": 2,
-       "c": 0,
-       "r": 0
-      },
-      {
-       "ts": 1794343127,
-       "l": 2,
-       "c": 0,
-       "r": 0
-      },
-      {
-       "ts": 1794343865,
-       "l": 2,
-       "c": 0,
-       "r": 0
-      }
-     ]
-    },
-    {
-     "id": "2118369542405517674",
-     "text": "finansal köle ifşası!!!!\nbu hesap sahtekarın teki bes kuruş sömürttüğü yok ve engelliyor sahibelerin dikkatine https://t.co/wAMf4Hr0f8",
-     "type": "original",
-     "likes": 57,
-     "comments": 6,
-     "reposts": 0,
-     "quotes": 0,
-     "bookmarks": 7,
-     "impressions": 6168,
-     "lang": "tr",
-     "created_at": "2026-11-05T15:47:10.000Z",
-     "hashtags": [],
-     "mentions": [],
-     "pinned": false,
-     "reply_to": null,
-     "quote": null,
-     "rt_of": "",
-     "media": [
-      {
-       "type": "photo",
-       "url": "https://pbs.twimg.com/media/HWX13fBWgAARdVq.jpg",
-       "preview": "https://pbs.twimg.com/media/HWX13fBWgAARdVq.jpg",
-       "w": 1798,
-       "h": 1474,
-       "alt": ""
-      }
-     ],
-     "url": "https://x.com/erkekdoven62/status/2118369542405517674",
-     "engagement": 63,
-     "er": 1.02,
-     "hist": [
-      {
-       "ts": 1794338001,
-       "l": 57,
-       "c": 6,
-       "r": 0
-      },
-      {
-       "ts": 1794338012,
-       "l": 57,
-       "c": 6,
-       "r": 0
-      },
-      {
-       "ts": 1794338563,
-       "l": 57,
-       "c": 6,
-       "r": 0
-      },
-      {
-       "ts": 1794343127,
-       "l": 57,
-       "c": 6,
-       "r": 0
-      },
-      {
-       "ts": 1794343865,
-       "l": 57,
-       "c": 6,
-       "r": 0
-      }
-     ]
-    },
-    {
-     "id": "2117730466258362756",
-     "text": "gozlerini gorene kadar yesilin boyle bir tonu oldugunu ve en sevdigim renk oldugunu bilmiyodum",
-     "type": "original",
-     "likes": 18,
-     "comments": 0,
-     "reposts": 0,
-     "quotes": 0,
-     "bookmarks": 0,
-     "impressions": 1124,
-     "lang": "tr",
-     "created_at": "2026-11-03T21:27:43.000Z",
-     "hashtags": [],
-     "mentions": [],
-     "pinned": false,
-     "reply_to": null,
-     "quote": null,
-     "rt_of": "",
-     "media": [],
-     "url": "https://x.com/erkekdoven62/status/2117730466258362756",
-     "engagement": 18,
-     "er": 1.6,
-     "hist": [
-      {
-       "ts": 1794338001,
-       "l": 18,
-       "c": 0,
-       "r": 0
-      },
-      {
-       "ts": 1794338012,
-       "l": 18,
-       "c": 0,
-       "r": 0
-      },
-      {
-       "ts": 1794338563,
-       "l": 18,
-       "c": 0,
-       "r": 0
-      },
-      {
-       "ts": 1794343127,
-       "l": 18,
-       "c": 0,
-       "r": 0
-      },
-      {
-       "ts": 1794343865,
-       "l": 18,
-       "c": 0,
-       "r": 0
-      }
-     ]
-    },
-    {
-     "id": "2117722660092395617",
-     "text": "enistenizle rivaya gittigim gun benim saf nese https://t.co/9qN510Kbyw",
-     "type": "original",
-     "likes": 21,
-     "comments": 0,
-     "reposts": 0,
-     "quotes": 0,
-     "bookmarks": 0,
-     "impressions": 1109,
-     "lang": "tr",
-     "created_at": "2026-11-03T20:56:42.000Z",
-     "hashtags": [],
-     "mentions": [],
-     "pinned": false,
-     "reply_to": null,
-     "quote": null,
-     "rt_of": "",
-     "media": [
-      {
-       "type": "video",
-       "url": "",
-       "preview": "https://pbs.twimg.com/amplify_video_thumb/2101771526441701376/img/Q0UsOiVm6H2v-Tcr.jpg",
-       "w": 960,
-       "h": 720,
-       "alt": ""
-      }
-     ],
-     "url": "https://x.com/erkekdoven62/status/2117722660092395617",
-     "engagement": 21,
-     "er": 1.89,
-     "hist": [
-      {
-       "ts": 1794338001,
-       "l": 21,
-       "c": 0,
-       "r": 0
-      },
-      {
-       "ts": 1794338012,
-       "l": 21,
-       "c": 0,
-       "r": 0
-      },
-      {
-       "ts": 1794338563,
-       "l": 21,
-       "c": 0,
-       "r": 0
-      },
-      {
-       "ts": 1794343127,
-       "l": 21,
-       "c": 0,
-       "r": 0
-      },
-      {
-       "ts": 1794343865,
-       "l": 21,
-       "c": 0,
-       "r": 0
-      }
-     ]
-    }
-   ],
-   "history": [
-    {
-     "ts": 1794338001,
-     "v": 3078
-    },
-    {
-     "ts": 1794338012,
-     "v": 3078
-    },
-    {
-     "ts": 1794338563,
-     "v": 3078
-    },
-    {
-     "ts": 1794343127,
-     "v": 3078
-    },
-    {
-     "ts": 1794343865,
-     "v": 3074
-    }
-   ],
-   "delta": -4,
-   "delta_24h": -4,
-   "delta_7d": -4,
-   "engagement": 600,
-   "avg_er": 1.12,
-   "top_post": "2118369542405517674",
-   "original_count": 5
-  }
- ],
+ "updated": "2026-11-10T23:28:48Z",
+ "accounts": [],
  "events": [
   {
    "ts": 1794343865,
@@ -758,7 +179,7 @@
    "count": null
   },
   {
-   "name": "#COP31FonlaKirlendi",
+   "name": "#TuzluKahve",
    "count": null
   },
   {
@@ -766,7 +187,11 @@
    "count": null
   },
   {
-   "name": "Tuzlu Kahve",
+   "name": "#COP31FonlaKirlendi",
+   "count": null
+  },
+  {
+   "name": "#GazaEmergency",
    "count": null
   },
   {
@@ -774,19 +199,7 @@
    "count": null
   },
   {
-   "name": "#GundemHerFonaTamAnaPara",
-   "count": null
-  },
-  {
-   "name": "#Azerbaycan",
-   "count": null
-  },
-  {
    "name": "AkpDönemi ZulümDönemi",
-   "count": null
-  },
-  {
-   "name": "Fonzedenin Sabri Kalmadi",
    "count": null
   },
   {
@@ -798,19 +211,27 @@
    "count": null
   },
   {
+   "name": "StajyerÇırak BütçedeYok",
+   "count": null
+  },
+  {
+   "name": "Ece Üner",
+   "count": null
+  },
+  {
+   "name": "Fonzedenin Sabri Kalmadi",
+   "count": null
+  },
+  {
+   "name": "Hacı",
+   "count": null
+  },
+  {
    "name": "5 BIN DKAB",
    "count": null
   },
   {
-   "name": "Emniyetten FurkanaGözdağı",
-   "count": null
-  },
-  {
-   "name": "TebligatYok YakalamaVar",
-   "count": null
-  },
-  {
-   "name": "StajyerÇırak BütçedeYok",
+   "name": "Türkiyeli",
    "count": null
   }
  ],
@@ -919,5 +340,7 @@
    "replies": []
   }
  },
- "errors": []
+ "errors": [
+  "@erkekdoven62: name 'fetch_account' is not defined"
+ ]
 }
