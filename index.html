@@ -47,6 +47,7 @@
   .last .top{display:flex;align-items:center;gap:7px}
   .last b{color:#fff;font-weight:600}
   .last .ago{color:var(--dim);margin-left:auto;font-variant-numeric:tabular-nums}
+  .last .ctx{margin-top:6px;padding-top:5px;border-top:1px dashed #2a3140;font-size:11.5px;color:var(--dim)}
   .last .lasttext{margin-top:6px;color:#9aa3b2;font-size:12.5px;line-height:1.45;
         display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
   .row{display:flex;align-items:flex-end;gap:10px;margin-top:14px;flex-wrap:wrap}
@@ -349,7 +350,24 @@ function lastBox(p, opts){
      onclick="document.getElementById('p-${p.id}') && document.getElementById('p-${p.id}').scrollIntoView({behavior:'smooth',block:'center'})">
     <div class="top"><span class="ty2">${icon} ${label}</span> <b>${fmtDate(p.created_at)}</b>
       <span class="ago">${ago(p.created_at)}</span></div>
-    <div class="lasttext">${esc(p.text)}</div></div>`;
+    <div class="lasttext">${esc(p.text)}</div>${ctxLine(p)}</div>`;
+}
+
+function ctxLine(p){
+  if(p.type === "reply" && p.reply_to && (p.reply_to.user || p.reply_to.text)){
+    const who = p.reply_to.user ? "@" + esc(p.reply_to.user) : "birine";
+    const txt = (p.reply_to.text || "").slice(0, 110);
+    return `<div class="ctx">↳ ${who}${txt ? ": " + esc(txt) : ""}</div>`;
+  }
+  if(p.type === "quote" && p.quote){
+    const who = p.quote.user ? "@" + esc(p.quote.user) : "";
+    const txt = (p.quote.text || "").slice(0, 110);
+    return `<div class="ctx">❝ ${who}${txt ? ": " + esc(txt) : ""}</div>`;
+  }
+  if(p.type === "retweet" && p.rt_of){
+    return `<div class="ctx">🔁 orijinal: @${esc(p.rt_of)}</div>`;
+  }
+  return "";
 }
 
 const LAST_SPEC = [
