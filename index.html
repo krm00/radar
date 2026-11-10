@@ -97,6 +97,7 @@
 
 <script>
 const nf = n => (n == null ? "—" : n.toLocaleString("tr-TR"));
+const esc = s => (s || "").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
 const fmtDate = s => {
   if(!s) return "";
   const d = new Date(s);
@@ -131,7 +132,7 @@ function mediaHTML(media){
     const play = (m.type === "video" || m.type === "animated_gif")
       ? `<span class="play">▶</span>` : "";
     return `<a href="${m.url || src}" target="_blank" rel="noopener">
-      <img src="${src}" alt="${(m.alt || "").replace(/"/g,"&quot;")}" loading="lazy">${play}</a>`;
+      <img src="${src}" alt="${esc(m.alt).replace(/"/g,"&quot;")}" loading="lazy">${play}</a>`;
   }).join("");
   return `<div class="media n${n}">${items}</div>`;
 }
@@ -141,9 +142,9 @@ function accountHTML(a){
     <div class="who">
       ${a.avatar ? `<img class="avatar" src="${a.avatar}" alt="">` : `<div class="avatar"></div>`}
       <div class="names">
-        <div class="nm">${a.name} ${a.verified ? `<span class="badge">✔︎</span>` : ""}</div>
+        <div class="nm">${esc(a.name)} ${a.verified ? `<span class="badge">✔︎</span>` : ""}</div>
         <div class="muted">${a.handle}</div>
-        ${a.bio ? `<div class="bio">${a.bio}</div>` : ""}
+        ${a.bio ? `<div class="bio">${esc(a.bio)}</div>` : ""}
       </div>
     </div>
     <div class="row"><div class="big">${nf(a.followers)}</div>${deltaHTML(a.delta)}</div>
@@ -164,7 +165,7 @@ function postHTML(p){
       ${p.is_retweet ? `<span class="pill">RT</span>` : ""}
       ${p.lang ? `<span class="pill">${p.lang}</span>` : ""}
     </div>
-    <div class="ptext">${p.text}</div>
+    <div class="ptext">${esc(p.text)}</div>
     ${mediaHTML(p.media)}
     <div class="pstats">
       <span>♥ <b>${nf(p.likes)}</b></span>
