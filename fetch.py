@@ -77,10 +77,15 @@ def fetch_account(handle, token, limit):
         f"{API}/users/{uid}/tweets?max_results={max(5, min(100, limit))}"
         f"&tweet.fields=public_metrics,created_at,attachments,lang,entities,"
         f"referenced_tweets,conversation_id,note_tweet"
-        f"&expansions=attachments.media_keys"
+        f"&expansions=attachments.media_keys,in_reply_to_user_id,"
+        f"referenced_tweets.id,referenced_tweets.id.author_id"
+        f"&user.fields=username,name,profile_image_url"
         f"&media.fields=url,preview_image_url,type,width,height,alt_text", token)
 
-    media = {m.get("media_key"): m for m in (t.get("includes", {}) or {}).get("media", [])}
+    inc = t.get("includes", {}) or {}
+    media = {m.get("media_key"): m for m in (inc.get("media") or [])}
+    users = {u.get("id"): u for u in (inc.get("users") or [])}
+    ref_tweets = {x.get("id"): x for x in (inc.get("tweets") or [])}
 
     posts = []
     for p in t.get("data", []) or []:
@@ -103,6 +108,39 @@ def fetch_account(handle, token, limit):
                     "h": mm.get("height") or 0,
                     "alt": mm.get("alt_text") or "",
                 })
+
+        def _user(uid):
+            u = users.get(uid) or {}
+            return u.get("username") or ""
+
+        reply_to = quote = None
+        rt_of = ""
+        rep = next((r for r in refs if r.get("type") == "replied_to"), None)
+        quo = next((r for r in refs if r.get("type") == "quoted"), None)
+        rtt = next((r for r in refs if r.get("type") == "retweeted"), None)
+
+        if rep:
+            rt = ref_tweets.get(rep.get("id")) or {}
+            reply_to = {
+                "user": _user(p.get("in_reply_to_user_id")),
+                "name": (users.get(p.get("in_reply_to_user_id")) or {}).get("name") or "",
+                "text": (rt.get("text") or "")[:280],
+                "id": rep.get("id"),
+            }
+        if quo:
+            qt = ref_tweets.get(quo.get("id")) or {}
+            quote = {
+                "user": _user(qt.get("author_id")),
+                "text": (qt.get("text") or "")[:280],
+                "id": quo.get("id"),
+            }
+        if rtt:
+            rt = ref_tweets.get(rtt.get("id")) or {}
+            rt_of = _user(rt.get("author_id"))
+        if not rt_of and text.startswith("RT @"):
+            m = re.match(r"RT @(\w+)", text)
+            if m:
+                rt_of = m.group(1)
 
         if "retweeted" in ref_types or text.startswith("RT @"):
             ptype = "retweet"
@@ -128,6 +166,9 @@ def fetch_account(handle, token, limit):
             "hashtags": [x.get("tag") for x in (ent.get("hashtags") or [])][:8],
             "mentions": [x.get("username") for x in (ent.get("mentions") or [])][:8],
             "pinned": bool(pinned and str(p.get("id")) == str(pinned)),
+            "reply_to": reply_to,
+            "quote": quote,
+            "rt_of": rt_of,
             "media": imgs,
             "url": f"https://x.com/{h}/status/{p['id']}",
         })

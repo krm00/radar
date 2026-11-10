@@ -55,7 +55,23 @@
   .tools select{background:var(--card);border:1px solid var(--line);border-radius:9px;
                 padding:8px 9px;color:var(--txt);font-size:13px}
 
-  .post{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:15px;margin-bottom:12px}
+  .post{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--line);
+        border-radius:16px;padding:15px;margin-bottom:12px}
+  .post.original{border-left-color:#3ddc84}
+  .post.reply{border-left-color:#1d9bf0}
+  .post.quote{border-left-color:#a06bff}
+  .post.retweet{border-left-color:#5b6472;opacity:.93}
+  .typehdr{display:flex;align-items:center;gap:6px;font-size:12px;margin-bottom:8px;flex-wrap:wrap}
+  .typehdr a{color:#7ab7e8;text-decoration:none}
+  .ty{font-weight:600}
+  .ty.original{color:#3ddc84} .ty.reply{color:#1d9bf0}
+  .ty.quote{color:#a06bff} .ty.retweet{color:#9aa3b2}
+  .quoted{border:1px solid var(--line);border-radius:10px;padding:9px 11px;margin:0 0 10px;
+          background:#12151b;font-size:13px;color:#c3cad6}
+  .quoted b{color:#9fb4cc}
+  .quoted a{color:#7ab7e8;text-decoration:none;font-size:11.5px}
+  .legend{display:flex;gap:12px;flex-wrap:wrap;margin:0 0 12px;font-size:11.5px;color:var(--dim)}
+  .legend i{font-style:normal}
   .pmeta{display:flex;align-items:center;gap:6px;margin-bottom:8px;flex-wrap:wrap}
   .pdate{color:var(--dim);font-size:12px}
   .pill{font-size:10.5px;color:var(--dim);border:1px solid var(--line);border-radius:99px;padding:2px 7px}
@@ -156,22 +172,58 @@ function mediaHTML(media){
   }).join("")}</div>`;
 }
 
-const TYPES = {original:"", reply:"yanıt", quote:"alıntı", retweet:"RT"};
+const TYPE_META = {
+  original: {icon:"✏️", label:"orijinal gönderi", cls:"original"},
+  reply:    {icon:"↩︎", label:"yanıt",           cls:"reply"},
+  quote:    {icon:"❝", label:"alıntı",          cls:"quote"},
+  retweet:  {icon:"🔁", label:"retweet",        cls:"retweet"},
+};
+
+function typeHeader(p){
+  const t = TYPE_META[p.type] || TYPE_META.original;
+  let extra = "";
+  if(p.type === "reply" && p.reply_to && p.reply_to.user){
+    extra = ` → <a href="https://x.com/${esc(p.reply_to.user)}" target="_blank" rel="noopener">@${esc(p.reply_to.user)}</a>`;
+  } else if(p.type === "quote" && p.quote && p.quote.user){
+    extra = ` · <a href="https://x.com/${esc(p.quote.user)}" target="_blank" rel="noopener">@${esc(p.quote.user)}</a>`;
+  } else if(p.type === "retweet" && p.rt_of){
+    extra = ` · <a href="https://x.com/${esc(p.rt_of)}" target="_blank" rel="noopener">@${esc(p.rt_of)}</a> retweetledi`;
+  }
+  return `<div class="typehdr"><span class="ty ${t.cls}">${t.icon} ${t.label}</span>${extra}</div>`;
+}
+
+function quotedBox(p){
+  if(p.type === "reply" && p.reply_to && (p.reply_to.text || p.reply_to.id)){
+    const who = p.reply_to.user ? `<b>@${esc(p.reply_to.user)}</b> ` : "";
+    const txt = p.reply_to.text ? esc(p.reply_to.text) : "(metin yok)";
+    const lnk = p.reply_to.id ? `<a href="https://x.com/i/status/${p.reply_to.id}" target="_blank" rel="noopener">yanıtlanan gönderi ↗</a>` : "";
+    return `<div class="quoted">${who}${txt}<div style="margin-top:6px">${lnk}</div></div>`;
+  }
+  if(p.type === "quote" && p.quote){
+    const who = p.quote.user ? `<b>@${esc(p.quote.user)}</b> ` : "";
+    const txt = p.quote.text ? esc(p.quote.text) : "(metin yok)";
+    const lnk = p.quote.id ? `<a href="https://x.com/i/status/${p.quote.id}" target="_blank" rel="noopener">alıntılanan gönderi ↗</a>` : "";
+    return `<div class="quoted">${who}${txt}<div style="margin-top:6px">${lnk}</div></div>`;
+  }
+  return "";
+}
 
 function postHTML(p, topId){
-  const tags = [
+  const t = TYPE_META[p.type] || TYPE_META.original;
+  const badges = [
     p.pinned ? `<span class="pill pin">sabitlenmiş</span>` : "",
     p.id === topId ? `<span class="pill top">🔥 en çok etkileşim</span>` : "",
-    TYPES[p.type] ? `<span class="pill">${TYPES[p.type]}</span>` : "",
     p.lang ? `<span class="pill">${p.lang}</span>` : "",
   ].join("");
-  const hashtags = (p.hashtags||[]).map(t => `<span class="tag">#${esc(t)}</span>`).join("");
-  const mentions = (p.mentions||[]).map(t => `<span class="tag">@${esc(t)}</span>`).join("");
+  const hashtags = (p.hashtags||[]).map(x => `<span class="tag">#${esc(x)}</span>`).join("");
+  const mentions = (p.mentions||[]).map(x => `<span class="tag">@${esc(x)}</span>`).join("");
   const mini = (p.hist && p.hist.length > 1)
     ? `<div class="mini">beğeni seyri ${spark(p.hist, 120, 22)} <span>${nf(p.hist[0].l)} → ${nf(p.hist[p.hist.length-1].l)}</span></div>` : "";
-  return `<article class="post">
-    <div class="pmeta"><span class="pdate">${fmtDate(p.created_at)}</span>${tags}</div>
+  return `<article class="post ${t.cls}">
+    <div class="pmeta"><span class="pdate">${fmtDate(p.created_at)}</span>${badges}</div>
+    ${typeHeader(p)}
     <div class="ptext">${esc(p.text)}</div>
+    ${quotedBox(p)}
     ${hashtags || mentions ? `<div class="tags">${hashtags}${mentions}</div>` : ""}
     ${mediaHTML(p.media)}
     <div class="pstats">
@@ -240,6 +292,12 @@ function accountHTML(a){
       <option value="quote">alıntı</option>
       <option value="retweet">RT</option>
     </select>
+  </div>
+  <div class="legend">
+    <i><span class="ty original">✏️ orijinal</span></i>
+    <i><span class="ty reply">↩︎ yanıt</span></i>
+    <i><span class="ty quote">❝ alıntı</span></i>
+    <i><span class="ty retweet">🔁 retweet</span></i>
   </div>
   <div class="posts">${posts.map(p => postHTML(p, a.top_post)).join("")
     || `<div class="acct muted">Filtreye uyan gönderi yok.</div>`}</div>`;

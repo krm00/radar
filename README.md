@@ -58,7 +58,9 @@ Token/chat yoksa bildirim adımı sessizce atlanır — pano normal çalışmaya
 
 - Profil: avatar, ad, doğrulama, biyografi, katılım tarihi
 - Takipçi: toplam değişim + **24 saat / 7 gün** değişimi, sparkline, geçmiş tablosu
-- Gönderiler: tür (orijinal / yanıt / alıntı / RT), sabitlenmiş, **en çok etkileşim**
+- Gönderiler: tür renkleri (yeşil **orijinal**, mavi **yanıt**, mor **alıntı**, gri **RT**),
+  yanıtlanan kişi + **yanıtlanan gönderinin metni**, alıntılanan gönderi kutusu,
+  sabitlenmiş, **en çok etkileşim**
 - Metrikler: ♥ beğeni, 💬 yorum, 🔁 repost, 🔄 alıntı, 🔖 kayıt, 👁 görüntülenme, ⚡ etkileşim oranı
 - Gönderi başına **beğeni seyri** (her çalışmada anlık görüntü)
 - Hashtag ve mention etiketleri
