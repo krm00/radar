@@ -141,6 +141,13 @@
   .cmt-t{font-size:13px;white-space:pre-wrap;word-break:break-word}
   .cmt-s{font-size:11px;color:var(--dim);margin-top:2px}
   .ask.on{background:#1d3b52;border-color:#2b5f80}
+  .deleted{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin-top:16px}
+  .deleted h2{font-size:13.5px;margin:0 0 10px;font-weight:650;color:#cdd4e0}
+  .del{padding:9px 0;border-bottom:1px solid var(--line)}
+  .del:last-child{border-bottom:0}
+  .del .dt{font-size:11.5px;color:var(--dim);margin-bottom:3px;display:flex;gap:8px;flex-wrap:wrap}
+  .del .dtext{font-size:13.5px;color:#b9c2d0;text-decoration:line-through;text-decoration-color:#5a2b2b}
+  .del .dmeta{font-size:11.5px;color:var(--dim);margin-top:3px}
   .events{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin-top:6px}
   .events h2,.hist h2{font-size:13.5px;margin:0 0 10px;font-weight:650;color:#cdd4e0}
   .ev{display:flex;gap:9px;padding:7px 0;border-bottom:1px solid var(--line);font-size:12.5px}
@@ -520,6 +527,20 @@ function trendsHTML(){
   return `<section class="analytics"><h2>🇹🇷 Gündem</h2><div class="tr-list">${rows}</div></section>`;
 }
 
+function deletedHTML(){
+  const del = (STATE.archive || []).filter(x => x.deleted);
+  if(!del.length) return "";
+  const rows = del.sort((a,b) => (b.deleted_at||0) - (a.deleted_at||0)).slice(0, 20).map(x => `
+    <div class="del">
+      <div class="dt"><span>🗑️ silindi</span>
+        ${x.deleted_at ? `<span>tespit: ${fmtShort(x.deleted_at)}</span>` : ""}
+        <span>yayın: ${fmtDate(x.created_at)}</span></div>
+      <div class="dtext">${esc(x.text) || "(metin yok)"}</div>
+      <div class="dmeta">son görülen: ♥ ${nf(x.likes)} · 💬 ${nf(x.comments)} · 👁 ${nf(x.impressions)} · ${TYPE_LABEL[x.type] || x.type}</div>
+    </div>`).join("");
+  return `<section class="deleted"><h2>Silinen gönderiler (${del.length})</h2>${rows}</section>`;
+}
+
 function eventsHTML(evts){
   if(!evts || !evts.length) return "";
   const rows = evts.slice().reverse().slice(0, 15).map(e => `
@@ -578,7 +599,7 @@ function draw(){
   document.getElementById("updated").textContent = "son veri " + fmtDate(STATE.updated);
   document.getElementById("app").innerHTML =
     (STATE.accounts || []).map(a => `${accountHTML(a)}${historyHTML(a)}`).join("")
-    + analyticsHTML() + trendsHTML() + eventsHTML(STATE.events)
+    + deletedHTML() + analyticsHTML() + trendsHTML() + eventsHTML(STATE.events)
     || `<div class="acct muted">Takip edilen hesap yok.</div>`;
   document.getElementById("errors").innerHTML =
     (STATE.errors || []).map(e => `<div class="err">⚠️ ${esc(e)}</div>`).join("");

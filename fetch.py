@@ -14,6 +14,7 @@ import json
 import os
 import re
 import urllib.parse
+import urllib.error
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
@@ -186,6 +187,24 @@ def fetch_account(handle, token, limit):
         "tweets_total": stats.get("tweet_count", 0),
         "posts": posts,
     }
+
+
+def tweet_status(token, tid):
+    """True: duruyor, False: silinmiş, None: bilinmiyor (403/limit)."""
+    try:
+        d = get_json(f"{API}/tweets/{tid}?tweet.fields=public_metrics", token)
+    except urllib.error.HTTPError as e:
+        return False if e.code == 404 else None
+    except Exception:
+        return None
+    if d.get("data"):
+        return True
+    errs = d.get("errors") or []
+    for e in errs:
+        blob = f"{e.get('title','')} {e.get('detail','')}".lower()
+        if "not found" in blob or "could not find" in blob:
+            return False
+    return None
 
 
 def fetch_conversation(token, post_id, limit=30):
@@ -387,6 +406,32 @@ def main():
 
     # --- arşiv: tüm görülen gönderiler (analitik için, ücretsiz) ---
     archive = {x["id"]: x for x in (prev_raw.get("archive") or [])} if prev_raw else {}
+
+    # --- silinen gönderi tespiti: bir önceki listede olup şimdi olmayanlar ---
+    deleted_budget = int(os.environ.get("DEL_CHECK_MAX", "8"))
+    for acc in out:
+        prev_ids = {p["id"] for p in (prev.get(acc["handle"], {}) or {}).get("posts", [])}
+        cur_ids = {p["id"] for p in acc["posts"]}
+        for mid in (prev_ids - cur_ids):
+            if deleted_budget <= 0:
+                break
+            item = archive.get(mid)
+            if item and item.get("deleted"):
+                continue
+            st = tweet_status(token, mid)
+            deleted_budget -= 1
+            if st is False:
+                if item:
+                    item["deleted"] = True
+                    item["deleted_at"] = int(datetime.now(timezone.utc).timestamp())
+                events.append({"ts": int(datetime.now(timezone.utc).timestamp()),
+                               "type": "deleted", "handle": acc["handle"],
+                               "text": "gönderi silindi: " + ((item or {}).get("text", "")[:140] or mid)})
+                notes.append(f"🗑️ <b>{esc(acc['handle'])}</b> bir gönderi sildi\n\n{esc((item or {}).get('text','')[:250])}")
+                print(f"silinmiş: {mid}")
+            elif st is True and item:
+                item["checked_at"] = int(datetime.now(timezone.utc).timestamp())
+
     for acc in out:
         for p in acc["posts"]:
             archive[p["id"]] = {
@@ -396,6 +441,9 @@ def main():
                 "engagement": p.get("engagement", 0), "er": p.get("er"),
                 "reply_to": (p.get("reply_to") or {}).get("user") or "",
                 "rt_of": p.get("rt_of") or "",
+                "handle": acc["handle"],
+                "deleted": False,
+                "deleted_at": None,
             }
     archive_list = sorted(archive.values(), key=lambda x: x.get("created_at") or "", reverse=True)[:MAX_ARCHIVE]
 

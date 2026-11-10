@@ -35,6 +35,8 @@ Birkaç dakika sonra: `https://<kullanıcı>.github.io/radar/`
 - Hesap eklemek/çıkarmak: `accounts.json` düzenle, commit'le
 - Güncelleme sıklığı: `.github/workflows/radar.yml` içindeki `cron` satırı
   (şu an **3 saatte bir**: `"17 */3 * * *"`)
+- Silinen kontrolü yalnızca listeden düşen gönderiler için yapılır (`DEL_CHECK_MAX=8`),
+  tespit başına ~$0,005
 - Konuşmalar her gönderi için **yalnızca bir kez** çekilir (`CONV_MAX=1`, `CONV_LIMIT=30`),
   sadece son 48 saatteki gönderiler için — yeni gönderi başına ~$0,15
 - Maliyet: her çalışma ~10 gönderi okuması ≈ **$0,05** → 3 saatlik = ~**$12/ay** üst sınır
@@ -70,6 +72,8 @@ Token/chat yoksa bildirim adımı sessizce atlanır — pano normal çalışmaya
 - Arama, sıralama (tarih/beğeni/etkileşim), tür filtresi
 - **Konuşma görünümü**: gönderideki "💬 N yorum" düğmesi → yorumlar ve hesabın o
   yorumlara verdiği cevaplar iç içe (hesap yanıtları mavi ile işaretli)
+- **Silinen gönderiler**: arşivde olup hesabın listesinden kaybolan gönderiler API'den
+  tek tek sorgulanır (404 → silinmiş), ayrı bölümde son görülen metrikleriyle listelenir
 - CSV: takipçi geçmişi ve gönderi metrikleri
 
 ## Ücretsiz analitik + gündem
