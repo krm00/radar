@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-10T19:13:33Z",
+ "updated": "2026-11-10T19:22:43Z",
  "accounts": [
   {
    "handle": "@erkekdoven62",
@@ -53,6 +53,12 @@
        "l": 0,
        "c": 0,
        "r": 0
+      },
+      {
+       "ts": 1794338563,
+       "l": 0,
+       "c": 0,
+       "r": 0
       }
      ]
     },
@@ -65,7 +71,7 @@
      "reposts": 0,
      "quotes": 0,
      "bookmarks": 2,
-     "impressions": 2182,
+     "impressions": 2190,
      "lang": "tr",
      "created_at": "2026-11-09T21:06:03.000Z",
      "hashtags": [],
@@ -77,7 +83,7 @@
      "media": [],
      "url": "https://x.com/erkekdoven62/status/2119899340986880250",
      "engagement": 34,
-     "er": 1.56,
+     "er": 1.55,
      "hist": [
       {
        "ts": 1794338001,
@@ -87,6 +93,12 @@
       },
       {
        "ts": 1794338012,
+       "l": 26,
+       "c": 8,
+       "r": 0
+      },
+      {
+       "ts": 1794338563,
        "l": 26,
        "c": 8,
        "r": 0
@@ -129,6 +141,12 @@
        "l": 0,
        "c": 0,
        "r": 426
+      },
+      {
+       "ts": 1794338563,
+       "l": 0,
+       "c": 0,
+       "r": 426
       }
      ]
     },
@@ -141,7 +159,7 @@
      "reposts": 0,
      "quotes": 1,
      "bookmarks": 1,
-     "impressions": 1888,
+     "impressions": 1890,
      "lang": "tr",
      "created_at": "2026-11-07T12:17:48.000Z",
      "hashtags": [],
@@ -163,6 +181,12 @@
       },
       {
        "ts": 1794338012,
+       "l": 32,
+       "c": 2,
+       "r": 0
+      },
+      {
+       "ts": 1794338563,
        "l": 32,
        "c": 2,
        "r": 0
@@ -210,6 +234,12 @@
        "l": 1,
        "c": 0,
        "r": 0
+      },
+      {
+       "ts": 1794338563,
+       "l": 1,
+       "c": 0,
+       "r": 0
       }
      ]
     },
@@ -254,6 +284,12 @@
        "l": 2,
        "c": 0,
        "r": 0
+      },
+      {
+       "ts": 1794338563,
+       "l": 2,
+       "c": 0,
+       "r": 0
       }
      ]
     },
@@ -266,7 +302,7 @@
      "reposts": 0,
      "quotes": 0,
      "bookmarks": 7,
-     "impressions": 6161,
+     "impressions": 6162,
      "lang": "tr",
      "created_at": "2026-11-05T15:47:10.000Z",
      "hashtags": [],
@@ -297,6 +333,12 @@
       },
       {
        "ts": 1794338012,
+       "l": 57,
+       "c": 6,
+       "r": 0
+      },
+      {
+       "ts": 1794338563,
        "l": 57,
        "c": 6,
        "r": 0
@@ -334,6 +376,12 @@
       },
       {
        "ts": 1794338012,
+       "l": 18,
+       "c": 0,
+       "r": 0
+      },
+      {
+       "ts": 1794338563,
        "l": 18,
        "c": 0,
        "r": 0
@@ -383,6 +431,12 @@
        "l": 21,
        "c": 0,
        "r": 0
+      },
+      {
+       "ts": 1794338563,
+       "l": 21,
+       "c": 0,
+       "r": 0
       }
      ]
     }
@@ -395,13 +449,17 @@
     {
      "ts": 1794338012,
      "v": 3078
+    },
+    {
+     "ts": 1794338563,
+     "v": 3078
     }
    ],
    "delta": 0,
    "delta_24h": 0,
    "delta_7d": 0,
    "engagement": 600,
-   "avg_er": 1.13,
+   "avg_er": 1.12,
    "top_post": "2118369542405517674",
    "original_count": 5
   }
@@ -434,10 +492,10 @@
    "comments": 8,
    "reposts": 0,
    "quotes": 0,
-   "impressions": 2182,
+   "impressions": 2190,
    "lang": "tr",
    "engagement": 34,
-   "er": 1.56,
+   "er": 1.55,
    "reply_to": "",
    "rt_of": "",
    "handle": "@erkekdoven62",
@@ -470,7 +528,7 @@
    "comments": 2,
    "reposts": 0,
    "quotes": 1,
-   "impressions": 1888,
+   "impressions": 1890,
    "lang": "tr",
    "engagement": 35,
    "er": 1.85,
@@ -524,7 +582,7 @@
    "comments": 6,
    "reposts": 0,
    "quotes": 0,
-   "impressions": 6161,
+   "impressions": 6162,
    "lang": "tr",
    "engagement": 63,
    "er": 1.02,
@@ -621,11 +679,11 @@
    "count": null
   },
   {
-   "name": "AileButcesindePsikolog",
+   "name": "5 BIN DKAB",
    "count": null
   },
   {
-   "name": "5 BIN DKAB",
+   "name": "AileButcesindePsikolog",
    "count": null
   },
   {
@@ -732,6 +790,10 @@
      "created_at": "2026-11-09T21:06:50.000Z"
     }
    ]
+  },
+  "2119758069601079679": {
+   "fetched": 1794338563,
+   "replies": []
   }
  },
  "errors": []
