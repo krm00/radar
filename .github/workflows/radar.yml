@@ -2,8 +2,8 @@ name: radar
 
 on:
   schedule:
-    - cron: "17 */3 * * *"    # her 3 saatte bir (UTC) — maliyet ~$6/ay
-  workflow_dispatch:           # elle tetikleme
+    - cron: "17 */3 * * *"    # her 3 saatte bir (UTC)
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -28,8 +28,10 @@ jobs:
           POST_LIMIT: "10"
           CONV_MAX: "1"
           CONV_LIMIT: "30"
+          DEL_CHECK_MAX: "8"
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
         run: python fetch.py
 
       - name: data.json'u commit'le
@@ -41,7 +43,8 @@ jobs:
             echo "değişiklik yok"
           else
             git commit -m "radar: veri güncellendi [skip ci]"
-            git push
+            git pull --rebase --autostash || true
+            git push || (sleep 5 && git pull --rebase --autostash && git push)
           fi
 
       - name: Hata bildirimi
@@ -49,8 +52,9 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
         run: |
+          MSG="⚠️ radar workflow hata verdi: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           curl -s -X POST "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" \
-            -d chat_id="$TELEGRAM_CHAT_ID" \
-            -d "text=⚠️ radar workflow hata verdi: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
-            -d disable_web_page_preview=true > /dev/null
+            -d chat_id="$TELEGRAM_CHAT_ID" -d "text=$MSG" -d disable_web_page_preview=true > /dev/null || true
+          curl -s -d "$MSG" -H "Title: Radar" "https://ntfy.sh/$NTFY_TOPIC" > /dev/null || true

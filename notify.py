@@ -14,6 +14,8 @@ import urllib.parse
 import urllib.request
 from pathlib import Path
 
+from push import send
+
 HERE = Path(__file__).parent
 STATE = HERE / "state.json"
 DATA = HERE / "data.json"
@@ -34,20 +36,6 @@ def get(url):
         "Authorization": f"Bearer {BEARER}", "User-Agent": "radar-notify/1.0"})
     with urllib.request.urlopen(r, timeout=25) as x:
         return json.loads(x.read().decode())
-
-
-def telegram(text):
-    if not TG_TOKEN or not TG_CHAT:
-        return
-    payload = urllib.parse.urlencode({
-        "chat_id": TG_CHAT, "text": text, "parse_mode": "HTML",
-        "disable_web_page_preview": "true"}).encode()
-    try:
-        urllib.request.urlopen(
-            urllib.request.Request(f"https://api.telegram.org/bot{TG_TOKEN}/sendMessage",
-                                   data=payload), timeout=20)
-    except Exception as e:
-        log("telegram hata:", e)
 
 
 def esc(s):
@@ -116,7 +104,7 @@ def main():
             elif any(x.get("type") == "replied_to" for x in refs):
                 kind = "yanıt"
             log(f"yeni {kind}: {t['id']}")
-            telegram(f"⚡ <b>{esc(handle)}</b> yeni {kind}\n\n{esc(t.get('text','')[:400])}\n\n"
+            send("Radar ⚡", f"⚡ <b>{esc(handle)}</b> yeni {kind}\n\n{esc(t.get('text','')[:400])}\n\n"
                      f"♥ {m.get('like_count',0)} · 💬 {m.get('reply_count',0)} · "
                      f"🔁 {m.get('retweet_count',0)}\n"
                      f"https://x.com/{handle.lstrip('@')}/status/{t['id']}")

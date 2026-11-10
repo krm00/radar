@@ -76,6 +76,14 @@ Token/chat yoksa bildirim adımı sessizce atlanır — pano normal çalışmaya
   tek tek sorgulanır (404 → silinmiş), ayrı bölümde son görülen metrikleriyle listelenir
 - CSV: takipçi geçmişi ve gönderi metrikleri
 
+## Bildirim kanalları
+
+- **Telegram** — bot + chat id (secret)
+- **ntfy.sh** — `NTFY_TOPIC` secret; iOS/Android uygulamasında konuya abone olunca
+  bildirimler **kilit ekranına** düşer (uygulama kapalı olsa bile)
+
+Her iki kanal da aynı anda çalışır; hangisi yapılandırılmışsa ona gönderilir.
+
 ## Bildirimler
 
 | Workflow | Zamanlama | İçerik |

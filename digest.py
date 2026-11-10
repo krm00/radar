@@ -12,28 +12,13 @@ import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
+from push import send
+
 HERE = Path(__file__).parent
 DATA = HERE / "data.json"
 
 TG_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
 TG_CHAT = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
-
-
-def telegram(text):
-    if not TG_TOKEN or not TG_CHAT:
-        print("telegram yapılandırılmamış")
-        return False
-    payload = urllib.parse.urlencode({
-        "chat_id": TG_CHAT, "text": text, "parse_mode": "HTML",
-        "disable_web_page_preview": "true"}).encode()
-    try:
-        urllib.request.urlopen(
-            urllib.request.Request(f"https://api.telegram.org/bot{TG_TOKEN}/sendMessage",
-                                   data=payload), timeout=20)
-        return True
-    except Exception as e:
-        print("telegram hata:", e)
-        return False
 
 
 def esc(s):
@@ -77,7 +62,7 @@ def main():
         parts.append("\n🇹🇷 Gündem: " + " · ".join(esc(t) for t in trends))
 
     parts.append("\nhttps://krm00.github.io/radar/")
-    ok = telegram("\n".join(parts))
+    ok = send("Radar günlük özet", "\n".join(parts))
     print("özet gönderildi" if ok else "özet gönderilemedi")
 
 
