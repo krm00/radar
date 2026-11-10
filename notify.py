@@ -83,8 +83,10 @@ def main():
             continue
 
         try:
-            d = get(f"{API}/users/{uid}/tweets?since_id={since}&max_results=5"
-                    f"&tweet.fields=created_at,public_metrics,referenced_tweets")
+            d = get(f"{API}/users/{uid}/tweets?since_id={since}&max_results=100"
+                    f"&tweet.fields=created_at,public_metrics,referenced_tweets,in_reply_to_user_id"
+                    f"&expansions=referenced_tweets.id,referenced_tweets.id.author_id,in_reply_to_user_id"
+                    f"&user.fields=username,name")
         except urllib.error.HTTPError as e:
             log(f"{handle}: HTTP {e.code}")
             continue
@@ -92,6 +94,10 @@ def main():
         tweets = d.get("data") or []
         if not tweets:
             continue
+
+        inc = d.get("includes") or {}
+        users = {u.get("id"): u for u in (inc.get("users") or [])}
+        ref_tweets = {t.get("id"): t for t in (inc.get("tweets") or [])}
 
         for t in reversed(tweets):          # eskiden yeniye
             m = t.get("public_metrics") or {}
@@ -103,8 +109,24 @@ def main():
                 kind = "alıntı"
             elif any(x.get("type") == "replied_to" for x in refs):
                 kind = "yanıt"
-            log(f"yeni {kind}: {t['id']}")
-            send("Radar ⚡", f"⚡ <b>{esc(handle)}</b> yeni {kind}\n\n{esc(t.get('text','')[:400])}\n\n"
+            # kime ait / kimi hedef aldı
+            extra = ""
+            rep = next((x for x in refs if x.get("type") == "replied_to"), None)
+            quo = next((x for x in refs if x.get("type") == "quoted"), None)
+            rtt = next((x for x in refs if x.get("type") == "retweeted"), None)
+            if kind == "retweet" and rtt:
+                au = users.get((ref_tweets.get(rtt.get("id")) or {}).get("author_id")) or {}
+                extra = f" · @{au.get('username','?')} retweetledi"
+            elif kind == "yanıt":
+                au = users.get(t.get("in_reply_to_user_id")) or {}
+                extra = f" · @{au.get('username','?')} kullanıcısına"
+            elif kind == "alıntı" and quo:
+                au = users.get((ref_tweets.get(quo.get("id")) or {}).get("author_id")) or {}
+                extra = f" · @{au.get('username','?')} gönderisinden"
+
+            log(f"yeni {kind}{extra}: {t['id']}")
+            send("Radar ⚡", f"⚡ <b>{esc(handle)}</b> yeni {kind}{esc(extra)}\n\n"
+                     f"{esc(t.get('text','')[:400])}\n\n"
                      f"♥ {m.get('like_count',0)} · 💬 {m.get('reply_count',0)} · "
                      f"🔁 {m.get('retweet_count',0)}\n"
                      f"https://x.com/{handle.lstrip('@')}/status/{t['id']}")

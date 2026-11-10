@@ -97,8 +97,9 @@ Her iki kanal da aynı anda çalışır; hangisi yapılandırılmışsa ona gön
 ## Bildirim gecikmesi
 
 - `radar.yml` (3 saatte bir): pano verisi + tam bildirimler
-- `notify.yml` (5 dakikada bir): yalnızca **yeni gönderi** kontrolü (`since_id`),
-  yeni gönderi yoksa **0 okuma** → neredeyse sıfır maliyet. GitHub cron gecikmesi 5-15 dk olabilir.
+- `notify.yml` (5 dakikada bir): **tüm gönderi türleri** (gönderi/RT/yanıt/alıntı) için kontrol,
+  `since_id` + `max_results=100` → kaçırma yok, yeni gönderi yoksa **0 okuma**.
+  GitHub cron gecikmesi 5-15 dk olabilir. **30-60 sn** için `watch.py`'yi 7/24 bir cihazda çalıştır.
 - `stream.py`: X filtered stream ile **gerçek anlık** bildirim; kalıcı bağlantı gerektirdiği
   için GitHub Actions'ta çalışmaz (Mac/Pi/VPS). Bu hesapta stream bağlantısı 429 verdi
   (plan limiti) — farklı plan/hesapta çalışabilir.
