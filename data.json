@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-10T18:52:19Z",
+ "updated": "2026-11-10T18:56:53Z",
  "accounts": [
   {
    "handle": "@erkekdoven62",
@@ -21,7 +21,7 @@
      "reposts": 0,
      "quotes": 0,
      "bookmarks": 0,
-     "impressions": 104,
+     "impressions": 105,
      "lang": "und",
      "created_at": "2026-11-09T21:59:59.000Z",
      "hashtags": [],
@@ -53,6 +53,12 @@
        "l": 0,
        "c": 0,
        "r": 0
+      },
+      {
+       "ts": 1794337013,
+       "l": 0,
+       "c": 0,
+       "r": 0
       }
      ]
     },
@@ -65,7 +71,7 @@
      "reposts": 0,
      "quotes": 0,
      "bookmarks": 2,
-     "impressions": 2149,
+     "impressions": 2162,
      "lang": "tr",
      "created_at": "2026-11-09T21:06:03.000Z",
      "hashtags": [],
@@ -77,7 +83,7 @@
      "media": [],
      "url": "https://x.com/erkekdoven62/status/2119899340986880250",
      "engagement": 34,
-     "er": 1.58,
+     "er": 1.57,
      "hist": [
       {
        "ts": 1794336729,
@@ -87,6 +93,12 @@
       },
       {
        "ts": 1794336739,
+       "l": 26,
+       "c": 8,
+       "r": 0
+      },
+      {
+       "ts": 1794337013,
        "l": 26,
        "c": 8,
        "r": 0
@@ -129,6 +141,12 @@
        "l": 0,
        "c": 0,
        "r": 426
+      },
+      {
+       "ts": 1794337013,
+       "l": 0,
+       "c": 0,
+       "r": 426
       }
      ]
     },
@@ -141,7 +159,7 @@
      "reposts": 0,
      "quotes": 1,
      "bookmarks": 1,
-     "impressions": 1884,
+     "impressions": 1885,
      "lang": "tr",
      "created_at": "2026-11-07T12:17:48.000Z",
      "hashtags": [],
@@ -163,6 +181,12 @@
       },
       {
        "ts": 1794336739,
+       "l": 32,
+       "c": 2,
+       "r": 0
+      },
+      {
+       "ts": 1794337013,
        "l": 32,
        "c": 2,
        "r": 0
@@ -210,6 +234,12 @@
        "l": 1,
        "c": 0,
        "r": 0
+      },
+      {
+       "ts": 1794337013,
+       "l": 1,
+       "c": 0,
+       "r": 0
       }
      ]
     },
@@ -254,6 +284,12 @@
        "l": 2,
        "c": 0,
        "r": 0
+      },
+      {
+       "ts": 1794337013,
+       "l": 2,
+       "c": 0,
+       "r": 0
       }
      ]
     },
@@ -266,7 +302,7 @@
      "reposts": 0,
      "quotes": 0,
      "bookmarks": 7,
-     "impressions": 6158,
+     "impressions": 6159,
      "lang": "tr",
      "created_at": "2026-11-05T15:47:10.000Z",
      "hashtags": [],
@@ -300,6 +336,12 @@
        "l": 57,
        "c": 6,
        "r": 0
+      },
+      {
+       "ts": 1794337013,
+       "l": 57,
+       "c": 6,
+       "r": 0
       }
      ]
     },
@@ -312,7 +354,7 @@
      "reposts": 0,
      "quotes": 0,
      "bookmarks": 0,
-     "impressions": 1120,
+     "impressions": 1121,
      "lang": "tr",
      "created_at": "2026-11-03T21:27:43.000Z",
      "hashtags": [],
@@ -334,6 +376,12 @@
       },
       {
        "ts": 1794336739,
+       "l": 18,
+       "c": 0,
+       "r": 0
+      },
+      {
+       "ts": 1794337013,
        "l": 18,
        "c": 0,
        "r": 0
@@ -383,6 +431,12 @@
        "l": 21,
        "c": 0,
        "r": 0
+      },
+      {
+       "ts": 1794337013,
+       "l": 21,
+       "c": 0,
+       "r": 0
       }
      ]
     }
@@ -394,6 +448,10 @@
     },
     {
      "ts": 1794336739,
+     "v": 3077
+    },
+    {
+     "ts": 1794337013,
      "v": 3077
     }
    ],
@@ -416,7 +474,7 @@
    "comments": 0,
    "reposts": 0,
    "quotes": 0,
-   "impressions": 104,
+   "impressions": 105,
    "lang": "und",
    "engagement": 0,
    "er": 0.0,
@@ -431,10 +489,10 @@
    "comments": 8,
    "reposts": 0,
    "quotes": 0,
-   "impressions": 2149,
+   "impressions": 2162,
    "lang": "tr",
    "engagement": 34,
-   "er": 1.58,
+   "er": 1.57,
    "reply_to": "",
    "rt_of": ""
   },
@@ -461,7 +519,7 @@
    "comments": 2,
    "reposts": 0,
    "quotes": 1,
-   "impressions": 1884,
+   "impressions": 1885,
    "lang": "tr",
    "engagement": 35,
    "er": 1.86,
@@ -506,7 +564,7 @@
    "comments": 6,
    "reposts": 0,
    "quotes": 0,
-   "impressions": 6158,
+   "impressions": 6159,
    "lang": "tr",
    "engagement": 63,
    "er": 1.02,
@@ -521,7 +579,7 @@
    "comments": 0,
    "reposts": 0,
    "quotes": 0,
-   "impressions": 1120,
+   "impressions": 1121,
    "lang": "tr",
    "engagement": 18,
    "er": 1.61,
@@ -546,6 +604,10 @@
  ],
  "trends": [
   {
+   "name": "Tuzlu Kahve",
+   "count": null
+  },
+  {
    "name": "#COP31FonlaKirlendi",
    "count": null
   },
@@ -567,10 +629,6 @@
   },
   {
    "name": "#GazaEmergency",
-   "count": null
-  },
-  {
-   "name": "Tuzlu Kahve",
    "count": null
   },
   {
@@ -705,6 +763,10 @@
      "created_at": "2026-11-09T21:06:50.000Z"
     }
    ]
+  },
+  "2119758069601079679": {
+   "fetched": 1794337013,
+   "replies": []
   }
  },
  "errors": []
