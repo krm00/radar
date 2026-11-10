@@ -36,6 +36,11 @@
   .nm{font-weight:650;font-size:16px;display:flex;align-items:center;gap:5px;flex-wrap:wrap}
   .badge{color:var(--x);font-size:13px}
   .bio{color:#b9c2d0;font-size:13px;margin-top:6px;white-space:pre-wrap}
+  .last{display:flex;align-items:center;gap:7px;margin-top:12px;padding:8px 11px;
+        background:#12151b;border:1px solid var(--line);border-left:3px solid var(--x);
+        border-radius:10px;font-size:12.5px;color:#c3cad6}
+  .last b{color:#fff;font-weight:600}
+  .last .ago{color:var(--dim);margin-left:auto;font-variant-numeric:tabular-nums}
   .row{display:flex;align-items:flex-end;gap:10px;margin-top:14px;flex-wrap:wrap}
   .big{font-size:36px;font-weight:700;letter-spacing:-.8px;font-variant-numeric:tabular-nums}
   .delta{font-size:13px;padding-bottom:7px}
@@ -163,6 +168,14 @@ const nf = n => (n == null ? "—" : n.toLocaleString("tr-TR"));
 const esc = s => (s || "").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
 const fmtDate = s => { if(!s) return ""; const d = new Date(s);
   return d.toLocaleString("tr-TR", {day:"numeric", month:"short", hour:"2-digit", minute:"2-digit"}); };
+const ago = iso => {
+  const t = (Date.now() - new Date(iso)) / 1000;
+  if(!isFinite(t) || t < 0) return "";
+  if(t < 60) return "az önce";
+  if(t < 3600) return Math.floor(t/60) + " dk önce";
+  if(t < 86400) return Math.floor(t/3600) + " sa önce";
+  return Math.floor(t/86400) + " gün önce";
+};
 const fmtShort = ts => { const d = new Date(ts*1000);
   return d.toLocaleString("tr-TR", {day:"numeric", month:"short", hour:"2-digit", minute:"2-digit"}); };
 
@@ -318,6 +331,15 @@ function toggleConv(btn, id){
   btn.classList.toggle("on", open);
 }
 
+function lastPostHTML(a){
+  const ps = (a.posts || []).filter(p => p.created_at);
+  if(!ps.length) return `<div class="last">🕒 henüz gönderi yok</div>`;
+  const latest = ps.reduce((x,y) => new Date(y.created_at) > new Date(x.created_at) ? y : x);
+  const label = {original:"gönderi", reply:"yanıt", quote:"alıntı", retweet:"retweet"}[latest.type] || "gönderi";
+  return `<div class="last">🕒 son ${label} <b>${fmtDate(latest.created_at)}</b>
+    <span class="ago">${ago(latest.created_at)}</span></div>`;
+}
+
 function accountHTML(a){
   const posts = filteredPosts(a);
   return `<section class="acct">
@@ -329,6 +351,7 @@ function accountHTML(a){
         ${a.bio ? `<div class="bio">${esc(a.bio)}</div>` : ""}
       </div>
     </div>
+    ${lastPostHTML(a)}
     <div class="row">
       <div class="big">${nf(a.followers)}</div>${deltaHTML(a.delta)}
       <div class="chips">${deltaChip("24s", a.delta_24h)}${deltaChip("7g", a.delta_7d)}</div>
