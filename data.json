@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-10T18:40:23Z",
+ "updated": "2026-11-10T18:49:00Z",
  "accounts": [
   {
    "handle": "@erkekdoven62",
@@ -43,13 +43,7 @@
      "er": 0.0,
      "hist": [
       {
-       "ts": 1794336012,
-       "l": 0,
-       "c": 0,
-       "r": 0
-      },
-      {
-       "ts": 1794336023,
+       "ts": 1794336539,
        "l": 0,
        "c": 0,
        "r": 0
@@ -65,7 +59,7 @@
      "reposts": 0,
      "quotes": 0,
      "bookmarks": 2,
-     "impressions": 2133,
+     "impressions": 2148,
      "lang": "tr",
      "created_at": "2026-11-09T21:06:03.000Z",
      "hashtags": [],
@@ -77,16 +71,10 @@
      "media": [],
      "url": "https://x.com/erkekdoven62/status/2119899340986880250",
      "engagement": 34,
-     "er": 1.59,
+     "er": 1.58,
      "hist": [
       {
-       "ts": 1794336012,
-       "l": 26,
-       "c": 8,
-       "r": 0
-      },
-      {
-       "ts": 1794336023,
+       "ts": 1794336539,
        "l": 26,
        "c": 8,
        "r": 0
@@ -119,13 +107,7 @@
      "er": null,
      "hist": [
       {
-       "ts": 1794336012,
-       "l": 0,
-       "c": 0,
-       "r": 426
-      },
-      {
-       "ts": 1794336023,
+       "ts": 1794336539,
        "l": 0,
        "c": 0,
        "r": 426
@@ -141,7 +123,7 @@
      "reposts": 0,
      "quotes": 1,
      "bookmarks": 1,
-     "impressions": 1883,
+     "impressions": 1884,
      "lang": "tr",
      "created_at": "2026-11-07T12:17:48.000Z",
      "hashtags": [],
@@ -156,13 +138,7 @@
      "er": 1.86,
      "hist": [
       {
-       "ts": 1794336012,
-       "l": 32,
-       "c": 2,
-       "r": 0
-      },
-      {
-       "ts": 1794336023,
+       "ts": 1794336539,
        "l": 32,
        "c": 2,
        "r": 0
@@ -200,13 +176,7 @@
      "er": 0.51,
      "hist": [
       {
-       "ts": 1794336012,
-       "l": 1,
-       "c": 0,
-       "r": 0
-      },
-      {
-       "ts": 1794336023,
+       "ts": 1794336539,
        "l": 1,
        "c": 0,
        "r": 0
@@ -244,13 +214,7 @@
      "er": 0.57,
      "hist": [
       {
-       "ts": 1794336012,
-       "l": 2,
-       "c": 0,
-       "r": 0
-      },
-      {
-       "ts": 1794336023,
+       "ts": 1794336539,
        "l": 2,
        "c": 0,
        "r": 0
@@ -266,7 +230,7 @@
      "reposts": 0,
      "quotes": 0,
      "bookmarks": 7,
-     "impressions": 6154,
+     "impressions": 6155,
      "lang": "tr",
      "created_at": "2026-11-05T15:47:10.000Z",
      "hashtags": [],
@@ -290,13 +254,7 @@
      "er": 1.02,
      "hist": [
       {
-       "ts": 1794336012,
-       "l": 57,
-       "c": 6,
-       "r": 0
-      },
-      {
-       "ts": 1794336023,
+       "ts": 1794336539,
        "l": 57,
        "c": 6,
        "r": 0
@@ -327,13 +285,7 @@
      "er": 1.61,
      "hist": [
       {
-       "ts": 1794336012,
-       "l": 18,
-       "c": 0,
-       "r": 0
-      },
-      {
-       "ts": 1794336023,
+       "ts": 1794336539,
        "l": 18,
        "c": 0,
        "r": 0
@@ -373,13 +325,7 @@
      "er": 1.9,
      "hist": [
       {
-       "ts": 1794336012,
-       "l": 21,
-       "c": 0,
-       "r": 0
-      },
-      {
-       "ts": 1794336023,
+       "ts": 1794336539,
        "l": 21,
        "c": 0,
        "r": 0
@@ -389,11 +335,7 @@
    ],
    "history": [
     {
-     "ts": 1794336012,
-     "v": 3077
-    },
-    {
-     "ts": 1794336023,
+     "ts": 1794336539,
      "v": 3077
     }
    ],
@@ -407,5 +349,204 @@
   }
  ],
  "events": [],
+ "archive": [
+  {
+   "id": "2119912914354360475",
+   "created_at": "2026-11-09T21:59:59.000Z",
+   "type": "reply",
+   "likes": 0,
+   "comments": 0,
+   "reposts": 0,
+   "quotes": 0,
+   "impressions": 104,
+   "lang": "und",
+   "engagement": 0,
+   "er": 0.0,
+   "reply_to": "yusuffmentality",
+   "rt_of": ""
+  },
+  {
+   "id": "2119899340986880250",
+   "created_at": "2026-11-09T21:06:03.000Z",
+   "type": "original",
+   "likes": 26,
+   "comments": 8,
+   "reposts": 0,
+   "quotes": 0,
+   "impressions": 2148,
+   "lang": "tr",
+   "engagement": 34,
+   "er": 1.58,
+   "reply_to": "",
+   "rt_of": ""
+  },
+  {
+   "id": "2119758069601079679",
+   "created_at": "2026-11-09T11:44:41.000Z",
+   "type": "retweet",
+   "likes": 0,
+   "comments": 0,
+   "reposts": 426,
+   "quotes": 0,
+   "impressions": 1,
+   "lang": "tr",
+   "engagement": 426,
+   "er": null,
+   "reply_to": "",
+   "rt_of": "miyavlq"
+  },
+  {
+   "id": "2119041628102877546",
+   "created_at": "2026-11-07T12:17:48.000Z",
+   "type": "original",
+   "likes": 32,
+   "comments": 2,
+   "reposts": 0,
+   "quotes": 1,
+   "impressions": 1884,
+   "lang": "tr",
+   "engagement": 35,
+   "er": 1.86,
+   "reply_to": "",
+   "rt_of": ""
+  },
+  {
+   "id": "2118460272310440415",
+   "created_at": "2026-11-05T21:47:42.000Z",
+   "type": "reply",
+   "likes": 1,
+   "comments": 0,
+   "reposts": 0,
+   "quotes": 0,
+   "impressions": 196,
+   "lang": "in",
+   "engagement": 1,
+   "er": 0.51,
+   "reply_to": "angelbutsinner",
+   "rt_of": ""
+  },
+  {
+   "id": "2118391494423777748",
+   "created_at": "2026-11-05T17:14:24.000Z",
+   "type": "reply",
+   "likes": 2,
+   "comments": 0,
+   "reposts": 0,
+   "quotes": 0,
+   "impressions": 349,
+   "lang": "tr",
+   "engagement": 2,
+   "er": 0.57,
+   "reply_to": "StevenBerkee7",
+   "rt_of": ""
+  },
+  {
+   "id": "2118369542405517674",
+   "created_at": "2026-11-05T15:47:10.000Z",
+   "type": "original",
+   "likes": 57,
+   "comments": 6,
+   "reposts": 0,
+   "quotes": 0,
+   "impressions": 6155,
+   "lang": "tr",
+   "engagement": 63,
+   "er": 1.02,
+   "reply_to": "",
+   "rt_of": ""
+  },
+  {
+   "id": "2117730466258362756",
+   "created_at": "2026-11-03T21:27:43.000Z",
+   "type": "original",
+   "likes": 18,
+   "comments": 0,
+   "reposts": 0,
+   "quotes": 0,
+   "impressions": 1120,
+   "lang": "tr",
+   "engagement": 18,
+   "er": 1.61,
+   "reply_to": "",
+   "rt_of": ""
+  },
+  {
+   "id": "2117722660092395617",
+   "created_at": "2026-11-03T20:56:42.000Z",
+   "type": "original",
+   "likes": 21,
+   "comments": 0,
+   "reposts": 0,
+   "quotes": 0,
+   "impressions": 1103,
+   "lang": "tr",
+   "engagement": 21,
+   "er": 1.9,
+   "reply_to": "",
+   "rt_of": ""
+  }
+ ],
+ "trends": [
+  {
+   "name": "#COP31FonlaKirlendi",
+   "count": null
+  },
+  {
+   "name": "#GundemHerFonaTamAnaPara",
+   "count": null
+  },
+  {
+   "name": "#PPFdeParamNerede",
+   "count": null
+  },
+  {
+   "name": "#ErisahAricanHemenistifa",
+   "count": null
+  },
+  {
+   "name": "Fonzedenin Sabri Kalmadi",
+   "count": null
+  },
+  {
+   "name": "#GazaEmergency",
+   "count": null
+  },
+  {
+   "name": "Tuzlu Kahve",
+   "count": null
+  },
+  {
+   "name": "Emniyetten FurkanaGözdağı",
+   "count": null
+  },
+  {
+   "name": "TebligatYok YakalamaVar",
+   "count": null
+  },
+  {
+   "name": "Gazze'de Acil Durum",
+   "count": null
+  },
+  {
+   "name": "Hacı",
+   "count": null
+  },
+  {
+   "name": "Filistin'i Kurtar",
+   "count": null
+  },
+  {
+   "name": "AileButcesindePsikolog",
+   "count": null
+  },
+  {
+   "name": "Atatürk",
+   "count": null
+  },
+  {
+   "name": "5 BIN DKAB",
+   "count": null
+  }
+ ],
  "errors": []
 }

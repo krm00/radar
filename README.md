@@ -68,6 +68,18 @@ Token/chat yoksa bildirim adımı sessizce atlanır — pano normal çalışmaya
 - Arama, sıralama (tarih/beğeni/etkileşim), tür filtresi
 - CSV: takipçi geçmişi ve gönderi metrikleri
 
+## Ücretsiz analitik + gündem
+
+- **Haftalık özet**: son 7 gün gönderi sayısı, ortalama etkileşim, görüntülenme
+- **Paylaşım ısı haritası** (gün × saat): hangi saatte paylaşım daha çok etkileşim alıyor
+- **Tür performansı**: orijinal / yanıt / alıntı / retweet ortalama etkileşimi
+- **En çok yanıt verdiği hesaplar**
+- **Dil dağılımı**
+- **🇹🇷 Gündem**: X Türkiye trendleri (WOEID `23424969`, tek API çağrısı)
+
+Analitikler `data.json` içindeki `archive` alanından hesaplanır (son 400 gönderi), ek API
+maliyeti yoktur — zamanla zenginleşir.
+
 ## iPhone
 
 Safari → `https://<kullanıcı>.github.io/radar/` → Paylaş → **Ana Ekrana Ekle**.

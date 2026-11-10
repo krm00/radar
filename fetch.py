@@ -26,6 +26,7 @@ API = "https://api.x.com/2"
 MAX_HISTORY = 72          # takipçi geçmişi kaydı
 MAX_POST_HIST = 24        # gönderi başına metrik kaydı
 MAX_EVENTS = 40           # aktivite akışı
+MAX_ARCHIVE = 400         # analitik için saklanan gönderi
 FOLLOW_DELTA_NOTIFY = 1
 
 
@@ -187,6 +188,20 @@ def fetch_account(handle, token, limit):
     }
 
 
+def fetch_trends(token, woeid="23424969", limit=15):
+    """Gündem: tek çağrı, ucuz."""
+    try:
+        d = get_json(f"{API}/trends/by/woeid/{woeid}", token)
+        items = []
+        for t in (d.get("data") or [])[:limit]:
+            items.append({"name": t.get("trend_name", ""),
+                          "count": t.get("trend_metadata", {}).get("post_count") if isinstance(t.get("trend_metadata"), dict) else None})
+        return items
+    except Exception as e:
+        print("trends hata:", e)
+        return []
+
+
 # ------------------------------------------------------------------ yardımcı
 
 def esc(s):
@@ -240,10 +255,11 @@ def main():
     limit = int(os.environ.get("POST_LIMIT", "10"))
     handles = json.loads(ACCOUNTS.read_text())["x"]
 
-    prev, prev_events = {}, []
+    prev, prev_events, prev_raw = {}, [], {}
     if DATA.exists():
         try:
             raw = json.loads(DATA.read_text())
+            prev_raw = raw
             prev = {a["handle"]: a for a in raw.get("accounts", [])}
             prev_events = raw.get("events", [])
         except Exception:
@@ -309,12 +325,29 @@ def main():
             events.append({"ts": now, "type": "profile", "handle": acc["handle"], "text": c})
             notes.append(f"👤 <b>{esc(acc['handle'])}</b> profil: {esc(c)}")
 
+    # --- arşiv: tüm görülen gönderiler (analitik için, ücretsiz) ---
+    archive = {x["id"]: x for x in (prev_raw.get("archive") or [])} if prev_raw else {}
+    for acc in out:
+        for p in acc["posts"]:
+            archive[p["id"]] = {
+                "id": p["id"], "created_at": p["created_at"], "type": p["type"],
+                "likes": p["likes"], "comments": p["comments"], "reposts": p["reposts"],
+                "quotes": p["quotes"], "impressions": p["impressions"], "lang": p["lang"],
+                "engagement": p.get("engagement", 0), "er": p.get("er"),
+                "reply_to": (p.get("reply_to") or {}).get("user") or "",
+                "rt_of": p.get("rt_of") or "",
+            }
+    archive_list = sorted(archive.values(), key=lambda x: x.get("created_at") or "", reverse=True)[:MAX_ARCHIVE]
+
+    trends = fetch_trends(token)
     events = (prev_events + events)[-MAX_EVENTS:]
 
     DATA.write_text(json.dumps({
         "updated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "accounts": out,
         "events": events,
+        "archive": archive_list,
+        "trends": trends,
         "errors": errors,
     }, ensure_ascii=False, indent=1))
 

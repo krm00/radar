@@ -96,6 +96,28 @@
   .mini{display:flex;align-items:center;gap:6px;margin-top:9px;color:var(--dim);font-size:11px}
   .mini svg{height:22px;width:120px}
 
+  .analytics{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin-top:16px}
+  .analytics h2{font-size:13.5px;margin:0 0 12px;font-weight:650;color:#cdd4e0}
+  .wk{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
+  .wk div{background:#12151b;border:1px solid var(--line);border-radius:10px;padding:8px;text-align:center}
+  .wk b{display:block;font-size:16px;font-variant-numeric:tabular-nums}
+  .wk span{font-size:10.5px;color:var(--dim)}
+  .heat{display:grid;grid-template-columns:auto repeat(24,1fr);gap:2px;align-items:center;margin:6px 0 14px}
+  .heat .d{font-size:9.5px;color:var(--dim);padding-right:4px;white-space:nowrap}
+  .cell{aspect-ratio:1;border-radius:2px;background:#1b1f27}
+  .cell.h1{background:rgba(61,220,132,.25)} .cell.h2{background:rgba(61,220,132,.5)}
+  .cell.h3{background:rgba(61,220,132,.75)} .cell.h4{background:rgba(61,220,132,1)}
+  .bars{display:flex;flex-direction:column;gap:7px;margin-bottom:14px}
+  .bar{display:grid;grid-template-columns:74px 1fr 56px;gap:8px;align-items:center;font-size:12px}
+  .bar .track{background:#12151b;border-radius:6px;height:8px;overflow:hidden}
+  .bar .fill{height:100%;border-radius:6px}
+  .bar em{font-style:normal;color:var(--dim);text-align:right;font-variant-numeric:tabular-nums}
+  .langs{display:flex;gap:6px;flex-wrap:wrap}
+  .tr-list{display:flex;flex-direction:column;gap:0}
+  .tr{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px solid var(--line);font-size:13px}
+  .tr:last-child{border-bottom:0}
+  .tr a{color:#7ab7e8;text-decoration:none}
+  .tr span{color:var(--dim);font-size:11.5px;flex:0 0 auto}
   .events{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin-top:6px}
   .events h2,.hist h2{font-size:13.5px;margin:0 0 10px;font-weight:650;color:#cdd4e0}
   .ev{display:flex;gap:9px;padding:7px 0;border-bottom:1px solid var(--line);font-size:12.5px}
@@ -303,6 +325,84 @@ function accountHTML(a){
     || `<div class="acct muted">Filtreye uyan gönderi yok.</div>`}</div>`;
 }
 
+function analyticsHTML(){
+  const A = STATE.archive || [];
+  if(A.length < 2) return "";
+  const now = Date.now()/1000;
+  const week = A.filter(p => (Date.parse(p.created_at)/1000) > now - 7*86400);
+  const avg = arr => arr.length ? Math.round(arr.reduce((s,x)=>s+x,0)/arr.length) : 0;
+
+  // haftalık özet
+  const wkE = avg(week.map(p => p.engagement || 0));
+  const wkI = week.reduce((s,p) => s + (p.impressions||0), 0);
+
+  // ısı haritası: gün x saat
+  const grid = Array.from({length:7}, () => new Array(24).fill(0));
+  for(const p of A){
+    const d = new Date(p.created_at);
+    if(isNaN(d)) continue;
+    grid[(d.getDay()+6)%7][d.getHours()]++;
+  }
+  const maxC = Math.max(1, ...grid.flat());
+  const days = ["Pzt","Sal","Çar","Per","Cum","Cmt","Paz"];
+  const heat = `<div class="heat"><div class="d"></div>${
+      Array.from({length:24},(_,h)=>`<div class="d" style="text-align:center">${h%6===0?h:""}</div>`).join("")}</div>` +
+    grid.map((row,i) => `<div class="heat"><div class="d">${days[i]}</div>${
+      row.map((c,j) => {
+        const b = c ? Math.max(1, Math.ceil((c/maxC)*4)) : 0;
+        return `<div class="cell${b ? " h"+b : ""}" title="${days[i]} ${j}:00 · ${c}"></div>`;
+      }).join("")}</div>`).join("");
+
+  // tür performansı
+  const types = ["original","reply","quote","retweet"];
+  const labels = {original:"orijinal", reply:"yanıt", quote:"alıntı", retweet:"retweet"};
+  const colors = {original:"#3ddc84", reply:"#1d9bf0", quote:"#a06bff", retweet:"#5b6472"};
+  const perf = types.map(t => {
+    const ps = A.filter(p => p.type === t);
+    return {t, n: ps.length, avg: avg(ps.map(p => p.engagement || 0))};
+  }).filter(x => x.n);
+  const maxAvg = Math.max(1, ...perf.map(x => x.avg));
+
+  // yanıt verilen hesaplar
+  const targets = {};
+  for(const p of A) if(p.reply_to) targets[p.reply_to] = (targets[p.reply_to]||0)+1;
+  const topTargets = Object.entries(targets).sort((a,b)=>b[1]-a[1]).slice(0,5);
+
+  // diller
+  const langs = {};
+  for(const p of A) if(p.lang) langs[p.lang] = (langs[p.lang]||0)+1;
+  const langChips = Object.entries(langs).sort((a,b)=>b[1]-a[1]).slice(0,6)
+    .map(([l,c]) => `<span class="chip">${esc(l)} · ${c}</span>`).join("");
+
+  return `<section class="analytics"><h2>Analiz (${A.length} gönderi arşivi)</h2>
+    <div class="wk">
+      <div><b>${week.length}</b><span>son 7 gün gönderi</span></div>
+      <div><b>${nf(wkE)}</b><span>ort. etkileşim</span></div>
+      <div><b>${nf(wkI)}</b><span>haftalık görüntülenme</span></div>
+    </div>
+    <div class="muted" style="margin-bottom:4px">paylaşım saati (gün × saat)</div>
+    ${heat}
+    <div class="muted" style="margin-bottom:6px">tür performansı (ort. etkileşim)</div>
+    <div class="bars">${perf.map(x => `
+      <div class="bar"><span>${labels[x.t]}</span>
+        <div class="track"><div class="fill" style="width:${(x.avg/maxAvg*100).toFixed(0)}%;background:${colors[x.t]}"></div></div>
+        <em>${nf(x.avg)}</em></div>`).join("")}</div>
+    ${topTargets.length ? `<div class="muted" style="margin-bottom:6px">en çok yanıt verdiği hesaplar</div>
+      <div class="langs">${topTargets.map(([u,c]) => `<span class="chip">@${esc(u)} · ${c}</span>`).join("")}</div>` : ""}
+    ${langChips ? `<div class="muted" style="margin:12px 0 6px">diller</div><div class="langs">${langChips}</div>` : ""}
+  </section>`;
+}
+
+function trendsHTML(){
+  const tr = STATE.trends || [];
+  if(!tr.length) return "";
+  const rows = tr.slice(0,15).map((t,i) => {
+    const q = encodeURIComponent(t.name);
+    return `<div class="tr"><a href="https://x.com/search?q=${q}" target="_blank" rel="noopener">${i+1}. ${esc(t.name)}</a></div>`;
+  }).join("");
+  return `<section class="analytics"><h2>🇹🇷 Gündem</h2><div class="tr-list">${rows}</div></section>`;
+}
+
 function eventsHTML(evts){
   if(!evts || !evts.length) return "";
   const rows = evts.slice().reverse().slice(0, 15).map(e => `
@@ -360,7 +460,8 @@ function draw(){
   if(!STATE) return;
   document.getElementById("updated").textContent = "son veri " + fmtDate(STATE.updated);
   document.getElementById("app").innerHTML =
-    (STATE.accounts || []).map(a => `${accountHTML(a)}${eventsHTML(STATE.events)}${historyHTML(a)}`).join("")
+    (STATE.accounts || []).map(a => `${accountHTML(a)}${historyHTML(a)}`).join("")
+    + analyticsHTML() + trendsHTML() + eventsHTML(STATE.events)
     || `<div class="acct muted">Takip edilen hesap yok.</div>`;
   document.getElementById("errors").innerHTML =
     (STATE.errors || []).map(e => `<div class="err">⚠️ ${esc(e)}</div>`).join("");
