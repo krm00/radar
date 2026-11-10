@@ -76,6 +76,15 @@ Token/chat yoksa bildirim adımı sessizce atlanır — pano normal çalışmaya
   tek tek sorgulanır (404 → silinmiş), ayrı bölümde son görülen metrikleriyle listelenir
 - CSV: takipçi geçmişi ve gönderi metrikleri
 
+## Bildirim gecikmesi
+
+- `radar.yml` (3 saatte bir): pano verisi + tam bildirimler
+- `notify.yml` (5 dakikada bir): yalnızca **yeni gönderi** kontrolü (`since_id`),
+  yeni gönderi yoksa **0 okuma** → neredeyse sıfır maliyet. GitHub cron gecikmesi 5-15 dk olabilir.
+- `stream.py`: X filtered stream ile **gerçek anlık** bildirim; kalıcı bağlantı gerektirdiği
+  için GitHub Actions'ta çalışmaz (Mac/Pi/VPS). Bu hesapta stream bağlantısı 429 verdi
+  (plan limiti) — farklı plan/hesapta çalışabilir.
+
 ## Ücretsiz analitik + gündem
 
 - **Haftalık özet**: son 7 gün gönderi sayısı, ortalama etkileşim, görüntülenme

@@ -1,0 +1,44 @@
+name: notify
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"     # 5 dakikada bir (GitHub gecikmesi: 5-15 dk olabilir)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: notify
+  cancel-in-progress: false
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Yeni gönderi var mı?
+        env:
+          X_BEARER: ${{ secrets.X_BEARER }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python notify.py
+
+      - name: state.json'u commit'le
+        run: |
+          git config user.name  "radar-bot"
+          git config user.email "radar-bot@users.noreply.github.com"
+          git add state.json
+          if git diff --staged --quiet; then
+            echo "değişiklik yok"
+          else
+            git commit -m "notify: durum güncellendi [skip ci]"
+            git pull --rebase --autostash || true
+            git push || (sleep 5 && git pull --rebase --autostash && git push)
+          fi
