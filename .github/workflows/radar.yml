@@ -1,0 +1,40 @@
+name: radar
+
+on:
+  schedule:
+    - cron: "17 * * * *"      # her saat :17'de (UTC)
+  workflow_dispatch:           # elle tetikleme
+
+permissions:
+  contents: write
+
+concurrency:
+  group: radar
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: X API'den veri çek
+        env:
+          X_BEARER: ${{ secrets.X_BEARER }}
+        run: python fetch.py
+
+      - name: data.json'u commit'le
+        run: |
+          git config user.name  "radar-bot"
+          git config user.email "radar-bot@users.noreply.github.com"
+          git add data.json
+          if git diff --staged --quiet; then
+            echo "değişiklik yok"
+          else
+            git commit -m "radar: veri güncellendi [skip ci]"
+            git push
+          fi
