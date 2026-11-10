@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-10T18:52:09Z",
+ "updated": "2026-11-10T18:52:19Z",
  "accounts": [
   {
    "handle": "@erkekdoven62",
@@ -47,6 +47,12 @@
        "l": 0,
        "c": 0,
        "r": 0
+      },
+      {
+       "ts": 1794336739,
+       "l": 0,
+       "c": 0,
+       "r": 0
       }
      ]
     },
@@ -75,6 +81,12 @@
      "hist": [
       {
        "ts": 1794336729,
+       "l": 26,
+       "c": 8,
+       "r": 0
+      },
+      {
+       "ts": 1794336739,
        "l": 26,
        "c": 8,
        "r": 0
@@ -111,6 +123,12 @@
        "l": 0,
        "c": 0,
        "r": 426
+      },
+      {
+       "ts": 1794336739,
+       "l": 0,
+       "c": 0,
+       "r": 426
       }
      ]
     },
@@ -139,6 +157,12 @@
      "hist": [
       {
        "ts": 1794336729,
+       "l": 32,
+       "c": 2,
+       "r": 0
+      },
+      {
+       "ts": 1794336739,
        "l": 32,
        "c": 2,
        "r": 0
@@ -180,6 +204,12 @@
        "l": 1,
        "c": 0,
        "r": 0
+      },
+      {
+       "ts": 1794336739,
+       "l": 1,
+       "c": 0,
+       "r": 0
       }
      ]
     },
@@ -215,6 +245,12 @@
      "hist": [
       {
        "ts": 1794336729,
+       "l": 2,
+       "c": 0,
+       "r": 0
+      },
+      {
+       "ts": 1794336739,
        "l": 2,
        "c": 0,
        "r": 0
@@ -258,6 +294,12 @@
        "l": 57,
        "c": 6,
        "r": 0
+      },
+      {
+       "ts": 1794336739,
+       "l": 57,
+       "c": 6,
+       "r": 0
       }
      ]
     },
@@ -286,6 +328,12 @@
      "hist": [
       {
        "ts": 1794336729,
+       "l": 18,
+       "c": 0,
+       "r": 0
+      },
+      {
+       "ts": 1794336739,
        "l": 18,
        "c": 0,
        "r": 0
@@ -329,6 +377,12 @@
        "l": 21,
        "c": 0,
        "r": 0
+      },
+      {
+       "ts": 1794336739,
+       "l": 21,
+       "c": 0,
+       "r": 0
       }
      ]
     }
@@ -336,6 +390,10 @@
    "history": [
     {
      "ts": 1794336729,
+     "v": 3077
+    },
+    {
+     "ts": 1794336739,
      "v": 3077
     }
    ],
@@ -552,6 +610,101 @@
   "2119912914354360475": {
    "fetched": 1794336729,
    "replies": []
+  },
+  "2119899340986880250": {
+   "fetched": 1794336739,
+   "replies": [
+    {
+     "id": "2120183198114333180",
+     "parent": "2120151077676859420",
+     "author": "Asensiofedai",
+     "name": "Asensio fedai",
+     "avatar": "https://abs.twimg.com/sticky/default_profile_images/default_profile_200x200.png",
+     "text": "@bencevar3572 @erkekdoven62 @Mistress_medea yaz sahibeme",
+     "likes": 0,
+     "created_at": "2026-11-10T15:54:00.000Z"
+    },
+    {
+     "id": "2120151077676859420",
+     "parent": "2119899340986880250",
+     "author": "bencevar3572",
+     "name": ".",
+     "avatar": "https://pbs.twimg.com/profile_images/2109207785598541824/CUpc5zEy_200x200.jpg",
+     "text": "@erkekdoven62 Dm finansal köleyim sahibe arıyorum",
+     "likes": 0,
+     "created_at": "2026-11-10T13:46:22.000Z"
+    },
+    {
+     "id": "2119919149962949103",
+     "parent": "2119899340986880250",
+     "author": "Zqpnta",
+     "name": "Z",
+     "avatar": "https://abs.twimg.com/sticky/default_profile_images/default_profile_200x200.png",
+     "text": "@erkekdoven62 Finansal köle ister misiniz",
+     "likes": 2,
+     "created_at": "2026-11-09T22:24:46.000Z"
+    },
+    {
+     "id": "2119915269942395337",
+     "parent": "2119899340986880250",
+     "author": "SarsanSalvo",
+     "name": "sarsan salvo",
+     "avatar": "https://pbs.twimg.com/profile_images/2104376582773075969/nMEbR7qa_200x200.jpg",
+     "text": "@erkekdoven62 Ben de istiyorum bi tane bulursan paylaşalim mi",
+     "likes": 0,
+     "created_at": "2026-11-09T22:09:21.000Z"
+    },
+    {
+     "id": "2119914433262534892",
+     "parent": "2119899340986880250",
+     "author": "ernyersen7",
+     "name": "moltisantieren",
+     "avatar": "https://pbs.twimg.com/profile_images/2113380288055095296/hQKyT32N_200x200.jpg",
+     "text": "@erkekdoven62 öl ya",
+     "likes": 0,
+     "created_at": "2026-11-09T22:06:01.000Z"
+    },
+    {
+     "id": "2119912914354360475",
+     "parent": "2119907824457130271",
+     "author": "erkekdoven62",
+     "name": "effy milkovich",
+     "avatar": "https://pbs.twimg.com/profile_images/2049295030083608576/V1AdE24V_200x200.jpg",
+     "text": "@yusuffmentality yok",
+     "likes": 0,
+     "created_at": "2026-11-09T21:59:59.000Z"
+    },
+    {
+     "id": "2119907824457130271",
+     "parent": "2119899340986880250",
+     "author": "yusuffmentality",
+     "name": "yusuf",
+     "avatar": "https://pbs.twimg.com/profile_images/2104618884112297985/s0y6l6hX_200x200.jpg",
+     "text": "@erkekdoven62 sus amk yeter",
+     "likes": 0,
+     "created_at": "2026-11-09T21:39:45.000Z"
+    },
+    {
+     "id": "2119905287398137960",
+     "parent": "2119899340986880250",
+     "author": "Ahmet514321",
+     "name": "burak",
+     "avatar": "https://pbs.twimg.com/profile_images/2112320415108300800/V7LDXgbP_200x200.jpg",
+     "text": "@erkekdoven62 Dm",
+     "likes": 0,
+     "created_at": "2026-11-09T21:29:41.000Z"
+    },
+    {
+     "id": "2119899539704602903",
+     "parent": "2119899340986880250",
+     "author": "1GemiKaptani",
+     "name": "𝟙 𝔾𝕖𝕞𝕚 𝕂𝕒𝕡𝕥𝕒𝕟ı 🤘🏼🐺",
+     "avatar": "https://pbs.twimg.com/profile_images/2119916805305122816/2iCwfExR_200x200.jpg",
+     "text": "@erkekdoven62 yok dimi hala",
+     "likes": 0,
+     "created_at": "2026-11-09T21:06:50.000Z"
+    }
+   ]
   }
  },
  "errors": []
