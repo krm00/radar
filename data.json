@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-10T19:02:16Z",
+ "updated": "2026-11-10T19:03:48Z",
  "accounts": [
   {
    "handle": "@erkekdoven62",
@@ -8,7 +8,7 @@
    "verified": false,
    "bio": "primat incel k*rdistanci akpli dusmaniyim islamofobi iceriyorum aksini dusunenler block çapulcuyum apoyu da sikiyom tarot da bakiyorm",
    "joined": "2023-05-20T07:38:45.000Z",
-   "followers": 3077,
+   "followers": 3078,
    "following": 964,
    "tweets_total": 4462,
    "posts": [
@@ -71,6 +71,12 @@
        "l": 0,
        "c": 0,
        "r": 0
+      },
+      {
+       "ts": 1794337428,
+       "l": 0,
+       "c": 0,
+       "r": 0
       }
      ]
     },
@@ -83,7 +89,7 @@
      "reposts": 0,
      "quotes": 0,
      "bookmarks": 2,
-     "impressions": 2164,
+     "impressions": 2166,
      "lang": "tr",
      "created_at": "2026-11-09T21:06:03.000Z",
      "hashtags": [],
@@ -123,6 +129,12 @@
       },
       {
        "ts": 1794337336,
+       "l": 26,
+       "c": 8,
+       "r": 0
+      },
+      {
+       "ts": 1794337428,
        "l": 26,
        "c": 8,
        "r": 0
@@ -183,6 +195,12 @@
        "l": 0,
        "c": 0,
        "r": 426
+      },
+      {
+       "ts": 1794337428,
+       "l": 0,
+       "c": 0,
+       "r": 426
       }
      ]
     },
@@ -195,7 +213,7 @@
      "reposts": 0,
      "quotes": 1,
      "bookmarks": 1,
-     "impressions": 1885,
+     "impressions": 1886,
      "lang": "tr",
      "created_at": "2026-11-07T12:17:48.000Z",
      "hashtags": [],
@@ -235,6 +253,12 @@
       },
       {
        "ts": 1794337336,
+       "l": 32,
+       "c": 2,
+       "r": 0
+      },
+      {
+       "ts": 1794337428,
        "l": 32,
        "c": 2,
        "r": 0
@@ -300,6 +324,12 @@
        "l": 1,
        "c": 0,
        "r": 0
+      },
+      {
+       "ts": 1794337428,
+       "l": 1,
+       "c": 0,
+       "r": 0
       }
      ]
     },
@@ -362,6 +392,12 @@
        "l": 2,
        "c": 0,
        "r": 0
+      },
+      {
+       "ts": 1794337428,
+       "l": 2,
+       "c": 0,
+       "r": 0
       }
      ]
     },
@@ -374,7 +410,7 @@
      "reposts": 0,
      "quotes": 0,
      "bookmarks": 7,
-     "impressions": 6159,
+     "impressions": 6160,
      "lang": "tr",
      "created_at": "2026-11-05T15:47:10.000Z",
      "hashtags": [],
@@ -423,6 +459,12 @@
       },
       {
        "ts": 1794337336,
+       "l": 57,
+       "c": 6,
+       "r": 0
+      },
+      {
+       "ts": 1794337428,
        "l": 57,
        "c": 6,
        "r": 0
@@ -481,6 +523,12 @@
        "l": 18,
        "c": 0,
        "r": 0
+      },
+      {
+       "ts": 1794337428,
+       "l": 18,
+       "c": 0,
+       "r": 0
       }
      ]
     },
@@ -493,7 +541,7 @@
      "reposts": 0,
      "quotes": 0,
      "bookmarks": 0,
-     "impressions": 1105,
+     "impressions": 1106,
      "lang": "tr",
      "created_at": "2026-11-03T20:56:42.000Z",
      "hashtags": [],
@@ -545,6 +593,12 @@
        "l": 21,
        "c": 0,
        "r": 0
+      },
+      {
+       "ts": 1794337428,
+       "l": 21,
+       "c": 0,
+       "r": 0
       }
      ]
     }
@@ -569,18 +623,29 @@
     {
      "ts": 1794337336,
      "v": 3077
+    },
+    {
+     "ts": 1794337428,
+     "v": 3078
     }
    ],
-   "delta": 0,
-   "delta_24h": 0,
-   "delta_7d": 0,
+   "delta": 1,
+   "delta_24h": 1,
+   "delta_7d": 1,
    "engagement": 600,
    "avg_er": 1.13,
    "top_post": "2118369542405517674",
    "original_count": 5
   }
  ],
- "events": [],
+ "events": [
+  {
+   "ts": 1794337428,
+   "type": "followers",
+   "handle": "@erkekdoven62",
+   "text": "takipçi 3077 → 3078 (+1)"
+  }
+ ],
  "archive": [
   {
    "id": "2119912914354360475",
@@ -605,7 +670,7 @@
    "comments": 8,
    "reposts": 0,
    "quotes": 0,
-   "impressions": 2164,
+   "impressions": 2166,
    "lang": "tr",
    "engagement": 34,
    "er": 1.57,
@@ -635,7 +700,7 @@
    "comments": 2,
    "reposts": 0,
    "quotes": 1,
-   "impressions": 1885,
+   "impressions": 1886,
    "lang": "tr",
    "engagement": 35,
    "er": 1.86,
@@ -680,7 +745,7 @@
    "comments": 6,
    "reposts": 0,
    "quotes": 0,
-   "impressions": 6159,
+   "impressions": 6160,
    "lang": "tr",
    "engagement": 63,
    "er": 1.02,
@@ -710,7 +775,7 @@
    "comments": 0,
    "reposts": 0,
    "quotes": 0,
-   "impressions": 1105,
+   "impressions": 1106,
    "lang": "tr",
    "engagement": 21,
    "er": 1.9,
@@ -748,15 +813,15 @@
    "count": null
   },
   {
+   "name": "Gazze'de Acil Durum",
+   "count": null
+  },
+  {
    "name": "Emniyetten FurkanaGözdağı",
    "count": null
   },
   {
    "name": "TebligatYok YakalamaVar",
-   "count": null
-  },
-  {
-   "name": "Gazze'de Acil Durum",
    "count": null
   },
   {
@@ -772,11 +837,11 @@
    "count": null
   },
   {
-   "name": "Atatürk",
+   "name": "5 BIN DKAB",
    "count": null
   },
   {
-   "name": "5 BIN DKAB",
+   "name": "Atatürk",
    "count": null
   }
  ],
