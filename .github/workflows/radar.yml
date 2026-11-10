@@ -25,6 +25,7 @@ jobs:
       - name: X API'den veri çek
         env:
           X_BEARER: ${{ secrets.X_BEARER }}
+          POST_LIMIT: "10"
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python fetch.py

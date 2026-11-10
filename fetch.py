@@ -59,34 +59,71 @@ def telegram(text):
 
 # ------------------------------------------------------------------ X API
 
+POST_LIMIT = int(os.environ.get("POST_LIMIT", "10"))   # okunan gönderi sayısı
+
+
 def fetch_account(handle, token):
     h = handle.lstrip("@")
     u = get_json(f"{API}/users/by/username/{h}"
-                 f"?user.fields=public_metrics,name,profile_image_url", token)
+                 f"?user.fields=public_metrics,name,profile_image_url,verified,"
+                 f"description,created_at", token)
     d = u.get("data") or {}
     if not d.get("id"):
         raise RuntimeError(f"@{h} bulunamadı: {u}")
     uid = d["id"]
-    followers = (d.get("public_metrics") or {}).get("followers_count", 0)
+    stats = d.get("public_metrics") or {}
 
-    t = get_json(f"{API}/users/{uid}/tweets"
-                 f"?max_results=5&tweet.fields=public_metrics,created_at", token)
+    t = get_json(
+        f"{API}/users/{uid}/tweets?max_results={max(5, min(100, POST_LIMIT))}"
+        f"&tweet.fields=public_metrics,created_at,attachments,lang"
+        f"&expansions=attachments.media_keys"
+        f"&media.fields=url,preview_image_url,type,width,height,alt_text", token)
+
+    media = {(m.get("media_key")): m for m in (t.get("includes", {}) or {}).get("media", [])}
+
     posts = []
     for p in t.get("data", []) or []:
         m = p.get("public_metrics") or {}
+        keys = ((p.get("attachments") or {}).get("media_keys") or [])
+        imgs = []
+        for k in keys:
+            mm = media.get(k) or {}
+            if mm.get("type") in ("photo", "video", "animated_gif"):
+                imgs.append({
+                    "type": mm.get("type"),
+                    "url": mm.get("url") or "",
+                    "preview": mm.get("preview_image_url") or mm.get("url") or "",
+                    "w": mm.get("width") or 0,
+                    "h": mm.get("height") or 0,
+                    "alt": mm.get("alt_text") or "",
+                })
         posts.append({
             "id": p["id"],
             "text": p.get("text", ""),
             "likes": m.get("like_count", 0),
             "comments": m.get("reply_count", 0),
             "reposts": m.get("retweet_count", 0),
+            "quotes": m.get("quote_count", 0),
+            "impressions": m.get("impression_count", 0),
+            "lang": p.get("lang", ""),
             "created_at": p.get("created_at", ""),
+            "is_retweet": p.get("text", "").startswith("RT @"),
+            "media": imgs,
             "url": f"https://x.com/{h}/status/{p['id']}",
         })
+
+    engagement = sum(p["likes"] + p["comments"] + p["reposts"] for p in posts)
     return {
         "handle": f"@{h}",
         "name": d.get("name") or h,
-        "followers": followers,
+        "avatar": d.get("profile_image_url", "").replace("_normal", "_200x200"),
+        "verified": bool(d.get("verified")),
+        "bio": d.get("description", "") or "",
+        "joined": d.get("created_at", "") or "",
+        "followers": stats.get("followers_count", 0),
+        "following": stats.get("following_count", 0),
+        "tweets_total": stats.get("tweet_count", 0),
+        "engagement": engagement,
         "posts": posts,
     }
 

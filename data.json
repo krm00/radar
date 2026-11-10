@@ -1,10 +1,17 @@
 {
- "updated": "2026-11-10T17:34:49Z",
+ "updated": "2026-11-10T18:30:22Z",
  "accounts": [
   {
    "handle": "@erkekdoven62",
    "name": "effy milkovich",
-   "followers": 3071,
+   "avatar": "https://pbs.twimg.com/profile_images/2049295030083608576/V1AdE24V_200x200.jpg",
+   "verified": false,
+   "bio": "primat incel k*rdistanci akpli dusmaniyim islamofobi iceriyorum aksini dusunenler block çapulcuyum apoyu da sikiyom tarot da bakiyorm",
+   "joined": "2023-05-20T07:38:45.000Z",
+   "followers": 3077,
+   "following": 964,
+   "tweets_total": 4462,
+   "engagement": 598,
    "posts": [
     {
      "id": "2119912914354360475",
@@ -12,16 +19,26 @@
      "likes": 0,
      "comments": 0,
      "reposts": 0,
+     "quotes": 0,
+     "impressions": 102,
+     "lang": "und",
      "created_at": "2026-11-09T21:59:59.000Z",
+     "is_retweet": false,
+     "media": [],
      "url": "https://x.com/erkekdoven62/status/2119912914354360475"
     },
     {
      "id": "2119899340986880250",
      "text": "finansal köle istiyorum",
-     "likes": 24,
+     "likes": 25,
      "comments": 8,
      "reposts": 0,
+     "quotes": 0,
+     "impressions": 2123,
+     "lang": "tr",
      "created_at": "2026-11-09T21:06:03.000Z",
+     "is_retweet": false,
+     "media": [],
      "url": "https://x.com/erkekdoven62/status/2119899340986880250"
     },
     {
@@ -30,7 +47,12 @@
      "likes": 0,
      "comments": 0,
      "reposts": 426,
+     "quotes": 0,
+     "impressions": 1,
+     "lang": "tr",
      "created_at": "2026-11-09T11:44:41.000Z",
+     "is_retweet": true,
+     "media": [],
      "url": "https://x.com/erkekdoven62/status/2119758069601079679"
     },
     {
@@ -39,18 +61,107 @@
      "likes": 32,
      "comments": 2,
      "reposts": 0,
+     "quotes": 1,
+     "impressions": 1881,
+     "lang": "tr",
      "created_at": "2026-11-07T12:17:48.000Z",
+     "is_retweet": false,
+     "media": [],
      "url": "https://x.com/erkekdoven62/status/2119041628102877546"
+    },
+    {
+     "id": "2118460272310440415",
+     "text": "@angelbutsinner PUUYAYSOFUARKARKALAISODYSODUAIFKDUA",
+     "likes": 1,
+     "comments": 0,
+     "reposts": 0,
+     "quotes": 0,
+     "impressions": 196,
+     "lang": "in",
+     "created_at": "2026-11-05T21:47:42.000Z",
+     "is_retweet": false,
+     "media": [],
+     "url": "https://x.com/erkekdoven62/status/2118460272310440415"
+    },
+    {
+     "id": "2118391494423777748",
+     "text": "@StevenBerkee7 her boku ciddiye almayın ya",
+     "likes": 2,
+     "comments": 0,
+     "reposts": 0,
+     "quotes": 0,
+     "impressions": 349,
+     "lang": "tr",
+     "created_at": "2026-11-05T17:14:24.000Z",
+     "is_retweet": false,
+     "media": [],
+     "url": "https://x.com/erkekdoven62/status/2118391494423777748"
+    },
+    {
+     "id": "2118369542405517674",
+     "text": "finansal köle ifşası!!!!\nbu hesap sahtekarın teki bes kuruş sömürttüğü yok ve engelliyor sahibelerin dikkatine https://t.co/wAMf4Hr0f8",
+     "likes": 57,
+     "comments": 6,
+     "reposts": 0,
+     "quotes": 0,
+     "impressions": 6152,
+     "lang": "tr",
+     "created_at": "2026-11-05T15:47:10.000Z",
+     "is_retweet": false,
+     "media": [
+      {
+       "type": "photo",
+       "url": "https://pbs.twimg.com/media/HWX13fBWgAARdVq.jpg",
+       "preview": "https://pbs.twimg.com/media/HWX13fBWgAARdVq.jpg",
+       "w": 1798,
+       "h": 1474,
+       "alt": ""
+      }
+     ],
+     "url": "https://x.com/erkekdoven62/status/2118369542405517674"
+    },
+    {
+     "id": "2117730466258362756",
+     "text": "gozlerini gorene kadar yesilin boyle bir tonu oldugunu ve en sevdigim renk oldugunu bilmiyodum",
+     "likes": 18,
+     "comments": 0,
+     "reposts": 0,
+     "quotes": 0,
+     "impressions": 1120,
+     "lang": "tr",
+     "created_at": "2026-11-03T21:27:43.000Z",
+     "is_retweet": false,
+     "media": [],
+     "url": "https://x.com/erkekdoven62/status/2117730466258362756"
+    },
+    {
+     "id": "2117722660092395617",
+     "text": "enistenizle rivaya gittigim gun benim saf nese https://t.co/9qN510Kbyw",
+     "likes": 21,
+     "comments": 0,
+     "reposts": 0,
+     "quotes": 0,
+     "impressions": 1103,
+     "lang": "tr",
+     "created_at": "2026-11-03T20:56:42.000Z",
+     "is_retweet": false,
+     "media": [
+      {
+       "type": "video",
+       "url": "",
+       "preview": "https://pbs.twimg.com/amplify_video_thumb/2101771526441701376/img/Q0UsOiVm6H2v-Tcr.jpg",
+       "w": 960,
+       "h": 720,
+       "alt": ""
+      }
+     ],
+     "url": "https://x.com/erkekdoven62/status/2117722660092395617"
     }
    ],
    "history": [
     {
-     "ts": 1794332075,
-     "v": 3071
-    },
-    {
-     "ts": 1794332089,
-     "v": 3071
+     "ts": 1794335422,
+     "v": 3077
     }
    ],
    "delta": 0

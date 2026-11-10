@@ -35,8 +35,9 @@ Birkaç dakika sonra: `https://<kullanıcı>.github.io/radar/`
 - Hesap eklemek/çıkarmak: `accounts.json` düzenle, commit'le
 - Güncelleme sıklığı: `.github/workflows/radar.yml` içindeki `cron` satırı
   (şu an **3 saatte bir**: `"17 */3 * * *"`)
-- Maliyet: her çalışma ~5 gönderi okuması ≈ **$0,025** → 3 saatlik = ~**$6/ay** üst sınır
-  (X aynı gün aynı gönderiyi tekrar faturalamazsa çok daha az)
+- Maliyet: her çalışma ~10 gönderi okuması ≈ **$0,05** → 3 saatlik = ~**$12/ay** üst sınır
+  (X aynı gün aynı gönderiyi tekrar faturalamazsa çok daha az). Düşürmek için
+  workflow'a `POST_LIMIT: "5"` ekle.
 
 ## Telegram bildirimi (opsiyonel)
 
@@ -63,6 +64,6 @@ Artık her yerden, Mac kapalıyken de açılır.
 | Dosya | İş |
 |---|---|
 | `fetch.py` | X API'den çeker, `data.json` yazar |
-| `index.html` | Statik pano (token içermez) |
+| `index.html` | Statik pano: profil, gönderi görselleri, etkileşim, geçmiş tablosu |
 | `accounts.json` | Takip edilecek hesaplar |
 | `.github/workflows/radar.yml` | 3 saatlik cron + Telegram adımı |
