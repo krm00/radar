@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-10T23:28:48Z",
+ "updated": "2026-11-11T06:38:32Z",
  "accounts": [],
  "events": [
   {
@@ -175,31 +175,39 @@
  ],
  "trends": [
   {
-   "name": "#Karabağ",
+   "name": "#Çarşamba",
    "count": null
   },
   {
-   "name": "#TuzluKahve",
+   "name": "#HirsizListesiVerilmezseOyYok",
    "count": null
   },
   {
-   "name": "AlparslanHocaya YineSürgün",
+   "name": "#OmerGonulKorunamazHapse",
    "count": null
   },
   {
-   "name": "#COP31FonlaKirlendi",
+   "name": "#TurpunBuyuguErisahHapse",
    "count": null
   },
   {
-   "name": "#GazaEmergency",
+   "name": "Hemen TamANAPARA YoksaSecim",
    "count": null
   },
   {
-   "name": "#PPFdeParamNerede",
+   "name": "#HerkesDinliyorMu",
    "count": null
   },
   {
-   "name": "AkpDönemi ZulümDönemi",
+   "name": "Yunus Arıncı",
+   "count": null
+  },
+  {
+   "name": "Ali Paslı",
+   "count": null
+  },
+  {
+   "name": "StajyerÇırak BütçedeYok",
    "count": null
   },
   {
@@ -211,27 +219,19 @@
    "count": null
   },
   {
-   "name": "StajyerÇırak BütçedeYok",
+   "name": "Fatih Altaylı",
    "count": null
   },
   {
-   "name": "Ece Üner",
+   "name": "Geleceğe Nefes",
    "count": null
   },
   {
-   "name": "Fonzedenin Sabri Kalmadi",
+   "name": "AlparslanHocaya YineSürgün",
    "count": null
   },
   {
-   "name": "Hacı",
-   "count": null
-  },
-  {
-   "name": "5 BIN DKAB",
-   "count": null
-  },
-  {
-   "name": "Türkiyeli",
+   "name": "Türkiye Sineması",
    "count": null
   }
  ],
