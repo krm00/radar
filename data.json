@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-11T06:38:32Z",
+ "updated": "2026-11-11T17:14:32Z",
  "accounts": [],
  "events": [
   {
@@ -175,19 +175,23 @@
  ],
  "trends": [
   {
-   "name": "#Çarşamba",
+   "name": "#MehmetCibaraİstifa",
    "count": null
   },
   {
-   "name": "#HirsizListesiVerilmezseOyYok",
+   "name": "#SaltanatBittiErisahHapse",
    "count": null
   },
   {
-   "name": "#OmerGonulKorunamazHapse",
+   "name": "#PPFdeAlınTerimiGeriVer",
    "count": null
   },
   {
-   "name": "#TurpunBuyuguErisahHapse",
+   "name": "#OmerGonulHemenHapse",
+   "count": null
+  },
+  {
+   "name": "#COP31Türkiye",
    "count": null
   },
   {
@@ -195,31 +199,23 @@
    "count": null
   },
   {
-   "name": "#HerkesDinliyorMu",
+   "name": "YektaTorun EmNazıYaz",
    "count": null
   },
   {
-   "name": "Yunus Arıncı",
+   "name": "Kronik",
    "count": null
   },
   {
-   "name": "Ali Paslı",
+   "name": "UlaşTunaAstepe",
    "count": null
   },
   {
-   "name": "StajyerÇırak BütçedeYok",
+   "name": "Başınız",
    "count": null
   },
   {
-   "name": "Gazze'de Acil Durum",
-   "count": null
-  },
-  {
-   "name": "Filistin'i Kurtar",
-   "count": null
-  },
-  {
-   "name": "Fatih Altaylı",
+   "name": "Whoareyoudizi97",
    "count": null
   },
   {
@@ -227,11 +223,15 @@
    "count": null
   },
   {
-   "name": "AlparslanHocaya YineSürgün",
+   "name": "DenizBaysal",
    "count": null
   },
   {
-   "name": "Türkiye Sineması",
+   "name": "Enes Ünal",
+   "count": null
+  },
+  {
+   "name": "İLKÖĞRETİM MATEMATİK",
    "count": null
   }
  ],
