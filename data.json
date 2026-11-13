@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T20:02:07Z",
+ "updated": "2026-11-13T01:54:17Z",
  "accounts": [],
  "events": [
   {
@@ -175,11 +175,23 @@
  ],
  "trends": [
   {
+   "name": "#PPFdeEmegimiGeriVer",
+   "count": null
+  },
+  {
+   "name": "Mehmet Pehlivan",
+   "count": null
+  },
+  {
    "name": "#TURBEL",
    "count": null
   },
   {
    "name": "Arda Güler",
+   "count": null
+  },
+  {
+   "name": "#Malatya",
    "count": null
   },
   {
@@ -191,27 +203,11 @@
    "count": null
   },
   {
-   "name": "Barış Alper",
-   "count": null
-  },
-  {
    "name": "Orkun",
    "count": null
   },
   {
-   "name": "#PPFdeEmegimiGeriVer",
-   "count": null
-  },
-  {
-   "name": "#Malatya",
-   "count": null
-  },
-  {
-   "name": "#TMVveTLYnedenOdemeYOK",
-   "count": null
-  },
-  {
-   "name": "Oğuz",
+   "name": "Barış",
    "count": null
   },
   {
@@ -219,19 +215,23 @@
    "count": null
   },
   {
-   "name": "Doku",
-   "count": null
-  },
-  {
    "name": "Türk Silahlı Kuvvetlerimize",
    "count": null
   },
   {
-   "name": "Ömer Üründül",
+   "name": "#FatihErbakanAnaParaAlacak",
    "count": null
   },
   {
-   "name": "Tamer Dağlı",
+   "name": "Fatoş Pınar Türker",
+   "count": null
+  },
+  {
+   "name": "Milli",
+   "count": null
+  },
+  {
+   "name": "Ekrem İmamoğlu",
    "count": null
   }
  ],
