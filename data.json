@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14T10:36:54Z",
+ "updated": "2026-11-14T18:13:50Z",
  "accounts": [],
  "events": [
   {
@@ -175,7 +175,15 @@
  ],
  "trends": [
   {
-   "name": "#HalkSoyulduReisDuymuyor",
+   "name": "AvaBurak AralıktaDergide",
+   "count": null
+  },
+  {
+   "name": "#PPFdeAdaletSaglanmalı",
+   "count": null
+  },
+  {
+   "name": "#yanıtbekliyor",
    "count": null
   },
   {
@@ -183,7 +191,7 @@
    "count": null
   },
   {
-   "name": "#ErisahAricaniKimKoruyor",
+   "name": "#SosyologlarBirleşin",
    "count": null
   },
   {
@@ -191,47 +199,39 @@
    "count": null
   },
   {
-   "name": "#KademeDurmayacak",
+   "name": "OzgürlükIçin Meydanlardayız",
    "count": null
   },
   {
-   "name": "IfadeHürriyetine Darbe",
+   "name": "FurkanGönüllülerine Ozgürlük",
    "count": null
   },
   {
-   "name": "AnaParasini AKPSoydu",
+   "name": "SagliktaFtrPskyeButce",
    "count": null
   },
   {
-   "name": "Ahıska Türklerinin",
+   "name": "SemraHocaya Ozgürlük",
    "count": null
   },
   {
-   "name": "YENİ Parti 1",
+   "name": "Liderimiz Sayın Devlet Bahçeli",
    "count": null
   },
   {
-   "name": "Söz Stajyer Çırağa Gelir",
+   "name": "AlparslanHocaya Ozgürlük",
+   "count": null
+  },
+  {
+   "name": "Özgür Özel",
+   "count": null
+  },
+  {
+   "name": "Berke Özer",
    "count": null
   },
   {
    "name": "Olağan Kurultayı'nda",
-   "count": null
-  },
-  {
-   "name": "Kız Kulesi",
-   "count": null
-  },
-  {
-   "name": "Alperen Şengün",
-   "count": null
-  },
-  {
-   "name": "Türkiye Yenileniyor",
-   "count": null
-  },
-  {
-   "name": "Ahıska Türkü",
    "count": null
   }
  ],
