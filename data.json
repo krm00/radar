@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14T01:28:44Z",
+ "updated": "2026-11-14T10:36:54Z",
  "accounts": [],
  "events": [
   {
@@ -175,51 +175,47 @@
  ],
  "trends": [
   {
-   "name": "ABD Federal Havacılık İdaresi",
+   "name": "#HalkSoyulduReisDuymuyor",
    "count": null
   },
   {
-   "name": "#picemiyeti",
+   "name": "#FondaAnaParaOdenmedi",
    "count": null
   },
   {
-   "name": "#FonzedelerSusturulamazlar",
+   "name": "#ErisahAricaniKimKoruyor",
    "count": null
   },
   {
-   "name": "11 Eylül",
+   "name": "#TamAnaParaYoksaistifa",
    "count": null
   },
   {
-   "name": "Uzaylılar",
+   "name": "#KademeDurmayacak",
    "count": null
   },
   {
-   "name": "#TasacakBuDeniz",
+   "name": "IfadeHürriyetine Darbe",
    "count": null
   },
   {
-   "name": "#FonzedeTumHirsizlarinPesinde",
+   "name": "AnaParasini AKPSoydu",
    "count": null
   },
   {
-   "name": "Mudanya",
+   "name": "Ahıska Türklerinin",
    "count": null
   },
   {
-   "name": "#isfad",
+   "name": "YENİ Parti 1",
    "count": null
   },
   {
-   "name": "Filistin'den Çağrı",
+   "name": "Söz Stajyer Çırağa Gelir",
    "count": null
   },
   {
-   "name": "Siber",
-   "count": null
-  },
-  {
-   "name": "New Orleans",
+   "name": "Olağan Kurultayı'nda",
    "count": null
   },
   {
@@ -227,11 +223,15 @@
    "count": null
   },
   {
-   "name": "Gazze Felaketi Yaşıyor",
+   "name": "Alperen Şengün",
    "count": null
   },
   {
-   "name": "Odemeler Eksik AnaPara Yok",
+   "name": "Türkiye Yenileniyor",
+   "count": null
+  },
+  {
+   "name": "Ahıska Türkü",
    "count": null
   }
  ],
