@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14T18:13:50Z",
+ "updated": "2026-11-14T22:33:49Z",
  "accounts": [],
  "events": [
   {
@@ -175,7 +175,27 @@
  ],
  "trends": [
   {
+   "name": "#AKPartiOdemeYokAlgiVar",
+   "count": null
+  },
+  {
+   "name": "#TumFonzedelerMecliseGelecek",
+   "count": null
+  },
+  {
+   "name": "#ArtikCevdetYilmazistifaET",
+   "count": null
+  },
+  {
+   "name": "BugunFonCalindi YarinSize",
+   "count": null
+  },
+  {
    "name": "AvaBurak AralıktaDergide",
+   "count": null
+  },
+  {
+   "name": "BTS Haber",
    "count": null
   },
   {
@@ -183,55 +203,35 @@
    "count": null
   },
   {
-   "name": "#yanıtbekliyor",
+   "name": "#GündemÖtesi",
    "count": null
   },
   {
-   "name": "#FondaAnaParaOdenmedi",
+   "name": "Portekiz",
    "count": null
   },
   {
-   "name": "#SosyologlarBirleşin",
+   "name": "Ronaldo",
    "count": null
   },
   {
-   "name": "#TamAnaParaYoksaistifa",
+   "name": "İyikiDoğdun SahraŞaş",
    "count": null
   },
   {
-   "name": "OzgürlükIçin Meydanlardayız",
+   "name": "Hülya Koçyiğit",
    "count": null
   },
   {
-   "name": "FurkanGönüllülerine Ozgürlük",
+   "name": "Halis Hoca",
    "count": null
   },
   {
-   "name": "SagliktaFtrPskyeButce",
+   "name": "Stajyer Çırak Köle Mi",
    "count": null
   },
   {
-   "name": "SemraHocaya Ozgürlük",
-   "count": null
-  },
-  {
-   "name": "Liderimiz Sayın Devlet Bahçeli",
-   "count": null
-  },
-  {
-   "name": "AlparslanHocaya Ozgürlük",
-   "count": null
-  },
-  {
-   "name": "Özgür Özel",
-   "count": null
-  },
-  {
-   "name": "Berke Özer",
-   "count": null
-  },
-  {
-   "name": "Olağan Kurultayı'nda",
+   "name": "Genel Başkanlığa",
    "count": null
   }
  ],
