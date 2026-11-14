@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13T19:50:06Z",
+ "updated": "2026-11-14T01:28:44Z",
  "accounts": [],
  "events": [
   {
@@ -175,15 +175,27 @@
  ],
  "trends": [
   {
+   "name": "ABD Federal Havacılık İdaresi",
+   "count": null
+  },
+  {
+   "name": "#picemiyeti",
+   "count": null
+  },
+  {
    "name": "#FonzedelerSusturulamazlar",
    "count": null
   },
   {
-   "name": "#FondaAraOdemeYALANI",
+   "name": "11 Eylül",
    "count": null
   },
   {
-   "name": "#CrushDay",
+   "name": "Uzaylılar",
+   "count": null
+  },
+  {
+   "name": "#TasacakBuDeniz",
    "count": null
   },
   {
@@ -191,7 +203,11 @@
    "count": null
   },
   {
-   "name": "#FonzedeGazetecilereTamDestek",
+   "name": "Mudanya",
+   "count": null
+  },
+  {
+   "name": "#isfad",
    "count": null
   },
   {
@@ -199,39 +215,23 @@
    "count": null
   },
   {
+   "name": "Siber",
+   "count": null
+  },
+  {
+   "name": "New Orleans",
+   "count": null
+  },
+  {
+   "name": "Kız Kulesi",
+   "count": null
+  },
+  {
    "name": "Gazze Felaketi Yaşıyor",
    "count": null
   },
   {
-   "name": "Fadime",
-   "count": null
-  },
-  {
-   "name": "Türkiye Sigorta",
-   "count": null
-  },
-  {
-   "name": "AvaYaman",
-   "count": null
-  },
-  {
-   "name": "OrEl",
-   "count": null
-  },
-  {
-   "name": "OzgürlükYürüyüşüne Müdahale",
-   "count": null
-  },
-  {
-   "name": "Zarife",
-   "count": null
-  },
-  {
-   "name": "TMSF'ye",
-   "count": null
-  },
-  {
-   "name": "Şerif",
+   "name": "Odemeler Eksik AnaPara Yok",
    "count": null
   }
  ],
