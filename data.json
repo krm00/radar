@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14T22:33:49Z",
+ "updated": "2026-11-15T06:43:59Z",
  "accounts": [],
  "events": [
   {
@@ -175,19 +175,23 @@
  ],
  "trends": [
   {
-   "name": "#AKPartiOdemeYokAlgiVar",
+   "name": "#pazar",
    "count": null
   },
   {
-   "name": "#TumFonzedelerMecliseGelecek",
+   "name": "#FondaAnaParaOdenmedi",
    "count": null
   },
   {
-   "name": "#ArtikCevdetYilmazistifaET",
+   "name": "#FondaAraOdemeYALANI",
    "count": null
   },
   {
-   "name": "BugunFonCalindi YarinSize",
+   "name": "#TamAnaParaYoksaistifa",
+   "count": null
+  },
+  {
+   "name": "#ErisahAricaniKimKoruyor",
    "count": null
   },
   {
@@ -195,43 +199,39 @@
    "count": null
   },
   {
-   "name": "BTS Haber",
+   "name": "Hokit",
    "count": null
   },
   {
-   "name": "#PPFdeAdaletSaglanmalı",
+   "name": "Gane",
    "count": null
   },
   {
-   "name": "#GündemÖtesi",
+   "name": "BugunFonCalindi YarinSize",
    "count": null
   },
   {
-   "name": "Portekiz",
+   "name": "Kayla Harrison",
    "count": null
   },
   {
-   "name": "Ronaldo",
+   "name": "Uzaylılar",
    "count": null
   },
   {
-   "name": "İyikiDoğdun SahraŞaş",
+   "name": "Filistin'den Çağrı",
    "count": null
   },
   {
-   "name": "Hülya Koçyiğit",
+   "name": "bts haber",
    "count": null
   },
   {
-   "name": "Halis Hoca",
+   "name": "Amanda Nunes",
    "count": null
   },
   {
-   "name": "Stajyer Çırak Köle Mi",
-   "count": null
-  },
-  {
-   "name": "Genel Başkanlığa",
+   "name": "Gazze Felaketi Yaşıyor",
    "count": null
   }
  ],
