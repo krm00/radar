@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-15T22:55:29Z",
+ "updated": "2026-11-16T06:42:44Z",
  "accounts": [],
  "events": [
   {
@@ -175,7 +175,31 @@
  ],
  "trends": [
   {
-   "name": "#FRATUR",
+   "name": "#pazartesi",
+   "count": null
+  },
+  {
+   "name": "#NasılOluyorArkadaş",
+   "count": null
+  },
+  {
+   "name": "#umutsuzlukyok",
+   "count": null
+  },
+  {
+   "name": "#AhmetKaya",
+   "count": null
+  },
+  {
+   "name": "#HayırlıHaftalar",
+   "count": null
+  },
+  {
+   "name": "Bismillah",
+   "count": null
+  },
+  {
+   "name": "Sezai Karakoç",
    "count": null
   },
   {
@@ -183,19 +207,7 @@
    "count": null
   },
   {
-   "name": "#FondaAlgıYapmaOdemeYAP",
-   "count": null
-  },
-  {
-   "name": "#MilliTakım",
-   "count": null
-  },
-  {
-   "name": "İsmail",
-   "count": null
-  },
-  {
-   "name": "#BizimÇocuklar",
+   "name": "Mehmet Şimşek",
    "count": null
   },
   {
@@ -203,11 +215,15 @@
    "count": null
   },
   {
-   "name": "Fransa",
+   "name": "Emirhan Topçu",
    "count": null
   },
   {
-   "name": "#AnaParaTufeGelmezseAKPBitti",
+   "name": "İsmail",
+   "count": null
+  },
+  {
+   "name": "Mbappe",
    "count": null
   },
   {
@@ -215,23 +231,7 @@
    "count": null
   },
   {
-   "name": "Sergen",
-   "count": null
-  },
-  {
-   "name": "Emirhan",
-   "count": null
-  },
-  {
-   "name": "Hakan",
-   "count": null
-  },
-  {
-   "name": "Montella",
-   "count": null
-  },
-  {
-   "name": "Abdülkerim",
+   "name": "#Derbas",
    "count": null
   }
  ],
