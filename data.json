@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16T19:40:49Z",
+ "updated": "2026-11-17T03:57:48Z",
  "accounts": [],
  "events": [
   {
@@ -175,43 +175,35 @@
  ],
  "trends": [
   {
+   "name": "Sözcü TV'ye",
+   "count": null
+  },
+  {
+   "name": "#Salı",
+   "count": null
+  },
+  {
+   "name": "Tuncer Sıdalı",
+   "count": null
+  },
+  {
+   "name": "#HGSVurgunu",
+   "count": null
+  },
+  {
+   "name": "#HaydiSöyle",
+   "count": null
+  },
+  {
    "name": "#ReisSoyuldukOdemeDüzmece",
    "count": null
   },
   {
-   "name": "#TumFonMagdurlariAnkarada",
+   "name": "#Muhalefet19KasimSPKya",
    "count": null
   },
   {
-   "name": "Adları Yeni Huyları Eski",
-   "count": null
-  },
-  {
-   "name": "#KHKZulmüDevamEdiyor",
-   "count": null
-  },
-  {
-   "name": "Bank of America",
-   "count": null
-  },
-  {
-   "name": "#VergiSGKYapılandırma",
-   "count": null
-  },
-  {
-   "name": "#KırmadanDökmeden",
-   "count": null
-  },
-  {
-   "name": "Wells Fargo",
-   "count": null
-  },
-  {
-   "name": "James Bond",
-   "count": null
-  },
-  {
-   "name": "Cigdem KaraaslanHapse",
+   "name": "EFE ŞAN",
    "count": null
   },
   {
@@ -219,19 +211,27 @@
    "count": null
   },
   {
-   "name": "İsoİkinciVeliaht",
+   "name": "Albora",
    "count": null
   },
   {
-   "name": "U.S. Bank",
+   "name": "Ülker",
    "count": null
   },
   {
-   "name": "Xi SerbestBırakın",
+   "name": "Mahsun",
+   "count": null
+  },
+  {
+   "name": "Bank of America",
    "count": null
   },
   {
    "name": "Robert Pattinson",
+   "count": null
+  },
+  {
+   "name": "Erden Timur",
    "count": null
   }
  ],
