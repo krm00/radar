@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18T20:39:03Z",
+ "updated": "2026-11-19T02:37:58Z",
  "accounts": [],
  "events": [
   {
@@ -175,23 +175,31 @@
  ],
  "trends": [
   {
+   "name": "GTA 6",
+   "count": null
+  },
+  {
+   "name": "#FonMagdurlariParasiniAlamadi",
+   "count": null
+  },
+  {
+   "name": "#YaKademeYadaSeçim",
+   "count": null
+  },
+  {
+   "name": "#PPFyiAcilTamöde",
+   "count": null
+  },
+  {
+   "name": "#Arda500K",
+   "count": null
+  },
+  {
+   "name": "#AnaParamiziVerOnumuzeBakalim",
+   "count": null
+  },
+  {
    "name": "İyikiDoğdun AvaYaman",
-   "count": null
-  },
-  {
-   "name": "#Kademe43tenBaşlar",
-   "count": null
-  },
-  {
-   "name": "#TümMagdurlar19KasimdaSPKda",
-   "count": null
-  },
-  {
-   "name": "#19KasimdaTumMuhalefetSPKOnune",
-   "count": null
-  },
-  {
-   "name": "#Yeraltı",
    "count": null
   },
   {
@@ -199,39 +207,31 @@
    "count": null
   },
   {
-   "name": "20Kasımı Kutlamıyoruz",
+   "name": "Mustafa Yazıcı",
    "count": null
   },
   {
-   "name": "#SevdanBirAteş",
+   "name": "Cemil Tugay",
    "count": null
   },
   {
-   "name": "GTA 6",
+   "name": "Özgür Çelik",
    "count": null
   },
   {
-   "name": "Dusan Alimpijevic",
+   "name": "CHP'nin 38",
    "count": null
   },
   {
-   "name": "OrtakDilHemenAnaParaTUFE",
+   "name": "20kasımı kutlamıyoruz",
    "count": null
   },
   {
-   "name": "Stajyer Çırağa Yapılan Reva Mı",
+   "name": "GTA 5",
    "count": null
   },
   {
-   "name": "DaQuan Jeffries",
-   "count": null
-  },
-  {
-   "name": "Real Madrid'i 83-79",
-   "count": null
-  },
-  {
-   "name": "ÇağanEfeAk",
+   "name": "Sözcü",
    "count": null
   }
  ],
