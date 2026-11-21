@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-20T20:29:25Z",
+ "updated": "2026-11-21T02:25:40Z",
  "accounts": [],
  "events": [
   {
@@ -175,6 +175,18 @@
  ],
  "trends": [
   {
+   "name": "#BakanKademeyeCevapVer",
+   "count": null
+  },
+  {
+   "name": "#picemiyeti",
+   "count": null
+  },
+  {
+   "name": "#TaşacakBuDeniz",
+   "count": null
+  },
+  {
    "name": "#AnaParaYokAlgiVar",
    "count": null
   },
@@ -183,19 +195,11 @@
    "count": null
   },
   {
-   "name": "#6KurumdaihmalveSuistmalVar",
-   "count": null
-  },
-  {
-   "name": "#TaşacakBuDeniz",
-   "count": null
-  },
-  {
    "name": "FonMagduru AnaParaAlamadi",
    "count": null
   },
   {
-   "name": "#FondaYüzde81Yalanı",
+   "name": "SOYKIRIMA HAYIR",
    "count": null
   },
   {
@@ -207,31 +211,27 @@
    "count": null
   },
   {
-   "name": "SOYKIRIMA HAYIR",
-   "count": null
-  },
-  {
-   "name": "Serdar Altınbaş",
-   "count": null
-  },
-  {
-   "name": "BATU CENGİZ",
-   "count": null
-  },
-  {
-   "name": "Merih Demiral",
-   "count": null
-  },
-  {
-   "name": "AlnımızınAkıyla 45Yıl",
-   "count": null
-  },
-  {
-   "name": "AlparslanHocam Onurumuzsun",
+   "name": "İso",
    "count": null
   },
   {
    "name": "Şerif",
+   "count": null
+  },
+  {
+   "name": "Cengiz",
+   "count": null
+  },
+  {
+   "name": "Esme",
+   "count": null
+  },
+  {
+   "name": "Adili",
+   "count": null
+  },
+  {
+   "name": "Euroleague",
    "count": null
   }
  ],
