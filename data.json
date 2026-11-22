@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-21T19:24:04Z",
+ "updated": "2026-11-22T01:23:56Z",
  "accounts": [],
  "events": [
   {
@@ -175,7 +175,7 @@
  ],
  "trends": [
   {
-   "name": "#KOCvFB",
+   "name": "BARIŞ ÇAĞAN YÜKSEKKAYA",
    "count": null
   },
   {
@@ -187,11 +187,7 @@
    "count": null
   },
   {
-   "name": "Semedo",
-   "count": null
-  },
-  {
-   "name": "#200SedatPeker",
+   "name": "#KOCvFB",
    "count": null
   },
   {
@@ -199,19 +195,7 @@
    "count": null
   },
   {
-   "name": "Oğuz",
-   "count": null
-  },
-  {
-   "name": "Lukaku",
-   "count": null
-  },
-  {
-   "name": "İsmail",
-   "count": null
-  },
-  {
-   "name": "BARIŞ ÇAĞAN YÜKSEKKAYA",
+   "name": "#200SedatPeker",
    "count": null
   },
   {
@@ -219,19 +203,35 @@
    "count": null
   },
   {
-   "name": "#SiirinEviBahcelievler",
+   "name": "Yalın Gergün",
    "count": null
   },
   {
-   "name": "Ederson",
+   "name": "İsmail",
    "count": null
   },
   {
-   "name": "#FonHirsizlarinaMuebbetHapis",
+   "name": "#BeşiktaşınMaçıVar",
+   "count": null
+  },
+  {
+   "name": "#BaşkalarınınHayatı",
+   "count": null
+  },
+  {
+   "name": "Ali Koç",
+   "count": null
+  },
+  {
+   "name": "Semedo",
    "count": null
   },
   {
    "name": "Kante",
+   "count": null
+  },
+  {
+   "name": "Trent",
    "count": null
   }
  ],
