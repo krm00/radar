@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-22T19:47:54Z",
+ "updated": "2026-11-23T01:47:25Z",
  "accounts": [],
  "events": [
   {
@@ -175,11 +175,27 @@
  ],
  "trends": [
   {
+   "name": "#OziDay",
+   "count": null
+  },
+  {
+   "name": "İyiKiDoğdunOğuzhanÇifçi",
+   "count": null
+  },
+  {
    "name": "#Daha17",
    "count": null
   },
   {
-   "name": "#BirGeceMasalı",
+   "name": "Aslan",
+   "count": null
+  },
+  {
+   "name": "İstanbul Sarıyer'de",
+   "count": null
+  },
+  {
+   "name": "OzanAkbaba Nerde",
    "count": null
   },
   {
@@ -191,11 +207,19 @@
    "count": null
   },
   {
-   "name": "MİLAN ÖNDER",
+   "name": "#DevleteSizanFonOrgutuKim",
    "count": null
   },
   {
-   "name": "#ömürusta",
+   "name": "Leyla",
+   "count": null
+  },
+  {
+   "name": "Erol",
+   "count": null
+  },
+  {
+   "name": "Teoman",
    "count": null
   },
   {
@@ -203,35 +227,11 @@
    "count": null
   },
   {
-   "name": "Tucker",
+   "name": "İstanbul Valiliği",
    "count": null
   },
   {
-   "name": "Onuachu",
-   "count": null
-  },
-  {
-   "name": "Savunma Hattı",
-   "count": null
-  },
-  {
-   "name": "Thomas Reis",
-   "count": null
-  },
-  {
-   "name": "Horton",
-   "count": null
-  },
-  {
-   "name": "Ozan Tufan",
-   "count": null
-  },
-  {
-   "name": "Şebnem",
-   "count": null
-  },
-  {
-   "name": "Baldwin",
+   "name": "Abdülkerim Bardakcı",
    "count": null
   }
  ],
