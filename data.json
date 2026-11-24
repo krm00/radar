@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23T13:03:43Z",
+ "updated": "2026-11-24T02:16:49Z",
  "accounts": [],
  "events": [
   {
@@ -175,7 +175,11 @@
  ],
  "trends": [
   {
-   "name": "#Aslan",
+   "name": "#24KasımÖğretmenlerGünü",
+   "count": null
+  },
+  {
+   "name": "Mustafa Kemal Atatürk",
    "count": null
   },
   {
@@ -183,55 +187,51 @@
    "count": null
   },
   {
-   "name": "#TamAnaParaNetYatirimDegil",
+   "name": "#HerBaşarıdaİzinizVar",
    "count": null
   },
   {
-   "name": "#FondaYuzde81algisiDogruDegil",
+   "name": "#BugünGünlerdenGALATASARAY",
    "count": null
   },
   {
-   "name": "#RTErdoganArtikFondaicraat",
+   "name": "#OzSinEmmyde",
    "count": null
   },
   {
-   "name": "AvaBurak AralıktaDergide",
+   "name": "İstanbul Valiliği",
    "count": null
   },
   {
-   "name": "AvaBurak YılbaşıLingoda",
+   "name": "Kedidir",
    "count": null
   },
   {
-   "name": "AvaBurak TbdDe",
+   "name": "Bertuğ Yıldırım",
    "count": null
   },
   {
-   "name": "AvaBurak KimMilyonerde",
+   "name": "Hasan",
    "count": null
   },
   {
-   "name": "24 Kasım Öğretmenler Günü",
+   "name": "Belgrad Ormanı",
    "count": null
   },
   {
-   "name": "AvaBurak BoşDerste",
+   "name": "Doom",
    "count": null
   },
   {
-   "name": "Müge Anlı",
+   "name": "Köpek",
    "count": null
   },
   {
-   "name": "AvaBurak İboShowda",
+   "name": "Jensen",
    "count": null
   },
   {
-   "name": "İETT",
-   "count": null
-  },
-  {
-   "name": "Abdülkerim Bardakcı",
+   "name": "Emre Mor",
    "count": null
   }
  ],
