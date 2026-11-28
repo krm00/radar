@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T23:30:34Z",
+ "updated": "2026-11-28T07:58:02Z",
  "accounts": [],
  "events": [
   {
@@ -175,35 +175,47 @@
  ],
  "trends": [
   {
+   "name": "#Cumartesi",
+   "count": null
+  },
+  {
+   "name": "#Bilmekİstiyoruz",
+   "count": null
+  },
+  {
    "name": "#bolu",
    "count": null
   },
   {
-   "name": "#AileBakanıİstifa",
+   "name": "#GMMTVStarlympics2026",
    "count": null
   },
   {
-   "name": "#TaşacakBuDeniz",
+   "name": "Kaybolan 10",
    "count": null
   },
   {
-   "name": "Bulundular",
+   "name": "Mustafa Cengiz",
    "count": null
   },
   {
-   "name": "Salim",
+   "name": "#haftasonu",
    "count": null
   },
   {
-   "name": "Gölcük Tabiat Parkı'na",
+   "name": "Nazif Ege",
    "count": null
   },
   {
-   "name": "#Turkcell",
+   "name": "Düzce'nin Yığılca",
    "count": null
   },
   {
-   "name": "#MilletinAdamıErdoğan",
+   "name": "Tahir Elçi",
+   "count": null
+  },
+  {
+   "name": "DEVLETİMİZ VAR OLSUN",
    "count": null
   },
   {
@@ -211,27 +223,15 @@
    "count": null
   },
   {
-   "name": "Sosyal Hizmetler Bakanlığı",
-   "count": null
-  },
-  {
-   "name": "Bakan Göktaş",
-   "count": null
-  },
-  {
    "name": "Cengiz Topel",
    "count": null
   },
   {
-   "name": "Oruç",
+   "name": "Iris",
    "count": null
   },
   {
-   "name": "Bayraktar İHA",
-   "count": null
-  },
-  {
-   "name": "Esme",
+   "name": "Lvbel C5",
    "count": null
   }
  ],
